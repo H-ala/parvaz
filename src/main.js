@@ -8,6 +8,12 @@ import {
   CircleUser,
   MoveLeft,
   LineSquiggle,
+  Plane,
+  Search,
+  ChevronRight,
+  ChevronLeft,
+  ArrowLeftRight,
+  Lock,
 } from 'lucide'
 
 createIcons({
@@ -19,5 +25,11 @@ createIcons({
     CircleUser,
     MoveLeft,
     LineSquiggle,
+    Plane,
+    Search,
+    ChevronRight,
+    ChevronLeft,
+    ArrowLeftRight,
+    Lock,
   },
 })
