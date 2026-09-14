@@ -24,11 +24,24 @@ jobs:
           node-version: 22
           cache: npm
 
+      - name: Check files
+        run: |
+          node --version
+          npm --version
+          ls -la
+          test -f package.json
+          test -f package-lock.json
+
       - name: Install dependencies
         run: npm ci
 
       - name: Build
         run: npm run build
+
+      - name: Check dist
+        run: |
+          ls -la dist
+          test -f dist/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -39,5 +52,4 @@ jobs:
           path: ./dist
 
       - name: Deploy
-        id: deployment
         uses: actions/deploy-pages@v4
