@@ -7,573 +7,739 @@
     <title>parvaz</title>
   </head>
   <body>
-    <!--   hero section-->
+    <div class="space-y-8">
+      <!--      card-1-->
+      <div
+        class="border-border/60! relative rounded-b-[100px] border-b pb-[10vh] shadow-[0_10px_25px_rgba(0,0,0,0.08)]"
+      >
+        <!--   hero-->
+        <!--    header-->
+        <header
+          class="bg-card/20 absolute inset-x-0 top-4 z-50 mx-auto max-w-[96%] rounded-full p-2"
+        >
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-4">
+              <a href="/" class="rounded-full bg-white/42 text-xl font-bold">
+                <img src="/images/parvaz-logo.png" class="w-10" />
+              </a>
 
-    <!--    header-->
-    <header
-      class="max-w-[96%] mx-auto bg-card/20 absolute z-50 top-4 inset-x-0 rounded-full p-2"
-    >
-      <div class="flex justify-between items-center">
-        <div class="flex items-center gap-4">
-          <a href="/" class="text-xl font-bold bg-white/42 rounded-full">
-            <img src="/images/parvaz-logo.png" class="w-10" />
-          </a>
-
-          <nav class="flex gap-6 text-white text-sm font-semibold">
-            <a href="#home" class="relative"
-              >پرواز داخلی
-              <span
-                class="absolute -bottom-1/2 left-1/2 -translate-x-1/2 w-3 h-1 bg-primary rounded-full"
-              ></span
-            ></a>
-            <a href="#about">پرواز خارجی</a>
-            <a href="#contact">تور</a>
-            <a href="#contact">اقامت</a>
-            <a href="#contact">وبلاگ</a>
-            <a href="#contact">درباره ما</a>
-            <a href="#contact">ارتباط با ما</a>
-            <a href="#contact">پیگیری خرید</a>
-          </nav>
-        </div>
-        <div class="flex items-center gap-1.5">
-          <button
-            class="border-2 border-white rounded-full p-2 text-white flex gap-1 items-center"
-          >
-            <i data-lucide="chevron-down" class="size-5"></i>
-            <span class="text-xs pe-1">IRR</span>
-            <i data-lucide="badge-dollar-sign" class="size-5"></i>
-          </button>
-          <button
-            class="border-2 border-white rounded-full p-2 text-white flex gap-1 items-center"
-          >
-            <span class="text-xs pe-1">فارسی</span>
-            <i data-lucide="earth" class="size-5"></i>
-          </button>
-          <button
-            class="relative flex items-center gap-1 rounded-full bg-light-primary p-2 text-white"
-          >
-            <i data-lucide="shopping-bag" class="size-5"></i>
-
-            <span
-              class="absolute -right-1 -top-1 flex size-4 items-center justify-center rounded-full bg-white text-[10px] font-medium text-black"
-            >
-              0
-            </span>
-          </button>
-          <button
-            class="bg-white rounded-full p-1 text-black flex gap-1 items-center"
-          >
-            <span class="bg-secondary rounded-full p-1">
-              <i data-lucide="circle-user" class="size-5"></i>
-            </span>
-            <span class="text-xs pe-1">ورود/ثبت نام</span>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <div class="relative">
-      <img
-        src="/images/home/hero.png"
-        class="h-[85vh] w-full object-cover rounded-b-[70px]"
-        alt="home page hero"
-      />
-      <div
-        class="absolute top-[15vh] left-1/2 -translate-x-1/2 text-white font-black text-center space-y-4"
-      >
-        <p class="text-5xl">سفر بعدی تو</p>
-        <p class="text-4xl">
-          <span class="text-secondary">از همینجا</span> شروع میشه!
-        </p>
-        <p class="font-medium">
-          پرواز، هتل، تور و اقامتگاه رو سریع، مطمئن و با بهترین قیمت پیدا کن!
-        </p>
-        <div class="flex items-center gap-1.5 justify-center">
-          <button
-            class="border-2 border-white rounded-full p-2 px-4 text-white flex gap-1 items-center backdrop-blur-3xl"
-          >
-            <span class="text-xs pe-1 font-medium">درباره ما</span>
-            <i data-lucide="move-left" class="size-5"></i>
-          </button>
-          <button
-            class="bg-secondary rounded-full p-2 px-4 text-black flex gap-1 items-center"
-          >
-            <i data-lucide="line-squiggle" class="size-5"></i>
-            <span class="text-xs pe-1 font-medium">لحظه آخری</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!--    blurred card-->
-    <div
-      class="-mt-36 backdrop-blur-[6px] flex gap-4 flex-col shadow-[inset_0_0_30px_rgba(255,255,255),0_4px_30px_rgba(0,0,0,0.08)] p-4 bg-white/25 mx-auto max-w-[70%] rounded-4xl border border-white/40! text-white font-[950] text-xl"
-    >
-      <div class="flex gap-1.5 items-center">
-        <button
-          class="p-4.5 px-6 rounded-full flex gap-1 items-center text-primary bg-white relative w-48 justify-center"
-        >
-          <i data-lucide="plane" class="size-5"></i>
-          <span>پرواز داخلی</span>
-          <span
-            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-primary rounded-full"
-          ></span>
-        </button>
-        <button
-          class="p-4.5 rounded-full flex gap-1 items-center text-white border border-white/20! bg-black/1 shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md w-48 justify-center"
-        >
-          <i data-lucide="plane" class="size-5"></i>
-          <span>پرواز خارجی</span>
-        </button>
-        <button
-          class="p-4.5 rounded-full flex gap-1 items-center text-white border border-white/20! bg-black/1 shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md w-48 justify-center"
-        >
-          <i data-lucide="plane" class="size-5"></i>
-          <span>تورها</span></button
-        ><button
-          class="p-4.5 rounded-full flex gap-1 items-center text-white border border-white/20! bg-black/1 shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md w-48 justify-center"
-        >
-          <i data-lucide="plane" class="size-5"></i>
-          <span>هتل و ویلا</span>
-        </button>
-      </div>
-      <div
-        class="bg-white rounded-4xl grid grid-cols-4 gap-1.5 p-4 shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
-      >
-        <input
-          type="text"
-          placeholder="مبدا(شهر)"
-          class="border rounded-xl placeholder:font-normal placeholder:text-foreground/80 p-3"
-        />
-        <input
-          type="text"
-          placeholder="مبدا(شهر)"
-          class="border rounded-xl placeholder:font-normal placeholder:text-foreground/80 p-3"
-        />
-        <input
-          type="text"
-          placeholder="مبدا(شهر)"
-          class="border rounded-xl placeholder:font-normal placeholder:text-foreground/80 p-3"
-        />
-        <input
-          type="text"
-          placeholder="مبدا(شهر)"
-          class="border rounded-xl placeholder:font-normal placeholder:text-foreground/80 p-3"
-        />
-        <input
-          type="text"
-          placeholder="مبدا(شهر)"
-          class="border rounded-xl placeholder:font-normal placeholder:text-foreground/80 p-3"
-        />
-        <input
-          type="text"
-          placeholder="مبدا(شهر)"
-          class="border rounded-xl placeholder:font-normal placeholder:text-foreground/80 p-3"
-        />
-        <div></div>
-        <button
-          class="rounded-xl p-3 flex gap-1 items-center text-white bg-light-primary w-full justify-center"
-        >
-          <i data-lucide="search" class="size-6"></i>
-          <span class="text-xl font-bold">جستجو</span>
-        </button>
-      </div>
-      <div class="text-foreground flex items-center gap-2">
-        <i data-lucide="line-squiggle" class="size-5"></i>
-        <span class="font-[950] text-xl">مسیرهای پرتردد</span>
-        <div class="flex items-center gap-2 grow">
-          <i data-lucide="chevron-right" class="size-6"></i>
-          <div
-            class="border border-b-foreground/40 flex items-center gap-2 p-3 px-6 rounded-xl font-medium text-base grow justify-center"
-          >
-            <span>تهران</span>
-            <i data-lucide="arrow-left-right" class="size-4"></i>
-            <span>کرج</span>
-          </div>
-          <div
-            class="border border-b-foreground/40 flex items-center gap-2 p-3 px-6 rounded-xl font-medium text-base grow justify-center"
-          >
-            <span>تهران</span>
-            <i data-lucide="arrow-left-right" class="size-4"></i>
-            <span>کرج</span>
-          </div>
-          <div
-            class="border border-b-foreground/40 flex items-center gap-2 p-3 px-6 rounded-xl font-medium text-base grow justify-center"
-          >
-            <span>تهران</span>
-            <i data-lucide="arrow-left-right" class="size-4"></i>
-            <span>کرج</span>
-          </div>
-          <div
-            class="border border-b-foreground/40 flex items-center gap-2 p-3 px-6 rounded-xl font-medium text-base grow justify-center"
-          >
-            <span>تهران</span>
-            <i data-lucide="arrow-left-right" class="size-4"></i>
-            <span>کرج</span>
-          </div>
-          <i data-lucide="chevron-left" class="size-6"></i>
-        </div>
-      </div>
-    </div>
-    <div class="mx-auto max-w-[70%] mt-4 grid grid-cols-4 gap-2">
-      <div
-        class="border-2 border-background! bg-primary/5 p-3 flex gap-1.5 rounded-4xl shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
-      >
-        <div class="p-3.5 bg-white rounded-full">
-          <i data-lucide="lock" class="text-primary"></i>
-        </div>
-        <div class="flex flex-col">
-          <span class="font-extrabold text-lg">پرداخت امن</span>
-          <span class="text-sm">با درگاه‌های معتبر‌بانکی</span>
-        </div>
-      </div>
-      <div
-        class="border-2 border-background! bg-primary/5 p-3 flex gap-1.5 rounded-4xl shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
-      >
-        <div class="p-3.5 bg-white rounded-full">
-          <i data-lucide="lock" class="text-primary"></i>
-        </div>
-        <div class="flex flex-col">
-          <span class="font-extrabold text-lg">پرداخت امن</span>
-          <span class="text-sm">با درگاه‌های معتبر‌بانکی</span>
-        </div>
-      </div>
-      <div
-        class="border-2 border-background! bg-primary/5 p-3 flex gap-1.5 rounded-4xl shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
-      >
-        <div class="p-3.5 bg-white rounded-full">
-          <i data-lucide="lock" class="text-primary"></i>
-        </div>
-        <div class="flex flex-col">
-          <span class="font-extrabold text-lg">پرداخت امن</span>
-          <span class="text-sm">با درگاه‌های معتبر‌بانکی</span>
-        </div>
-      </div>
-      <div
-        class="border-2 border-background! bg-primary/5 p-3 flex gap-1.5 rounded-4xl shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
-      >
-        <div class="p-3.5 bg-white rounded-full">
-          <i data-lucide="lock" class="text-primary"></i>
-        </div>
-        <div class="flex flex-col">
-          <span class="font-extrabold text-lg">پرداخت امن</span>
-          <span class="text-sm">با درگاه‌های معتبر‌بانکی</span>
-        </div>
-      </div>
-    </div>
-    <div
-      class="mt-[10vh] grid grid-cols-7 gap-4 max-w-[70%] mx-auto text-white"
-    >
-      <div class="col-span-2 relative">
-        <div
-          class="absolute top-[8%] z-10 left-1/2 -translate-x-1/2 flex flex-col items-center w-full justify-center gap-1.5"
-        >
-          <p class="font-[950] text-lg">تورهای داخلی و خارجی مرداد</p>
-          <p>وقتشه یه سفر تازه رو تجربه کنی!</p>
-          <button
-            class="flex items-center text-black bg-white p-1.5 rounded-full"
-          >
-            <span class="text-sm"> مشاهده تورها </span>
-            <i data-lucide="chevron-left" class="size-3"></i>
-          </button>
-        </div>
-        <img
-          src="/images/home/tour.png"
-          alt="tour image"
-          class="w-full h-full object-cover rounded-4xl"
-        />
-        <div
-          class="absolute inset-0 rounded-4xl bg-gradient-to-b from-black/60 via-black/20 to-transparent"
-        ></div>
-      </div>
-      <div class="col-span-2 relative">
-        <div
-          class="absolute top-[8%] z-10 left-1/2 -translate-x-1/2 flex flex-col items-center w-full justify-center gap-1.5"
-        >
-          <p class="font-[950] text-lg">تورهای داخلی و خارجی مرداد</p>
-          <p>وقتشه یه سفر تازه رو تجربه کنی!</p>
-          <button
-            class="flex items-center text-black bg-white p-1.5 rounded-full"
-          >
-            <span class="text-sm"> مشاهده تورها </span>
-            <i data-lucide="chevron-left" class="size-3"></i>
-          </button>
-        </div>
-        <img
-          src="/images/home/hotels.png"
-          alt="tour image"
-          class="w-full h-full object-cover rounded-4xl"
-        />
-        <div
-          class="absolute inset-0 rounded-4xl bg-gradient-to-b from-black/60 via-black/20 to-transparent"
-        ></div>
-      </div>
-      <div class="col-span-3 relative gap-2">
-        <div class="flex absolute flex-col top-[8%] left-6">
-          <div class="flex items-center">
-            <div class="bg-destructive rounded-full p-2 -ml-3">
-              <i data-lucide="flame" class="size-5 text-white"></i>
+              <nav class="flex gap-6 text-sm font-semibold text-white">
+                <a href="#home" class="relative"
+                  >پرواز داخلی
+                  <span
+                    class="bg-primary absolute -bottom-1/2 left-1/2 h-1 w-3 -translate-x-1/2 rounded-full"
+                  ></span
+                ></a>
+                <a href="#about">پرواز خارجی</a>
+                <a href="#contact">تور</a>
+                <a href="#contact">اقامت</a>
+                <a href="#contact">وبلاگ</a>
+                <a href="#contact">درباره ما</a>
+                <a href="#contact">ارتباط با ما</a>
+                <a href="#contact">پیگیری خرید</a>
+              </nav>
             </div>
-            <p
-              class="text-white font-bold bg-destructive/37 rounded-full p-2 px-4"
-            >
-              پیشنهاد ویژه امروز
+            <div class="flex items-center gap-1.5">
+              <button
+                class="flex items-center gap-1 rounded-full border-2 border-white p-2 text-white"
+              >
+                <i data-lucide="chevron-down" class="size-5"></i>
+                <span class="pe-1 text-xs">IRR</span>
+                <i data-lucide="badge-dollar-sign" class="size-5"></i>
+              </button>
+              <button
+                class="flex items-center gap-1 rounded-full border-2 border-white p-2 text-white"
+              >
+                <span class="pe-1 text-xs">فارسی</span>
+                <i data-lucide="earth" class="size-5"></i>
+              </button>
+              <button
+                class="bg-light-primary relative flex items-center gap-1 rounded-full p-2 text-white"
+              >
+                <i data-lucide="shopping-bag" class="size-5"></i>
+
+                <span
+                  class="absolute -top-1 -right-1 flex size-4 items-center justify-center rounded-full bg-white text-[10px] font-medium text-black"
+                >
+                  0
+                </span>
+              </button>
+              <button
+                class="flex items-center gap-1 rounded-full bg-white p-1 text-black"
+              >
+                <span class="bg-secondary rounded-full p-1">
+                  <i data-lucide="circle-user" class="size-5"></i>
+                </span>
+                <span class="pe-1 text-xs">ورود/ثبت نام</span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <!--    header end-->
+        <div class="relative">
+          <img
+            src="/images/home/hero.png"
+            class="h-[85vh] w-full rounded-b-[70px] object-cover"
+            alt="home page hero"
+          />
+          <div
+            class="absolute top-[15vh] left-1/2 -translate-x-1/2 space-y-4 text-center font-black text-white"
+          >
+            <p class="text-5xl">سفر بعدی تو</p>
+            <p class="text-4xl">
+              <span class="text-secondary">از همینجا</span> شروع میشه!
             </p>
-          </div>
-          <div
-            class="flex items-center gap-2 p-3 px-6 text-black font-bold text-2xl grow justify-center"
-          >
-            <span>تهران</span>
-            <i data-lucide="arrow-left-right" class="size-6"></i>
-            <span>کرج</span>
-          </div>
-          <p class="text-black text-xs">لورم ایپسوم متن نمایشی با تولید .</p>
-        </div>
-        <div
-          class="flex flex-col gap-0 absolute left-6 z-10 bottom-2 text-white font-extrabold"
-        >
-          <span class="text-shadow-[0_4px_4px_rgba(0,0,0,0.3)]">تومان</span>
-          <p class="text-4xl text-shadow-[0_4px_4px_rgba(0,0,0,0.3)]">
-            3.400.000
-          </p>
-          <div class="flex justify-end">
-            <button
-              class="bg-white p-2 rounded-full text-black flex gap-1 items-center w-fit"
-            >
-              <span class="text-sm font-medium">جزئیات</span>
-              <i data-lucide="chevron-left" class="size-4"></i>
-            </button>
-          </div>
-        </div>
-        <img
-          src="/images/home/offer.png"
-          alt="tour image"
-          class="w-full h-full object-cover rounded-4xl"
-        />
-        <div
-          class="absolute inset-0 rounded-4xl bg-gradient-to-t from-destructive/40 via-destructive/5 to-transparent"
-        ></div>
-      </div>
-    </div>
-    <div
-      class="mt-[10vh] relative flex mx-auto max-w-[70%] flex-col gap-1 text-center"
-    >
-      <div class="flex gap-2 items-center font-bold text-xl justify-center">
-        <span data-lucide="megaphone" class="size-6 text-primary"></span>
-        <p>کجا بریم؟</p>
-      </div>
-      <p class="font-medium text-sm">
-        محبوبترین مقصدها رو ببین و سفرت رو انتخاب کن!
-      </p>
-      <div class="swiper mySwiper w-full pt-2! pb-5!">
-        <div class="swiper-wrapper">
-          <div
-            class="swiper-slide bg-white rounded-2xl shadow-[0_5px_5px_rgba(0,0,0,0.2)] border p-2 space-y-2"
-          >
-            <img
-              src="/images/home/where-to-go/1.png"
-              alt="where to go 1"
-              class="w-full h-full object-cover rounded-xl"
-            />
-            <button class="bg-ring/10 w-full p-1.5 rounded-full">
-              <span class="text-sm text-foreground/80 font-medium">
-                تور‌های استانبول
-              </span>
-            </button>
-            <div class="flex justify-between items-center">
-              <span class="text-foreground/70 text-[11px]">شروع قیمت از</span>
-              <div>
-                <span class="text-foreground font-bold text-[13px]">
-                  4.700.000</span
-                >
-                <span class="text-foreground/70 text-[9px]">تومان</span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide bg-white rounded-2xl shadow-[0_5px_5px_rgba(0,0,0,0.2)] border p-2 space-y-2"
-          >
-            <img
-              src="/images/home/where-to-go/2.png"
-              alt="where to go 1"
-              class="w-full h-full object-cover rounded-xl"
-            />
-            <button class="bg-ring/10 w-full p-1.5 rounded-full">
-              <span class="text-sm text-foreground/80 font-medium">
-                تور‌های استانبول
-              </span>
-            </button>
-            <div class="flex justify-between items-center">
-              <span class="text-foreground/70 text-[11px]">شروع قیمت از</span>
-              <div>
-                <span class="text-foreground font-bold text-[13px]">
-                  4.700.000</span
-                >
-                <span class="text-foreground/70 text-[9px]">تومان</span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide bg-white rounded-2xl shadow-[0_5px_5px_rgba(0,0,0,0.2)] border p-2 space-y-2"
-          >
-            <img
-              src="/images/home/where-to-go/4.png"
-              alt="where to go 1"
-              class="w-full h-full object-cover rounded-xl"
-            />
-            <button class="bg-ring/10 w-full p-1.5 rounded-full">
-              <span class="text-sm text-foreground/80 font-medium">
-                تور‌های استانبول
-              </span>
-            </button>
-            <div class="flex justify-between items-center">
-              <span class="text-foreground/70 text-[11px]">شروع قیمت از</span>
-              <div>
-                <span class="text-foreground font-bold text-[13px]">
-                  4.700.000</span
-                >
-                <span class="text-foreground/70 text-[9px]">تومان</span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide bg-white rounded-2xl shadow-[0_5px_5px_rgba(0,0,0,0.2)] border p-2 space-y-2"
-          >
-            <img
-              src="/images/home/where-to-go/3.png"
-              alt="where to go 1"
-              class="w-full h-full object-cover rounded-xl"
-            />
-            <button class="bg-ring/10 w-full p-1.5 rounded-full">
-              <span class="text-sm text-foreground/80 font-medium">
-                تور‌های استانبول
-              </span>
-            </button>
-            <div class="flex justify-between items-center">
-              <span class="text-foreground/70 text-[11px]">شروع قیمت از</span>
-              <div>
-                <span class="text-foreground font-bold text-[13px]">
-                  4.700.000</span
-                >
-                <span class="text-foreground/70 text-[9px]">تومان</span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide bg-white rounded-2xl shadow-[0_5px_5px_rgba(0,0,0,0.2)] border p-2 space-y-2"
-          >
-            <img
-              src="/images/home/where-to-go/2.png"
-              alt="where to go 1"
-              class="w-full h-full object-cover rounded-xl"
-            />
-            <button class="bg-ring/10 w-full p-1.5 rounded-full">
-              <span class="text-sm text-foreground/80 font-medium">
-                تور‌های استانبول
-              </span>
-            </button>
-            <div class="flex justify-between items-center">
-              <span class="text-foreground/70 text-[11px]">شروع قیمت از</span>
-              <div>
-                <span class="text-foreground font-bold text-[13px]">
-                  4.700.000</span
-                >
-                <span class="text-foreground/70 text-[9px]">تومان</span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide bg-white rounded-2xl shadow-[0_5px_5px_rgba(0,0,0,0.2)] border p-2 space-y-2"
-          >
-            <img
-              src="/images/home/where-to-go/2.png"
-              alt="where to go 1"
-              class="w-full h-full object-cover rounded-xl"
-            />
-            <button class="bg-ring/10 w-full p-1.5 rounded-full">
-              <span class="text-sm text-foreground/80 font-medium">
-                تور‌های استانبول
-              </span>
-            </button>
-            <div class="flex justify-between items-center">
-              <span class="text-foreground/70 text-[11px]">شروع قیمت از</span>
-              <div>
-                <span class="text-foreground font-bold text-[13px]">
-                  4.700.000</span
-                >
-                <span class="text-foreground/70 text-[9px]">تومان</span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide bg-white rounded-2xl shadow-[0_5px_5px_rgba(0,0,0,0.2)] border p-2 space-y-2"
-          >
-            <img
-              src="/images/home/where-to-go/2.png"
-              alt="where to go 1"
-              class="w-full h-full object-cover rounded-xl"
-            />
-            <button class="bg-ring/10 w-full p-1.5 rounded-full">
-              <span class="text-sm text-foreground/80 font-medium">
-                تور‌های استانبول
-              </span>
-            </button>
-            <div class="flex justify-between items-center">
-              <span class="text-foreground/70 text-[11px]">شروع قیمت از</span>
-              <div>
-                <span class="text-foreground font-bold text-[13px]">
-                  4.700.000</span
-                >
-                <span class="text-foreground/70 text-[9px]">تومان</span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide bg-white rounded-2xl shadow-[0_5px_5px_rgba(0,0,0,0.2)] border p-2 space-y-2"
-          >
-            <img
-              src="/images/home/where-to-go/2.png"
-              alt="where to go 1"
-              class="w-full h-full object-cover rounded-xl"
-            />
-            <button class="bg-ring/10 w-full p-1.5 rounded-full">
-              <span class="text-sm text-foreground/80 font-medium">
-                تور‌های استانبول
-              </span>
-            </button>
-            <div class="flex justify-between items-center">
-              <span class="text-foreground/70 text-[11px]">شروع قیمت از</span>
-              <div>
-                <span class="text-foreground font-bold text-[13px]">
-                  4.700.000</span
-                >
-                <span class="text-foreground/70 text-[9px]">تومان</span>
-              </div>
+            <p class="font-medium">
+              پرواز، هتل، تور و اقامتگاه رو سریع، مطمئن و با بهترین قیمت پیدا
+              کن!
+            </p>
+            <div class="flex items-center justify-center gap-1.5">
+              <button
+                class="flex items-center gap-1 rounded-full border-2 border-white p-2 px-4 text-white backdrop-blur-3xl"
+              >
+                <span class="pe-1 text-xs font-medium">درباره ما</span>
+                <i data-lucide="move-left" class="size-5"></i>
+              </button>
+              <button
+                class="bg-secondary flex items-center gap-1 rounded-full p-2 px-4 text-black"
+              >
+                <i data-lucide="line-squiggle" class="size-5"></i>
+                <span class="pe-1 text-xs font-medium">لحظه آخری</span>
+              </button>
             </div>
           </div>
         </div>
-        <div
-          class="swiper-scrollbar !left-1/2 !-translate-x-1/2 !w-[70%] bg-primary/20! h-1.5!"
-        ></div>
-      </div>
-      <button
-        class="swiper-button-prev translate-x-1/2 !-translate-y-1/2 !p-2 !backdrop-blur-xs !h-24 !bg-white/70 !rounded-full border !shadow-[5px_8px_8px_rgba(0,0,0,0.36)]"
-      >
-        <i data-lucide="chevron-right" class="size-7! fill-transparent!"></i>
-      </button>
-      <button
-        class="swiper-button-next -translate-x-1/2 !-translate-y-1/2 !p-2 !backdrop-blur-xs !h-24 !bg-white/70 !rounded-full border !shadow-[5px_8px_8px_rgba(0,0,0,0.36)]"
-      >
-        <i data-lucide="chevron-left" class="size-7! fill-transparent!"></i>
-      </button>
-      <button
-        class="text-white custom-bg rounded-full py-3 px-4 flex items-center gap-1 w-fit mx-auto"
-      >
-        <span class="font-medium">مشاهده همه</span>
-        <i data-lucide="chevron-left" class="size-4"></i>
-      </button>
-    </div>
 
+        <!--    blurred card-->
+        <div
+          class="mx-auto -mt-36 flex max-w-[70%] flex-col gap-4 rounded-4xl border border-white/40! bg-white/25 p-4 text-xl font-[950] text-white shadow-[inset_0_0_30px_rgba(255,255,255),0_4px_30px_rgba(0,0,0,0.08)] backdrop-blur-[6px]"
+        >
+          <div class="flex items-center gap-1.5">
+            <button
+              class="text-primary relative flex w-48 items-center justify-center gap-1 rounded-full bg-white p-4.5 px-6"
+            >
+              <i data-lucide="plane" class="size-5"></i>
+              <span>پرواز داخلی</span>
+              <span
+                class="bg-primary absolute bottom-0 left-1/2 h-1 w-1/3 -translate-x-1/2 rounded-full"
+              ></span>
+            </button>
+            <button
+              class="flex w-48 items-center justify-center gap-1 rounded-full border border-white/20! bg-black/1 p-4.5 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md"
+            >
+              <i data-lucide="plane" class="size-5"></i>
+              <span>پرواز خارجی</span>
+            </button>
+            <button
+              class="flex w-48 items-center justify-center gap-1 rounded-full border border-white/20! bg-black/1 p-4.5 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md"
+            >
+              <i data-lucide="plane" class="size-5"></i>
+              <span>تورها</span></button
+            ><button
+              class="flex w-48 items-center justify-center gap-1 rounded-full border border-white/20! bg-black/1 p-4.5 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md"
+            >
+              <i data-lucide="plane" class="size-5"></i>
+              <span>هتل و ویلا</span>
+            </button>
+          </div>
+          <div
+            class="grid grid-cols-4 gap-1.5 rounded-4xl bg-white p-4 shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
+          >
+            <input
+              type="text"
+              placeholder="مبدا(شهر)"
+              class="placeholder:text-foreground/80 rounded-xl border p-3 placeholder:font-normal"
+            />
+            <input
+              type="text"
+              placeholder="مبدا(شهر)"
+              class="placeholder:text-foreground/80 rounded-xl border p-3 placeholder:font-normal"
+            />
+            <input
+              type="text"
+              placeholder="مبدا(شهر)"
+              class="placeholder:text-foreground/80 rounded-xl border p-3 placeholder:font-normal"
+            />
+            <input
+              type="text"
+              placeholder="مبدا(شهر)"
+              class="placeholder:text-foreground/80 rounded-xl border p-3 placeholder:font-normal"
+            />
+            <input
+              type="text"
+              placeholder="مبدا(شهر)"
+              class="placeholder:text-foreground/80 rounded-xl border p-3 placeholder:font-normal"
+            />
+            <input
+              type="text"
+              placeholder="مبدا(شهر)"
+              class="placeholder:text-foreground/80 rounded-xl border p-3 placeholder:font-normal"
+            />
+            <div></div>
+            <button
+              class="bg-light-primary flex w-full items-center justify-center gap-1 rounded-xl p-3 text-white"
+            >
+              <i data-lucide="search" class="size-6"></i>
+              <span class="text-xl font-bold">جستجو</span>
+            </button>
+          </div>
+          <div class="text-foreground flex items-center gap-2">
+            <i data-lucide="line-squiggle" class="size-5"></i>
+            <span class="text-xl font-[950]">مسیرهای پرتردد</span>
+            <div class="flex grow items-center gap-2">
+              <i data-lucide="chevron-right" class="size-6"></i>
+              <div
+                class="border-b-foreground/40 flex grow items-center justify-center gap-2 rounded-xl border p-3 px-6 text-base font-medium"
+              >
+                <span>تهران</span>
+                <i data-lucide="arrow-left-right" class="size-4"></i>
+                <span>کرج</span>
+              </div>
+              <div
+                class="border-b-foreground/40 flex grow items-center justify-center gap-2 rounded-xl border p-3 px-6 text-base font-medium"
+              >
+                <span>تهران</span>
+                <i data-lucide="arrow-left-right" class="size-4"></i>
+                <span>کرج</span>
+              </div>
+              <div
+                class="border-b-foreground/40 flex grow items-center justify-center gap-2 rounded-xl border p-3 px-6 text-base font-medium"
+              >
+                <span>تهران</span>
+                <i data-lucide="arrow-left-right" class="size-4"></i>
+                <span>کرج</span>
+              </div>
+              <div
+                class="border-b-foreground/40 flex grow items-center justify-center gap-2 rounded-xl border p-3 px-6 text-base font-medium"
+              >
+                <span>تهران</span>
+                <i data-lucide="arrow-left-right" class="size-4"></i>
+                <span>کرج</span>
+              </div>
+              <i data-lucide="chevron-left" class="size-6"></i>
+            </div>
+          </div>
+        </div>
+        <!--     hero end-->
+        <!--    pros-->
+        <div class="mx-auto mt-4 grid max-w-[70%] grid-cols-4 gap-2">
+          <div
+            class="border-background! bg-primary/5 flex gap-1.5 rounded-4xl border-2 p-3 shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
+          >
+            <div class="rounded-full bg-white p-3.5">
+              <i data-lucide="lock" class="text-primary"></i>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-lg font-extrabold">پرداخت امن</span>
+              <span class="text-sm">با درگاه‌های معتبر‌بانکی</span>
+            </div>
+          </div>
+          <div
+            class="border-background! bg-primary/5 flex gap-1.5 rounded-4xl border-2 p-3 shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
+          >
+            <div class="rounded-full bg-white p-3.5">
+              <i data-lucide="lock" class="text-primary"></i>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-lg font-extrabold">پرداخت امن</span>
+              <span class="text-sm">با درگاه‌های معتبر‌بانکی</span>
+            </div>
+          </div>
+          <div
+            class="border-background! bg-primary/5 flex gap-1.5 rounded-4xl border-2 p-3 shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
+          >
+            <div class="rounded-full bg-white p-3.5">
+              <i data-lucide="lock" class="text-primary"></i>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-lg font-extrabold">پرداخت امن</span>
+              <span class="text-sm">با درگاه‌های معتبر‌بانکی</span>
+            </div>
+          </div>
+          <div
+            class="border-background! bg-primary/5 flex gap-1.5 rounded-4xl border-2 p-3 shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
+          >
+            <div class="rounded-full bg-white p-3.5">
+              <i data-lucide="lock" class="text-primary"></i>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-lg font-extrabold">پرداخت امن</span>
+              <span class="text-sm">با درگاه‌های معتبر‌بانکی</span>
+            </div>
+          </div>
+        </div>
+        <!--    pros end-->
+
+        <!--    images grid-->
+        <div
+          class="mx-auto mt-[10vh] grid max-w-[70%] grid-cols-7 gap-4 text-white"
+        >
+          <div class="relative col-span-2">
+            <div
+              class="absolute top-[8%] left-1/2 z-10 flex w-full -translate-x-1/2 flex-col items-center justify-center gap-1.5"
+            >
+              <p class="text-lg font-[950]">تورهای داخلی و خارجی مرداد</p>
+              <p>وقتشه یه سفر تازه رو تجربه کنی!</p>
+              <button
+                class="flex items-center rounded-full bg-white p-1.5 text-black"
+              >
+                <span class="text-sm"> مشاهده تورها </span>
+                <i data-lucide="chevron-left" class="size-3"></i>
+              </button>
+            </div>
+            <img
+              src="/images/home/tour.png"
+              alt="tour image"
+              class="h-full w-full rounded-4xl object-cover"
+            />
+            <div
+              class="absolute inset-0 rounded-4xl bg-gradient-to-b from-black/60 via-black/20 to-transparent"
+            ></div>
+          </div>
+          <div class="relative col-span-2">
+            <div
+              class="absolute top-[8%] left-1/2 z-10 flex w-full -translate-x-1/2 flex-col items-center justify-center gap-1.5"
+            >
+              <p class="text-lg font-[950]">تورهای داخلی و خارجی مرداد</p>
+              <p>وقتشه یه سفر تازه رو تجربه کنی!</p>
+              <button
+                class="flex items-center rounded-full bg-white p-1.5 text-black"
+              >
+                <span class="text-sm"> مشاهده تورها </span>
+                <i data-lucide="chevron-left" class="size-3"></i>
+              </button>
+            </div>
+            <img
+              src="/images/home/hotels.png"
+              alt="tour image"
+              class="h-full w-full rounded-4xl object-cover"
+            />
+            <div
+              class="absolute inset-0 rounded-4xl bg-gradient-to-b from-black/60 via-black/20 to-transparent"
+            ></div>
+          </div>
+          <div class="relative col-span-3 gap-2">
+            <div class="absolute top-[8%] left-6 flex flex-col">
+              <div class="flex items-center">
+                <div class="bg-destructive -ml-3 rounded-full p-2">
+                  <i data-lucide="flame" class="size-5 text-white"></i>
+                </div>
+                <p
+                  class="bg-destructive/37 rounded-full p-2 px-4 font-bold text-white"
+                >
+                  پیشنهاد ویژه امروز
+                </p>
+              </div>
+              <div
+                class="flex grow items-center justify-center gap-2 p-3 px-6 text-2xl font-bold text-black"
+              >
+                <span>تهران</span>
+                <i data-lucide="arrow-left-right" class="size-6"></i>
+                <span>کرج</span>
+              </div>
+              <p class="text-xs text-black">
+                لورم ایپسوم متن نمایشی با تولید .
+              </p>
+            </div>
+            <div
+              class="absolute bottom-2 left-6 z-10 flex flex-col gap-0 font-extrabold text-white"
+            >
+              <span class="text-shadow-[0_4px_4px_rgba(0,0,0,0.3)]">تومان</span>
+              <p class="text-4xl text-shadow-[0_4px_4px_rgba(0,0,0,0.3)]">
+                3.400.000
+              </p>
+              <div class="flex justify-end">
+                <button
+                  class="flex w-fit items-center gap-1 rounded-full bg-white p-2 text-black"
+                >
+                  <span class="text-sm font-medium">جزئیات</span>
+                  <i data-lucide="chevron-left" class="size-4"></i>
+                </button>
+              </div>
+            </div>
+            <img
+              src="/images/home/offer.png"
+              alt="tour image"
+              class="h-full w-full rounded-4xl object-cover"
+            />
+            <div
+              class="from-destructive/40 via-destructive/5 absolute inset-0 rounded-4xl bg-gradient-to-t to-transparent"
+            ></div>
+          </div>
+        </div>
+        <!--    images grid end-->
+
+        <!--    where to go-->
+        <div
+          class="relative mx-auto mt-[10vh] flex max-w-[70%] flex-col gap-1 text-center"
+        >
+          <div class="flex items-center justify-center gap-2 text-xl font-bold">
+            <span data-lucide="megaphone" class="text-primary size-6"></span>
+            <p>کجا بریم؟</p>
+          </div>
+          <p class="text-sm font-medium">
+            محبوبترین مقصدها رو ببین و سفرت رو انتخاب کن!
+          </p>
+          <div class="swiper mySwiper w-full pt-2! pb-5!">
+            <div class="swiper-wrapper">
+              <div
+                class="swiper-slide space-y-2 rounded-2xl border bg-white p-2 shadow-[0_5px_5px_rgba(0,0,0,0.2)]"
+              >
+                <img
+                  src="/images/home/where-to-go/1.png"
+                  alt="where to go 1"
+                  class="h-full w-full rounded-xl object-cover"
+                />
+                <button class="bg-ring/10 w-full rounded-full p-1.5">
+                  <span class="text-foreground/80 text-sm font-medium">
+                    تور‌های استانبول
+                  </span>
+                </button>
+                <div class="flex items-center justify-between">
+                  <span class="text-foreground/70 text-[11px]"
+                    >شروع قیمت از</span
+                  >
+                  <div>
+                    <span class="text-foreground text-[13px] font-bold">
+                      4.700.000</span
+                    >
+                    <span class="text-foreground/70 text-[9px]">تومان</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-slide space-y-2 rounded-2xl border bg-white p-2 shadow-[0_5px_5px_rgba(0,0,0,0.2)]"
+              >
+                <img
+                  src="/images/home/where-to-go/2.png"
+                  alt="where to go 1"
+                  class="h-full w-full rounded-xl object-cover"
+                />
+                <button class="bg-ring/10 w-full rounded-full p-1.5">
+                  <span class="text-foreground/80 text-sm font-medium">
+                    تور‌های استانبول
+                  </span>
+                </button>
+                <div class="flex items-center justify-between">
+                  <span class="text-foreground/70 text-[11px]"
+                    >شروع قیمت از</span
+                  >
+                  <div>
+                    <span class="text-foreground text-[13px] font-bold">
+                      4.700.000</span
+                    >
+                    <span class="text-foreground/70 text-[9px]">تومان</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-slide space-y-2 rounded-2xl border bg-white p-2 shadow-[0_5px_5px_rgba(0,0,0,0.2)]"
+              >
+                <img
+                  src="/images/home/where-to-go/4.png"
+                  alt="where to go 1"
+                  class="h-full w-full rounded-xl object-cover"
+                />
+                <button class="bg-ring/10 w-full rounded-full p-1.5">
+                  <span class="text-foreground/80 text-sm font-medium">
+                    تور‌های استانبول
+                  </span>
+                </button>
+                <div class="flex items-center justify-between">
+                  <span class="text-foreground/70 text-[11px]"
+                    >شروع قیمت از</span
+                  >
+                  <div>
+                    <span class="text-foreground text-[13px] font-bold">
+                      4.700.000</span
+                    >
+                    <span class="text-foreground/70 text-[9px]">تومان</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-slide space-y-2 rounded-2xl border bg-white p-2 shadow-[0_5px_5px_rgba(0,0,0,0.2)]"
+              >
+                <img
+                  src="/images/home/where-to-go/3.png"
+                  alt="where to go 1"
+                  class="h-full w-full rounded-xl object-cover"
+                />
+                <button class="bg-ring/10 w-full rounded-full p-1.5">
+                  <span class="text-foreground/80 text-sm font-medium">
+                    تور‌های استانبول
+                  </span>
+                </button>
+                <div class="flex items-center justify-between">
+                  <span class="text-foreground/70 text-[11px]"
+                    >شروع قیمت از</span
+                  >
+                  <div>
+                    <span class="text-foreground text-[13px] font-bold">
+                      4.700.000</span
+                    >
+                    <span class="text-foreground/70 text-[9px]">تومان</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-slide space-y-2 rounded-2xl border bg-white p-2 shadow-[0_5px_5px_rgba(0,0,0,0.2)]"
+              >
+                <img
+                  src="/images/home/where-to-go/2.png"
+                  alt="where to go 1"
+                  class="h-full w-full rounded-xl object-cover"
+                />
+                <button class="bg-ring/10 w-full rounded-full p-1.5">
+                  <span class="text-foreground/80 text-sm font-medium">
+                    تور‌های استانبول
+                  </span>
+                </button>
+                <div class="flex items-center justify-between">
+                  <span class="text-foreground/70 text-[11px]"
+                    >شروع قیمت از</span
+                  >
+                  <div>
+                    <span class="text-foreground text-[13px] font-bold">
+                      4.700.000</span
+                    >
+                    <span class="text-foreground/70 text-[9px]">تومان</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-slide space-y-2 rounded-2xl border bg-white p-2 shadow-[0_5px_5px_rgba(0,0,0,0.2)]"
+              >
+                <img
+                  src="/images/home/where-to-go/2.png"
+                  alt="where to go 1"
+                  class="h-full w-full rounded-xl object-cover"
+                />
+                <button class="bg-ring/10 w-full rounded-full p-1.5">
+                  <span class="text-foreground/80 text-sm font-medium">
+                    تور‌های استانبول
+                  </span>
+                </button>
+                <div class="flex items-center justify-between">
+                  <span class="text-foreground/70 text-[11px]"
+                    >شروع قیمت از</span
+                  >
+                  <div>
+                    <span class="text-foreground text-[13px] font-bold">
+                      4.700.000</span
+                    >
+                    <span class="text-foreground/70 text-[9px]">تومان</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-slide space-y-2 rounded-2xl border bg-white p-2 shadow-[0_5px_5px_rgba(0,0,0,0.2)]"
+              >
+                <img
+                  src="/images/home/where-to-go/2.png"
+                  alt="where to go 1"
+                  class="h-full w-full rounded-xl object-cover"
+                />
+                <button class="bg-ring/10 w-full rounded-full p-1.5">
+                  <span class="text-foreground/80 text-sm font-medium">
+                    تور‌های استانبول
+                  </span>
+                </button>
+                <div class="flex items-center justify-between">
+                  <span class="text-foreground/70 text-[11px]"
+                    >شروع قیمت از</span
+                  >
+                  <div>
+                    <span class="text-foreground text-[13px] font-bold">
+                      4.700.000</span
+                    >
+                    <span class="text-foreground/70 text-[9px]">تومان</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-slide space-y-2 rounded-2xl border bg-white p-2 shadow-[0_5px_5px_rgba(0,0,0,0.2)]"
+              >
+                <img
+                  src="/images/home/where-to-go/2.png"
+                  alt="where to go 1"
+                  class="h-full w-full rounded-xl object-cover"
+                />
+                <button class="bg-ring/10 w-full rounded-full p-1.5">
+                  <span class="text-foreground/80 text-sm font-medium">
+                    تور‌های استانبول
+                  </span>
+                </button>
+                <div class="flex items-center justify-between">
+                  <span class="text-foreground/70 text-[11px]"
+                    >شروع قیمت از</span
+                  >
+                  <div>
+                    <span class="text-foreground text-[13px] font-bold">
+                      4.700.000</span
+                    >
+                    <span class="text-foreground/70 text-[9px]">تومان</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-scrollbar bg-primary/20! !left-1/2 h-1.5! !w-[70%] !-translate-x-1/2"
+            ></div>
+          </div>
+          <button
+            class="swiper-button-prev !h-24 translate-x-1/2 !-translate-y-1/2 !rounded-full border !bg-white/70 !p-2 !shadow-[5px_8px_8px_rgba(0,0,0,0.36)] !backdrop-blur-xs"
+          >
+            <i
+              data-lucide="chevron-right"
+              class="size-7! fill-transparent!"
+            ></i>
+          </button>
+          <button
+            class="swiper-button-next !h-24 -translate-x-1/2 !-translate-y-1/2 !rounded-full border !bg-white/70 !p-2 !shadow-[5px_8px_8px_rgba(0,0,0,0.36)] !backdrop-blur-xs"
+          >
+            <i data-lucide="chevron-left" class="size-7! fill-transparent!"></i>
+          </button>
+          <button
+            class="custom-bg mx-auto flex w-fit items-center gap-1 rounded-full px-4 py-3 text-white"
+          >
+            <span class="font-medium">مشاهده همه</span>
+            <i data-lucide="chevron-left" class="size-4"></i>
+          </button>
+        </div>
+        <!--    where to go end-->
+        <div class="absolute bottom-[-12%] z-10">
+          <div
+            class="bg-primary/60 absolute inset-0 h-full w-[50%] rounded-full blur-3xl"
+          ></div>
+
+          <img
+            src="/images/home/card-arrow.png"
+            alt="where to go 1"
+            class="relative"
+          />
+        </div>
+        <div class="absolute bottom-[-18%] left-0 z-10 scale-x-[-1]">
+          <div
+            class="bg-primary/60 absolute inset-0 h-full w-[50%] rounded-full blur-3xl"
+          ></div>
+
+          <img
+            src="/images/home/card-arrow.png"
+            alt="where to go 1"
+            class="relative"
+          />
+        </div>
+      </div>
+      <!--      card-1 end-->
+      <!--      card-2-->
+      <div
+        class="border-border/60! relative rounded-[100px] border py-[7vh] pb-[10vh] shadow-[0_10px_25px_rgba(0,0,0,0.08)]"
+      >
+        <div class="mx-auto grid max-w-[70%] grid-cols-5 gap-2">
+          <div class="flex flex-col gap-4 col-span-3">
+            <div>
+              <div class="flex items-center gap-1">
+                <i
+                  data-lucide="star"
+                  class="text-secondary fill-secondary size-4"
+                ></i>
+                <p class="text-xl font-bold">با این بودجه کجا میتونم برم؟</p>
+              </div>
+              <p class="text-foreground/70 text-sm">
+                بودجه سفرت رو مشخص کن مقصد رو بهت پیشنهاد بدیم!
+              </p>
+            </div>
+            <div class="flex gap-1.5">
+              <button class="custom-bg rounded-full px-3 py-2 text-white">
+                بودجه شما: 15میلیون
+              </button>
+              <button class="custom-bg rounded-full p-2 text-white">
+                <i data-lucide="search"></i>
+              </button>
+            </div>
+            <div class="flex gap-1.5 items-center">
+              <span class="text-xs text-foreground/70 whitespace-nowrap"
+                >0 میلیون</span
+              >
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="30"
+                class="w-full h-2 rounded-full appearance-none [&::-webkit-slider-thumb]:size-4.5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary [&::-moz-range-thumb]:size-4.5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-primary"
+              />
+              <span class="text-xs text-foreground/70 whitespace-nowrap"
+                >15 میلیون</span
+              >
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <h4 class="font-bold">نتایج(3)</h4>
+              <div class="grid grid-cols-3 gap-1.5">
+                <div
+                  class="flex items-center gap-4 text-foreground/80 font-medium text-sm rounded-3xl border border-ring/10! shadow-[0_10px_25px_rgba(0,0,0,0.08)]"
+                >
+                  <img
+                    src="/images/home/budget/1.png"
+                    alt="budget image"
+                    class="rounded-xl w-[40%] h-full object-cover"
+                  />
+                  <div class="flex flex-col gap-1">
+                    <span>استانبول</span>
+                    <span>3 روز</span>
+                    <div class="mt-3">
+                      <p class="font-bold">4.700.000</p>
+                      <p class="text-[9px] text-foreground/70 -mt-1">تومان</p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-4 text-foreground/80 font-medium text-sm rounded-3xl border border-ring/10! shadow-[0_10px_25px_rgba(0,0,0,0.08)]"
+                >
+                  <img
+                    src="/images/home/budget/1.png"
+                    alt="budget image"
+                    class="rounded-xl w-[40%] h-full object-cover"
+                  />
+                  <div class="flex flex-col gap-1">
+                    <span>استانبول</span>
+                    <span>3 روز</span>
+                    <div class="mt-3">
+                      <p class="font-bold">4.700.000</p>
+                      <p class="text-[9px] text-foreground/70 -mt-1">تومان</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="flex items-center gap-4 text-foreground/80 font-medium text-sm rounded-3xl border border-ring/10! shadow-[0_10px_25px_rgba(0,0,0,0.08)]"
+                >
+                  <img
+                    src="/images/home/budget/1.png"
+                    alt="budget image"
+                    class="rounded-xl w-[40%] h-full object-cover"
+                  />
+                  <div class="flex flex-col gap-1">
+                    <span>استانبول</span>
+                    <span>3 روز</span>
+                    <div class="mt-3">
+                      <p class="font-bold">4.700.000</p>
+                      <p class="text-[9px] text-foreground/70 -mt-1">تومان</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            src="/images/home/budget/grid.png"
+            alt="weird suitcase image"
+            class="col-span-2"
+          />
+        </div>
+      </div>
+      <!--      card-2 end-->
+    </div>
     <div class="h-60"></div>
 
     <script type="module" src="/src/main.js"></script>

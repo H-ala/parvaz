@@ -23,6 +23,7 @@ import {
   Lock,
   Flame,
   Megaphone,
+  Star,
 } from 'lucide'
 
 const swiper = new Swiper('.mySwiper', {
@@ -60,6 +61,30 @@ const swiper = new Swiper('.mySwiper', {
   },
 })
 
+const range = document.querySelector('input[type="range"]')
+
+function updateRange() {
+  const min = Number(range.min) || 0
+  const max = Number(range.max) || 100
+  const value = Number(range.value)
+
+  const percent = ((value - min) / (max - min)) * 100
+
+  range.style.background = `
+    linear-gradient(
+      to left,
+      var(--primary) 0%,
+      var(--primary) ${percent}%,
+      color-mix(in srgb, var(--primary) 10%, transparent) ${percent}%,
+      color-mix(in srgb, var(--primary) 10%, transparent) 100%
+    )
+  `
+}
+
+range.addEventListener('input', updateRange)
+
+updateRange()
+
 createIcons({
   icons: {
     BadgeDollarSign,
@@ -77,5 +102,6 @@ createIcons({
     Lock,
     Flame,
     Megaphone,
+    Star,
   },
 })
