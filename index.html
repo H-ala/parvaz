@@ -15,12 +15,22 @@
         <!--   hero-->
         <!--    header-->
         <header
-          class="bg-card/20 absolute inset-x-0 top-4 z-50 mx-auto max-w-[96%] rounded-full p-2"
+          class="bg-card/20 absolute inset-x-0 top-4 z-50 mx-auto max-w-[96%] rounded-full p-2 backdrop-blur-xs"
         >
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-4">
-              <a href="/" class="rounded-full bg-white/42 text-xl font-bold">
-                <img src="/images/parvaz-logo.png" class="w-10" />
+              <a href="/" class="rounded-full bg-white/20 backdrop-blur-xs text-xl font-bold py-1 ps-2 pe-3.5">
+                <div class="flex gap-1.5 items-center">
+                  <img
+                    src="/images/parvaz-logo.png"
+                    alt="website logo"
+                    class="w-6"
+                  />
+                  <div class="flex flex-col gap-0.5 items-start">
+                    <span class="font-extrabold text-sm -mb-1.5 text-white">لحظه پرواز</span>
+                    <span class="text-[10px] font-normal text-white">Lahzeh parvaz</span>
+                  </div>
+                </div>
               </a>
 
               <nav class="flex gap-6 text-sm font-semibold text-white">
@@ -1225,7 +1235,7 @@
 
       <!--    card-3-->
       <div
-        class="border-border/60! relative rounded-t-[100px] border-t py-[7vh] pb-[10vh] shadow-[0_10px_25px_rgba(0,0,0,0.08)]"
+        class="border-border/60! relative rounded-t-[100px] border-t pt-[7vh] shadow-[0_10px_25px_rgba(0,0,0,0.08)]"
       >
         <!--        blogs -->
         <div
@@ -1331,9 +1341,11 @@
           class="grid mx-auto max-w-[70%] grid-cols-1 md:grid-cols-2 mt-[10vh]"
         >
           <div class="space-y-2">
-            <button class="rounded-full px-4 py-0.5 bg-card text-white">
+            <div
+              class="rounded-full px-4 py-0.5 bg-card text-white inline-block"
+            >
               <span class="text-xs"> تماس با ما </span>
-            </button>
+            </div>
             <p class="font-black text-xl">
               خدمات حرفه‌ای و <span class="text-primary">پشتیبانی اختصاصی</span>
             </p>
@@ -1417,8 +1429,150 @@
         </div>
         <!--        contact-us end-->
         <!--        register-->
-        <div></div>
+        <div
+          class="relative mx-auto mt-[10vh] bg-card max-w-[70%] grid grid-cols-3 gap-2 items-center rounded-3xl p-3.5 px-5 h-[11vh]"
+        >
+          <button
+            class="absolute left-1/2 top-0 -translate-y-1/2 w-fit -translate-x-1/2 rounded-full bg-secondary p-2 text-white"
+          >
+            <a href="#">
+              <i
+                data-lucide="chevrons-up"
+                class="drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
+              ></i>
+            </a>
+          </button>
+          <p class="text-[35px] font-black text-white">
+            “عضویت در <span class="text-secondary">خبرنامه</span>”
+          </p>
+          <p class="text-white text-sm font-medium">
+            با عضویت در خبرنامه از جدیدترین اخبار ما مطلع شوید.
+          </p>
+          <div class="h-full relative">
+            <input
+              type="email"
+              placeholder="ایمیل شما.."
+              class="bg-white placeholder:text-sm rounded-xl w-full h-full ps-4"
+            />
+            <button
+              class="absolute left-2 top-1/2 -translate-y-1/2 rounded-xl bg-secondary h-[80%] px-3"
+            >
+              <span class="text-sm text-white font-bold">عضویت</span>
+            </button>
+          </div>
+        </div>
         <!--        register end-->
+        <!--        footer-->
+        <div class="mx-auto max-w-[70%] mt-[10vh]">
+          <div class="grid grid-cols-4 justify-items-center">
+            <div>
+              <div class="grid grid-cols-2 gap-2">
+                <div>
+                  <h3 class="font-extrabold text-lg text-primary">دسترسی</h3>
+                  <ul class="text-sm space-y-5 mt-6">
+                    <li>تورها</li>
+                    <li>پروازها</li>
+                    <li>هتل‌ها</li>
+                    <li>درباره‌ما</li>
+                    <li>وبلاگ</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-extrabold text-lg text-primary">لینک‌ها</h3>
+                  <ul class="text-sm space-y-5 mt-6">
+                    <li>تورها</li>
+                    <li>پروازها</li>
+                    <li>هتل‌ها</li>
+                    <li>درباره‌ما</li>
+                    <li>وبلاگ</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-span-2 flex flex-col items-center justify-center text-center gap-2"
+            >
+              <div class="flex gap-1.5 items-center">
+                <img
+                  src="/images/parvaz-logo.png"
+                  alt="website logo"
+                />
+                <div class="flex flex-col items-start">
+                  <span class="font-extrabold text-lg -mb-1.5 text-shadow-[0_4px_6px_rgba(0,0,0,0.25)]">لحظه پرواز</span>
+                  <span class="text-shadow-[0_4px_6px_rgba(0,0,0,0.25)]">Lahzeh parvaz</span>
+                </div>
+              </div>
+
+              <h3 class="font-bold">
+                سامانه معتبر و جامع در حوزه گردشگری و خدمات سفر
+              </h3>
+
+              <p class="text-xs max-w-[80%]">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+                در ستون و سطرآنچنان که لازم است.
+              </p>
+              <div class="flex gap-2 items-center justify-center">
+                <div class="rounded-xl border size-14"></div>
+                <div class="rounded-xl border size-14"></div>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-primary text-lg font-extrabold">ارتباط با ما</h3>
+              <div class="mt-6 space-y-7.5">
+                <div class="flex gap-2 items-center">
+                  <div class="bg-primary p-2.5 rounded-full">
+                    <i data-lucide="phone-call" class="size-4.5 text-white"></i>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-xs">شماره تماس:</span>
+                    <span>۰۱۳-۴۴۴۴</span>
+                  </div>
+                </div>
+                <div class="flex gap-2 items-center">
+                  <div class="bg-primary p-2.5 rounded-full">
+                    <i data-lucide="smartphone" class="size-4.5 text-white"></i>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-xs">شماره تماس:</span>
+                    <span>۰۹۳۷۸۹۲۹۳۷۷</span>
+                  </div>
+                </div>
+                <div class="flex gap-2 items-center">
+                  <div class="bg-primary p-2.5 rounded-full">
+                    <i data-lucide="at-sign" class="size-4.5 text-white"></i>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-xs">ایمیل</span>
+                    <span>parvaz@gmail.com</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="text-sm col-span-3 my-[6vh] flex items-center justify-self-start ps-[7%]">
+              تمامی حقوق این سایت به لحظه پرواز تعلق دارد طراحی سایت توسط
+              یلداحضرتی انجام شده است.
+            </p>
+            <div class="flex gap-2 items-center my-[4vh]">
+              <div class="bg-primary p-2.5 rounded-full">
+                <i data-lucide="phone-call" class="size-4.5 text-white"></i>
+              </div>
+              <div
+                class="bg-white rounded-full flex gap-2 items-center shadow-[0_10px_25px_rgba(0,0,0,0.08)] border border-ring/15!"
+              >
+                <span class="text-xs ps-2">اینستاگرام</span>
+                <div class="bg-primary p-2.5 rounded-full">
+                  <i data-lucide="phone-call" class="size-4.5 text-white"></i>
+                </div>
+              </div>
+
+              <div class="bg-primary p-2.5 rounded-full">
+                <i data-lucide="send" class="size-4.5 text-white"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--        footer end-->
       </div>
       <!--    card-3 end-->
     </div>

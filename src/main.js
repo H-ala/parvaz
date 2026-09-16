@@ -28,24 +28,19 @@ import {
   Hotel,
   CircleCheck,
   ClipboardList,
+  ChevronsUp,
+  PhoneCall,
+  Smartphone,
+  AtSign,
+  Send,
 } from 'lucide'
 
-const swiper = new Swiper('.mySwiper', {
+const swiperOptions = {
   modules: [Scrollbar, Navigation],
   loop: true,
 
   slidesPerView: 4,
   spaceBetween: 24,
-
-  scrollbar: {
-    el: '.swiper-scrollbar',
-    draggable: true,
-  },
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
 
   breakpoints: {
     640: {
@@ -63,6 +58,24 @@ const swiper = new Swiper('.mySwiper', {
       spaceBetween: 18,
     },
   },
+}
+
+document.querySelectorAll('.mySwiper').forEach((swiperEl) => {
+  const parent = swiperEl.parentElement
+
+  new Swiper(swiperEl, {
+    ...swiperOptions,
+
+    scrollbar: {
+      el: swiperEl.querySelector('.swiper-scrollbar'),
+      draggable: true,
+    },
+
+    navigation: {
+      nextEl: parent.querySelector('.swiper-button-next'),
+      prevEl: parent.querySelector('.swiper-button-prev'),
+    },
+  })
 })
 
 const blogSwiper = new Swiper('.blogSwiper', {
@@ -136,5 +149,10 @@ createIcons({
     Hotel,
     CircleCheck,
     ClipboardList,
+    ChevronsUp,
+    PhoneCall,
+    Smartphone,
+    AtSign,
+    Send,
   },
 })
