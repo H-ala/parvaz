@@ -32,6 +32,7 @@ import {
   PhoneCall,
   Smartphone,
   AtSign,
+  Camera,
   Send,
 } from 'lucide'
 
@@ -154,5 +155,6 @@ createIcons({
     Smartphone,
     AtSign,
     Send,
+    Camera,
   },
 })
