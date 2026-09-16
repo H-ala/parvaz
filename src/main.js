@@ -24,6 +24,10 @@ import {
   Flame,
   Megaphone,
   Star,
+  Zap,
+  Hotel,
+  CircleCheck,
+  ClipboardList,
 } from 'lucide'
 
 const swiper = new Swiper('.mySwiper', {
@@ -56,6 +60,31 @@ const swiper = new Swiper('.mySwiper', {
 
     1280: {
       slidesPerView: 4,
+      spaceBetween: 18,
+    },
+  },
+})
+
+const blogSwiper = new Swiper('.blogSwiper', {
+  modules: [Scrollbar],
+  loop: true,
+
+  slidesPerView: 1,
+  spaceBetween: 24,
+
+  scrollbar: {
+    el: '.swiper-scrollbar',
+    draggable: true,
+  },
+
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+
+    1024: {
+      slidesPerView: 3,
       spaceBetween: 18,
     },
   },
@@ -103,5 +132,9 @@ createIcons({
     Flame,
     Megaphone,
     Star,
+    Zap,
+    Hotel,
+    CircleCheck,
+    ClipboardList,
   },
 })

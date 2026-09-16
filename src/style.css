@@ -189,7 +189,7 @@ a {
   text-decoration: none;
 }
 
-.swiper-scrollbar-drag,
+.primary-drag .swiper-scrollbar-drag,
 .custom-bg {
   background: linear-gradient(
     to bottom,
@@ -197,6 +197,10 @@ a {
     color-mix(in srgb, var(--primary) 80%, transparent) 30%,
     var(--primary) 80%
   ) !important;
+}
+
+.lahze-akhari .swiper-scrollbar-drag{
+  @apply bg-white/40!;
 }
 .swiper-navigation-icon {
   display: none !important;
