@@ -105,6 +105,7 @@ const blogSwiper = new Swiper('.blogSwiper', {
 })
 
 const range = document.querySelector('input[type="range"]')
+const budgetValue = document.querySelector('#budget-value')
 
 function updateRange() {
   const min = Number(range.min) || 0
@@ -113,6 +114,10 @@ function updateRange() {
 
   const percent = ((value - min) / (max - min)) * 100
 
+  // نمایش مقدار بودجه
+  budgetValue.textContent = value
+
+  // نمایش رنگ پس‌زمینه اسلایدر
   range.style.background = `
     linear-gradient(
       to left,
