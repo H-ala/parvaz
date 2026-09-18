@@ -308,6 +308,7 @@
             </button>
           </div>
 
+<!--          search block-->
           <div
             class="grid-cols-5 gap-1.5 rounded-4xl bg-white p-4 shadow-[0_4px_12px_rgba(0,0,0,0.08)] hidden md:grid"
           >
@@ -438,6 +439,7 @@
               <span class="text-xl font-bold">جستجو</span>
             </button>
           </div>
+<!--          search block end-->
           <div class="text-foreground items-center gap-2 hidden md:flex">
             <i data-lucide="line-squiggle" class="size-5"></i>
             <span class="text-xl font-[950]">مسیرهای پرتردد</span>
@@ -2074,7 +2076,7 @@
         </div>
         <!--        register end-->
         <!--        footer-->
-        <div class="mx-auto max-w-[85%] mt-[10vh]">
+        <div class="mx-auto max-w-[85%] mt-[10vh] pb-[10vh] md:pb-0">
           <div
             class="flex flex-col gap-6 md:grid md:grid-cols-1 md:grid-cols-4 md:justify-items-center"
           >
@@ -2272,7 +2274,7 @@
     </div>
     <!--    mobile nav-->
     <div
-      class="fixed inset-x-0 bottom-0 z-60 flex items-center justify-around bg-white p-1.5 shadow-[0_-4px_12px_rgba(0,0,0,0.1)]"
+      class="fixed inset-x-0 bottom-0 z-60 flex items-center justify-around bg-white p-1.5 shadow-[0_-4px_12px_rgba(0,0,0,0.1)] md:hidden"
     >
       <button>
         <i data-lucide="house"></i>
@@ -2351,6 +2353,120 @@
       </nav>
     </aside>
     <!-- mobile sidebar end-->
+
+    <!-- mobile search popup -->
+    <div
+      id="searchPopupOverlay"
+      class="fixed inset-0 bg-black/50 z-[90] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
+    ></div>
+    <div
+      id="searchPopup"
+      class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none scale-95 transition-all duration-300 ease-in-out md:hidden"
+    >
+      <div class="bg-white rounded-3xl p-4 w-full max-w-md max-h-[85vh] overflow-y-auto">
+        <div class="flex items-center justify-between mb-3">
+          <span class="font-extrabold text-lg text-foreground">جستجوی سفر</span>
+          <button id="closeSearchPopup" class="rounded-full">
+            <i data-lucide="x" class="size-5"></i>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 gap-3">
+          <div class="relative">
+            <select
+              id="origin-mobile"
+              class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-base!"
+            >
+              <option value="" disabled selected>مبدا (شهر)</option>
+              <option value="tehran">تهران</option>
+              <option value="mashhad">مشهد</option>
+              <option value="shiraz">شیراز</option>
+              <option value="tabriz">تبریز</option>
+              <option value="istanbul">استانبول</option>
+              <option value="dubai">دبی</option>
+              <option value="antalya">آنتالیا</option>
+              <option value="paris">پاریس</option>
+            </select>
+            <i data-lucide="chevron-down" class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"></i>
+            <button
+              id="swap-locations-mobile"
+              class="z-10 rounded-full p-1.5 absolute top-full -translate-y-1/3 left-1/2 -translate-x-1/2 bg-secondary shadow-[0_0_1px_rgba(0,0,0,0.2)] border border-ring/30!"
+            >
+              <i data-lucide="arrow-left-right" class="size-4 rotate-90 text-white"></i>
+            </button>
+          </div>
+
+          <div class="relative">
+            <select
+              id="destination-mobile"
+              class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-base!"
+            >
+              <option value="" disabled selected>مقصد (شهر)</option>
+              <option value="tehran">تهران</option>
+              <option value="mashhad">مشهد</option>
+              <option value="shiraz">شیراز</option>
+              <option value="tabriz">تبریز</option>
+              <option value="istanbul">استانبول</option>
+              <option value="dubai">دبی</option>
+              <option value="antalya">آنتالیا</option>
+              <option value="paris">پاریس</option>
+            </select>
+            <i data-lucide="chevron-down" class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"></i>
+          </div>
+
+          <div class="relative">
+            <select class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-base!">
+              <option value="" disabled selected>تاریخ رفت</option>
+              <option value="2026-10-01">۱ مهر ۱۴۰۵</option>
+              <option value="2026-10-05">۵ مهر ۱۴۰۵</option>
+              <option value="2026-10-10">۱۰ مهر ۱۴۰۵</option>
+              <option value="2026-10-15">۱۵ مهر ۱۴۰۵</option>
+            </select>
+            <i data-lucide="chevron-down" class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"></i>
+          </div>
+
+          <div class="relative">
+            <select class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-base!">
+              <option value="" disabled selected>تاریخ برگشت</option>
+              <option value="2026-10-05">۵ مهر ۱۴۰۵</option>
+              <option value="2026-10-10">۱۰ مهر ۱۴۰۵</option>
+              <option value="2026-10-15">۱۵ مهر ۱۴۰۵</option>
+              <option value="2026-10-20">۲۰ مهر ۱۴۰۵</option>
+            </select>
+            <i data-lucide="chevron-down" class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"></i>
+          </div>
+
+          <div class="relative">
+            <select class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-base!">
+              <option value="" disabled selected>نوع سفر</option>
+              <option value="one-way">یک طرفه</option>
+              <option value="round-trip">رفت و برگشت</option>
+            </select>
+            <i data-lucide="chevron-down" class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"></i>
+          </div>
+
+          <div class="relative">
+            <select class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-base!">
+              <option value="" disabled selected>تعداد مسافران</option>
+              <option value="1">۱ مسافر</option>
+              <option value="2">۲ مسافر</option>
+              <option value="3">۳ مسافر</option>
+              <option value="4">۴ مسافر</option>
+              <option value="5">۵ مسافر</option>
+            </select>
+            <i data-lucide="chevron-down" class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"></i>
+          </div>
+
+          <button
+            class="bg-light-primary gradient-overlay group flex w-full items-center justify-center gap-1.5 rounded-xl p-3 text-white transition-all duration-300 hover:bg-light-primary/90"
+          >
+            <i data-lucide="search" class="size-6 transition-all duration-300 group-hover:scale-105"></i>
+            <span class="text-xl font-bold">جستجو</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- mobile search popup end-->
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

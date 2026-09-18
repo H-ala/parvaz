@@ -235,3 +235,37 @@ mobileMenuOverlay.addEventListener('click', closeSidebar)
 mobileSidebar.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', closeSidebar)
 })
+
+// mobile search popup — opens 5s after load
+const searchPopup = document.querySelector('#searchPopup')
+const searchPopupOverlay = document.querySelector('#searchPopupOverlay')
+const closeSearchPopup = document.querySelector('#closeSearchPopup')
+const swapLocationsMobile = document.querySelector('#swap-locations-mobile')
+const originMobile = document.querySelector('#origin-mobile')
+const destinationMobile = document.querySelector('#destination-mobile')
+
+function openSearchPopup() {
+  searchPopup.classList.remove('opacity-0', 'pointer-events-none', 'scale-95')
+  searchPopupOverlay.classList.remove('opacity-0', 'pointer-events-none')
+  document.body.style.overflow = 'hidden'
+}
+
+function closeSearchPopupFn() {
+  searchPopup.classList.add('opacity-0', 'pointer-events-none', 'scale-95')
+  searchPopupOverlay.classList.add('opacity-0', 'pointer-events-none')
+  document.body.style.overflow = ''
+}
+
+if (searchPopup && window.innerWidth < 768) {
+  setTimeout(openSearchPopup, 5000)
+}
+
+closeSearchPopup?.addEventListener('click', closeSearchPopupFn)
+searchPopupOverlay?.addEventListener('click', closeSearchPopupFn)
+
+swapLocationsMobile?.addEventListener('click', () => {
+  const originValue = originMobile.value
+  const destinationValue = destinationMobile.value
+  originMobile.value = destinationValue
+  destinationMobile.value = originValue
+})
