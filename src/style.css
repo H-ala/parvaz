@@ -146,9 +146,9 @@
   border-color: var(--border);
 }
 
-html {
+html,
+body {
   font-family: var(--font-sans);
-  scroll-behavior: smooth;
   direction: rtl;
 }
 
@@ -160,7 +160,6 @@ body {
   background: var(--background);
   color: var(--foreground);
 
-  font-family: var(--font-sans);
   line-height: 1.5;
 
   -webkit-font-smoothing: antialiased;

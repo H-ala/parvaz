@@ -34,6 +34,7 @@ import {
   AtSign,
   Camera,
   Send,
+  Menu,
 } from 'lucide'
 
 const originSelect = document.querySelector('#origin')
@@ -52,8 +53,8 @@ const swiperOptions = {
   modules: [Scrollbar, Navigation],
   loop: true,
 
-  slidesPerView: 4,
-  spaceBetween: 24,
+  slidesPerView: 1.3,
+  spaceBetween: 12,
 
   breakpoints: {
     640: {
@@ -89,6 +90,31 @@ document.querySelectorAll('.mySwiper').forEach((swiperEl) => {
       prevEl: parent.querySelector('.swiper-button-prev'),
     },
   })
+})
+
+const budgetSwiper = new Swiper('.budgetSwiper', {
+  modules: [Scrollbar],
+  loop: true,
+
+  slidesPerView: 1.7,
+  spaceBetween: 16,
+
+  scrollbar: {
+    el: '.swiper-scrollbar',
+    draggable: true,
+  },
+
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 18,
+    },
+  },
 })
 
 const blogSwiper = new Swiper('.blogSwiper', {
@@ -173,5 +199,6 @@ createIcons({
     AtSign,
     Send,
     Camera,
+    Menu,
   },
 })
