@@ -36,6 +36,18 @@ import {
   Send,
 } from 'lucide'
 
+const originSelect = document.querySelector('#origin')
+const destinationSelect = document.querySelector('#destination')
+const swapButton = document.querySelector('#swap-locations')
+
+swapButton.addEventListener('click', () => {
+  const originValue = originSelect.value
+  const destinationValue = destinationSelect.value
+
+  originSelect.value = destinationValue
+  destinationSelect.value = originValue
+})
+
 const swiperOptions = {
   modules: [Scrollbar, Navigation],
   loop: true,
@@ -121,8 +133,8 @@ function updateRange() {
   range.style.background = `
     linear-gradient(
       to left,
-      var(--primary) 0%,
-      var(--primary) ${percent}%,
+      var(--light-primary) 0%,
+      var(--light-primary) ${percent}%,
       color-mix(in srgb, var(--primary) 10%, transparent) ${percent}%,
       color-mix(in srgb, var(--primary) 10%, transparent) 100%
     )

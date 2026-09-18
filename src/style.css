@@ -189,17 +189,29 @@ a {
   text-decoration: none;
 }
 
-.primary-drag .swiper-scrollbar-drag,
-.custom-bg {
-  background: linear-gradient(
-    to bottom,
-    color-mix(in srgb, var(--primary) 70%, transparent) 0%,
-    color-mix(in srgb, var(--primary) 80%, transparent) 30%,
-    var(--primary) 80%
-  ) !important;
+#loan::after {
+  content: '';
+  @apply absolute inset-[3%] -z-1 -rotate-4 rounded-4xl border border-ring/40;
 }
 
-.lahze-akhari .swiper-scrollbar-drag{
+.gradient-overlay {
+  @apply relative isolate;
+}
+
+.gradient-overlay::before {
+  content: '';
+  @apply pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-t from-black/40 via-black/10 to-transparent;
+}
+
+.gradient-overlay > * {
+  @apply relative z-10;
+}
+
+.primary-drag .swiper-scrollbar-drag {
+  @apply bg-light-primary;
+}
+
+.lahze-akhari .swiper-scrollbar-drag {
   @apply bg-white/40!;
 }
 .swiper-navigation-icon {
