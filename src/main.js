@@ -208,3 +208,30 @@ createIcons({
     X,
   },
 })
+
+const mobileMenuBtn = document.querySelector('#mobileMenuBtn')
+const bottomMenuBtn = document.querySelector('#bottomMenuBtn')
+const closeSidebarBtn = document.querySelector('#closeSidebarBtn')
+const mobileSidebar = document.querySelector('#mobileSidebar')
+const mobileMenuOverlay = document.querySelector('#mobileMenuOverlay')
+
+function openSidebar() {
+  mobileSidebar.classList.remove('translate-x-full')
+  mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none')
+  document.body.style.overflow = 'hidden'
+}
+
+function closeSidebar() {
+  mobileSidebar.classList.add('translate-x-full')
+  mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none')
+  document.body.style.overflow = ''
+}
+
+mobileMenuBtn?.addEventListener('click', openSidebar)
+bottomMenuBtn?.addEventListener('click', openSidebar)
+closeSidebarBtn.addEventListener('click', closeSidebar)
+mobileMenuOverlay.addEventListener('click', closeSidebar)
+
+mobileSidebar.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', closeSidebar)
+})

@@ -163,7 +163,9 @@
           <!--          mobile navbar-->
           <div class="items-center justify-between flex md:hidden">
             <div class="flex items-center gap-1.5">
-              <button class="p-2 bg-white text-black rounded-full">
+              <button
+                id="mobileMenuBtn"
+                class="p-2 bg-white text-black rounded-full">
                 <i data-lucide="menu" class="size-5"></i>
               </button>
               <a
@@ -2288,7 +2290,9 @@
         </span>
         <i data-lucide="shopping-bag"></i>
       </button>
-      <button>
+      <button
+        id="bottomMenuBtn"
+      >
         <i data-lucide="menu"></i>
       </button>
       <button>
@@ -2296,6 +2300,57 @@
       </button>
     </div>
     <!--    mobile nav end-->
+
+    <!-- mobile sidebar overlay -->
+    <div
+      id="mobileMenuOverlay"
+      class="fixed inset-0 bg-black/50 z-[70] opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+    <!-- mobile sidebar overlay end-->
+
+    <!-- mobile sidebar -->
+    <aside
+      id="mobileSidebar"
+      class="fixed top-0 right-0 h-full w-72 max-w-[80%] bg-card z-80 translate-x-full transition-transform duration-300 ease-in-out flex flex-col"
+    >
+      <div class="flex items-center justify-between p-4 border-b border-white/20">
+        <span class="font-extrabold text-white">لحظه پرواز</span>
+        <button id="closeSidebarBtn" class="p-2 rounded-full bg-white/20 text-white">
+          <i data-lucide="x" class="size-5"></i>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-1 py-4 text-sm font-semibold text-white overflow-y-auto">
+        <a href="#home" class="py-2 px-4">پرواز داخلی</a>
+        <a href="#about" class="py-2 px-4">پرواز خارجی</a>
+        <a href="#contact" class="py-2 px-4">تور</a>
+        <a href="#contact" class="py-2 px-4">اقامت</a>
+        <a href="#contact" class="py-2 px-4">وبلاگ</a>
+        <a href="#contact" class="py-2 px-4">درباره ما</a>
+        <a href="#contact" class="py-2 px-4">ارتباط با ما</a>
+        <a href="#contact" class="py-2 px-4">پیگیری خرید</a>
+
+        <div class="flex items-center gap-1.5 pt-4 px-4 mt-2 border-t border-white/20">
+          <button class="flex items-center gap-1 rounded-full border border-white p-2 text-white">
+            <i data-lucide="chevron-down" class="size-5"></i>
+            <span class="pe-1 text-xs font-medium">IRR</span>
+            <i data-lucide="badge-dollar-sign" class="size-5"></i>
+          </button>
+          <button class="flex items-center gap-1 rounded-full border border-white p-2 text-white">
+            <span class="pe-1 text-xs font-medium">فارسی</span>
+            <i data-lucide="earth" class="size-5"></i>
+          </button>
+        </div>
+
+        <button class="flex items-center gap-1 rounded-full bg-white p-1 mt-3 mx-4 text-black">
+      <span class="bg-secondary rounded-full p-1">
+        <i data-lucide="circle-user" class="size-5 text-black"></i>
+      </span>
+          <span class="pe-1 text-xs font-medium">ورود/ثبت نام</span>
+        </button>
+      </nav>
+    </aside>
+    <!-- mobile sidebar end-->
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
