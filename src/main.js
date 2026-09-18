@@ -35,6 +35,9 @@ import {
   Camera,
   Send,
   Menu,
+  House,
+  User,
+  X,
 } from 'lucide'
 
 const originSelect = document.querySelector('#origin')
@@ -200,5 +203,8 @@ createIcons({
     Send,
     Camera,
     Menu,
+    House,
+    User,
+    X,
   },
 })
