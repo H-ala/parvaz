@@ -95,6 +95,8 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
+  --breakpoint-xs: 420px;
+
   --font-sans: 'YekanBakh', ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -190,7 +192,7 @@ a {
 
 #loan::after {
   content: '';
-  @apply absolute inset-[3%] -translate-x-2 md:translate-x-0 -z-1 -rotate-10 md:-rotate-4 rounded-4xl border border-ring/40;
+  @apply absolute inset-[3%] -translate-x-2 xs:translate-x-0 -z-1 -rotate-10 xs:-rotate-4 rounded-4xl border border-ring/40;
 }
 
 .gradient-overlay {

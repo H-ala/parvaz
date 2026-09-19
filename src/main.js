@@ -256,7 +256,7 @@ function closeSearchPopupFn() {
   document.body.style.overflow = ''
 }
 
-if (searchPopup && window.innerWidth < 768) {
+if (searchPopup && window.innerWidth < 1024) {
   setTimeout(openSearchPopup, 5000)
 }
 
