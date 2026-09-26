@@ -38,6 +38,12 @@ import {
   House,
   User,
   X,
+  Globe,
+  Map,
+  Bus,
+  ShieldCheck,
+  Headset,
+  BadgeCheck,
 } from 'lucide'
 
 const originSelect = document.querySelector('#origin')
@@ -206,6 +212,12 @@ createIcons({
     House,
     User,
     X,
+    Globe,
+    Map,
+    Bus,
+    ShieldCheck,
+    Headset,
+    BadgeCheck,
   },
 })
 
@@ -214,6 +226,7 @@ const bottomMenuBtn = document.querySelector('#bottomMenuBtn')
 const closeSidebarBtn = document.querySelector('#closeSidebarBtn')
 const mobileSidebar = document.querySelector('#mobileSidebar')
 const mobileMenuOverlay = document.querySelector('#mobileMenuOverlay')
+const mobileSearchBtn = document.querySelector('#mobileSearchBtn')
 
 function openSidebar() {
   mobileSidebar.classList.remove('translate-x-full')
@@ -250,14 +263,18 @@ function openSearchPopup() {
   document.body.style.overflow = 'hidden'
 }
 
+mobileSearchBtn?.addEventListener('click', openSearchPopup)
+
+searchPopup?.addEventListener('click', (event) => {
+  if (event.target === searchPopup) {
+    closeSearchPopupFn()
+  }
+})
+
 function closeSearchPopupFn() {
   searchPopup.classList.add('opacity-0', 'pointer-events-none', 'scale-95')
   searchPopupOverlay.classList.add('opacity-0', 'pointer-events-none')
   document.body.style.overflow = ''
-}
-
-if (searchPopup && window.innerWidth < 1024) {
-  setTimeout(openSearchPopup, 5000)
 }
 
 closeSearchPopup?.addEventListener('click', closeSearchPopupFn)
