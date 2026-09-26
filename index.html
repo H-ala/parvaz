@@ -214,7 +214,8 @@
         <!--    header end-->
         <div class="relative">
           <img
-            src="/images/home/hero.png"
+            id="heroImage"
+            src="/images/home/hero/hero-1.png"
             class="h-[69vh] md:h-[85vh] w-full rounded-b-[40px] md:rounded-b-[70px] object-cover"
             alt="home page hero"
           />
@@ -231,7 +232,7 @@
             </p>
             <div class="flex items-center justify-center gap-1.5">
               <button
-                class="flex items-center gap-1 rounded-full border border-white/80! py-2 text-white backdrop-blur-3xl transition-all duration-300 hover:bg-white/20 w-30 justify-center whitespace-nowrap"
+                class="flex items-center gap-1 rounded-full border border-white/80! bg-card py-2 text-white transition-all duration-300 hover:bg-card/85 w-30 justify-center whitespace-nowrap"
               >
                 <span class="pe-1 font-medium">درباره ما</span>
                 <i data-lucide="move-left" class="size-5"></i>
@@ -251,19 +252,22 @@
           class="mx-auto -mt-24 md:-mt-36 flex max-w-[85%] flex-col gap-4 rounded-4xl border border-white/40! bg-white/25 p-2 md:p-4 text-base md:text-xl font-[950] text-white shadow-[inset_0_0_30px_rgba(255,255,255),0_4px_30px_rgba(0,0,0,0.08)] backdrop-blur-[6px]"
         >
           <div
+            id="serviceTabs"
             class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-1.5 gap-y-2"
           >
             <button
-              class="text-light-primary relative flex items-center justify-center gap-1 rounded-full bg-white whitespace-nowrap py-3 md:py-4"
+              data-image="%BASE_URL%images/home/hero/hero-1.png"
+              class="service-btn  group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary active"
             >
               <i data-lucide="plane" class="size-5"></i>
               <span>پرواز داخلی</span>
               <span
-                class="bg-light-primary absolute -bottom-1 left-1/2 h-1 w-1/3 -translate-x-1/2 rounded-full"
+                class="bg-light-primary absolute -bottom-1 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-1/3"
               ></span>
             </button>
             <button
-              class="group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary"
+              data-image="%BASE_URL%images/home/hero/hero-3.jpg"
+              class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary"
             >
               <i data-lucide="globe" class="size-5"></i>
               <span>پرواز خارجی</span>
@@ -273,7 +277,8 @@
               ></span>
             </button>
             <button
-              class="group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary"
+              data-image="%BASE_URL%images/home/hero/hero-2.jpg"
+              class="service-btn  group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary"
             >
               <i data-lucide="map" class="size-5"></i>
               <span>تورها</span>
@@ -282,7 +287,8 @@
               ></span>
             </button>
             <button
-              class="group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary"
+              data-image="%BASE_URL%images/home/hero/hero-1.png"
+              class="service-btn  group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary"
             >
               <i data-lucide="hotel" class="size-5"></i>
               <span>هتل و ویلا</span>
@@ -291,7 +297,8 @@
               ></span>
             </button>
             <button
-              class="group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary"
+              data-image="%BASE_URL%images/home/hero/hero-3.jpg"
+              class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary"
             >
               <i data-lucide="bus" class="size-5"></i>
               <span>اتوبوس</span>
@@ -300,7 +307,8 @@
               ></span>
             </button>
             <button
-              class="group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary"
+              data-image="%BASE_URL%images/home/hero/hero-2.jpg"
+              class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary"
             >
               <i data-lucide="shield-check" class="size-5"></i>
               <span>بیمه</span>
@@ -2072,38 +2080,33 @@
             </div>
             <div class="space-y-1.5 lg:hidden">
               <div class="relative z-50">
-                <select
-                  class="text-foreground w-full appearance-none rounded-2xl border p-3 ps-4.5 pl-10 font-normal! text-sm!"
+                <select id="footerLinksSelect"
+                        class="text-foreground w-full appearance-none rounded-2xl border p-3 ps-4.5 pl-10 font-normal! text-sm!"
                 >
                   <option value="" disabled selected>لینک‌ها</option>
-                  <option value="tours">تورهای مسافرتی</option>
-                  <option value="flights">پروازها</option>
-                  <option value="hotels">هتل‌ها</option>
-                  <option value="about">درباره ما</option>
-                  <option value="blog">وبلاگ</option>
+                  <option value="/tours">تورهای مسافرتی</option>
+                  <option value="/flights">پروازها</option>
+                  <option value="/hotels">هتل‌ها</option>
+                  <option value="/about">درباره ما</option>
+                  <option value="/blog">وبلاگ</option>
                 </select>
 
-                <i
-                  data-lucide="chevron-down"
-                  class="pointer-events-none absolute left-4 top-1/2 size-3.5 -translate-y-1/2 text-foreground/70"
-                ></i>
+                <i data-lucide="chevron-down" class="pointer-events-none absolute left-4 top-1/2 size-3.5 -translate-y-1/2 text-foreground/70"></i>
               </div>
+
               <div class="relative z-50">
-                <select
-                  class="w-full appearance-none rounded-2xl bg-card! text-white p-3 ps-4.5 pl-10 font-normal! text-sm!"
+                <select id="quickAccessSelect"
+                        class="w-full appearance-none rounded-2xl bg-card! text-white p-3 ps-4.5 pl-10 font-normal! text-sm!"
                 >
                   <option value="" disabled selected>دسترسی سریع</option>
-                  <option value="domestic">تورهای داخلی</option>
-                  <option value="international">تورهای خارجی</option>
-                  <option value="accommodation">رزرو اقامتگاه</option>
-                  <option value="tracking">پیگیری سفارش</option>
-                  <option value="contact">ارتباط با ما</option>
+                  <option value="/tours/domestic">تورهای داخلی</option>
+                  <option value="/tours/international">تورهای خارجی</option>
+                  <option value="/accommodation">رزرو اقامتگاه</option>
+                  <option value="/tracking">پیگیری سفارش</option>
+                  <option value="/contact">ارتباط با ما</option>
                 </select>
 
-                <i
-                  data-lucide="chevron-down"
-                  class="pointer-events-none absolute left-4 top-1/2 size-3.5 -translate-y-1/2 text-white"
-                ></i>
+                <i data-lucide="chevron-down" class="pointer-events-none absolute left-4 top-1/2 size-3.5 -translate-y-1/2 text-white"></i>
               </div>
             </div>
             <div>

@@ -227,6 +227,61 @@ const closeSidebarBtn = document.querySelector('#closeSidebarBtn')
 const mobileSidebar = document.querySelector('#mobileSidebar')
 const mobileMenuOverlay = document.querySelector('#mobileMenuOverlay')
 const mobileSearchBtn = document.querySelector('#mobileSearchBtn')
+const heroImage = document.getElementById('heroImage')
+const buttons = document.querySelectorAll('.service-btn')
+
+// track the *intended* image, not the resolved src
+heroImage.dataset.currentImage = heroImage.getAttribute('src')
+
+let fadeTimeout = null
+
+buttons.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    buttons.forEach((b) => b.classList.remove('active'))
+    btn.classList.add('active')
+
+    const newSrc = btn.dataset.image
+    if (!newSrc || heroImage.dataset.currentImage === newSrc) return
+
+    heroImage.dataset.currentImage = newSrc
+
+    // preload so the fade-in only starts once the image is actually ready
+    const preload = new Image()
+    preload.onload = () => {
+      heroImage.src = newSrc
+      heroImage.style.opacity = '1'
+    }
+    preload.onerror = () => {
+      // let the existing error handler on heroImage deal with the fallback
+      heroImage.src = newSrc
+    }
+    preload.src = newSrc
+
+    heroImage.style.opacity = '0.4' // brief dim instead of a full blank-out
+  })
+})
+
+// fallback if an image 404s, so you don't get a broken-icon dead end
+heroImage.addEventListener('error', () => {
+  if (heroImage.dataset.fallbackApplied) return
+  heroImage.dataset.fallbackApplied = 'true'
+  heroImage.src = `${import.meta.env.BASE_URL}images/home/hero.png`
+  heroImage.dataset.currentImage = `${import.meta.env.BASE_URL}images/home/hero.png`
+})
+
+heroImage.addEventListener('load', () => {
+  delete heroImage.dataset.fallbackApplied
+})
+
+document
+  .querySelectorAll('#footerLinksSelect, #quickAccessSelect')
+  .forEach((select) => {
+    select.addEventListener('change', () => {
+      if (select.value) {
+        window.location.href = `${import.meta.env.BASE_URL}${select.value.replace(/^\//, '')}`
+      }
+    })
+  })
 
 function openSidebar() {
   mobileSidebar.classList.remove('translate-x-full')

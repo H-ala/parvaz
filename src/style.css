@@ -218,3 +218,11 @@ a {
 .swiper-navigation-icon {
   display: none !important;
 }
+
+.service-btn.active {
+  @apply text-light-primary bg-white shadow-[0_4px_10px_rgba(0,0,0,0.15)]!;
+}
+
+.service-btn.active > span:last-child {
+  width: 33.333% !important;
+}
