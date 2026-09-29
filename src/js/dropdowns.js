@@ -213,3 +213,70 @@ setActiveOption(mobileLanguageOptions, 'fa', 'mobileLanguage')
 document.addEventListener('click', () => {
   closeAllDropdowns()
 })
+
+// ============================================================
+// CLOSE DROPDOWNS ON SCROLL
+// ============================================================
+
+window.addEventListener(
+  'scroll',
+  () => {
+    closeAllDropdowns()
+  },
+  { passive: true }
+)
+// ============================================================
+// CLOSE DROPDOWNS ON PAGE HIDE / NAVIGATION
+// ============================================================
+
+window.addEventListener('pagehide', () => {
+  closeAllDropdowns()
+})
+
+// ============================================================
+// CLOSE DROPDOWNS ON VISIBILITY CHANGE
+// ============================================================
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    closeAllDropdowns()
+  }
+})
+
+// ============================================================
+// CLOSE DROPDOWNS BEFORE NAVIGATION
+// ============================================================
+
+document.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    closeAllDropdowns()
+  })
+})
+
+// ============================================================
+// CLOSE DROPDOWNS ON PAGE HIDE / NAVIGATION
+// ============================================================
+
+window.addEventListener('pagehide', () => {
+  closeAllDropdowns()
+})
+
+// ============================================================
+// CLOSE DROPDOWNS ON VISIBILITY CHANGE
+// ============================================================
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    closeAllDropdowns()
+  }
+})
+
+// ============================================================
+// CLOSE DROPDOWNS BEFORE NAVIGATION
+// ============================================================
+
+document.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    closeAllDropdowns()
+  })
+})
