@@ -41,87 +41,44 @@
                 </div>
               </a>
 
-              <nav class="flex gap-6 text-sm font-semibold text-white">
-                <a href="#home" class="relative"
-                  >پرواز داخلی
-                  <span
-                    class="bg-primary absolute -bottom-1/2 left-1/2 h-1 w-5 -translate-x-1/2 rounded-full"
-                  ></span
-                ></a>
-                <a href="#about" class="group relative">
-                  <span
-                    class="transition-all duration-300 hover:text-light-primary"
-                  >
-                    پرواز خارجی
-                  </span>
-                  <span
-                    class="bg-primary absolute -bottom-1/2 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-5"
-                  ></span>
-                </a>
-                <a href="#contact" class="group relative">
-                  <span
-                    class="transition-all duration-300 hover:text-light-primary"
-                    >تور
-                  </span>
-                  <span
-                    class="bg-primary absolute -bottom-1/2 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-5"
-                  ></span>
+              <nav id="mainNavigation" class="relative flex gap-6 text-sm font-semibold text-white">
+                <a href="#home" class="nav-item relative hover:text-light-primary! transition-all duration-300">
+                  پرواز داخلی
                 </a>
 
-                <a href="#contact" class="group relative">
-                  <span
-                    class="transition-all duration-300 hover:text-light-primary"
-                  >
-                    اقامت
-                  </span>
-                  <span
-                    class="bg-primary absolute -bottom-1/2 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-5"
-                  ></span>
+                <a href="#about" class="nav-item relative hover:text-light-primary! transition-all duration-300">
+                  پرواز خارجی
                 </a>
 
-                <a href="#contact" class="group relative">
-                  <span
-                    class="transition-all duration-300 hover:text-light-primary"
-                  >
-                    وبلاگ
-                  </span>
-                  <span
-                    class="bg-primary absolute -bottom-1/2 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-5"
-                  ></span>
+                <a href="#tour" class="nav-item relative hover:text-light-primary! transition-all duration-300">
+                  تور
                 </a>
 
-                <a href="#contact" class="group relative">
-                  <span
-                    class="transition-all duration-300 hover:text-light-primary"
-                  >
-                    درباره ما
-                  </span>
-                  <span
-                    class="bg-primary absolute -bottom-1/2 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-5"
-                  ></span>
+                <a href="#stay" class="nav-item relative hover:text-light-primary! transition-all duration-300">
+                  اقامت
                 </a>
 
-                <a href="#contact" class="group relative">
-                  <span
-                    class="transition-all duration-300 hover:text-light-primary"
-                  >
-                    ارتباط با ما
-                  </span>
-                  <span
-                    class="bg-primary absolute -bottom-1/2 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-5"
-                  ></span>
+                <a href="#blog" class="nav-item relative hover:text-light-primary! transition-all duration-300">
+                  وبلاگ
                 </a>
 
-                <a href="#contact" class="group relative">
-                  <span
-                    class="transition-all duration-300 hover:text-light-primary"
-                  >
-                    پیگیری خرید
-                  </span>
-                  <span
-                    class="bg-primary absolute -bottom-1/2 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-5"
-                  ></span>
+                <a href="#about-us" class="nav-item relative hover:text-light-primary! transition-all duration-300">
+                  درباره ما
                 </a>
+
+                <a href="#contact" class="nav-item relative hover:text-light-primary! transition-all duration-300">
+                  ارتباط با ما
+                </a>
+
+                <a href="#tracking" class="nav-item relative hover:text-light-primary! transition-all duration-300">
+                  پیگیری خرید
+                </a>
+
+                <!-- فقط یک span -->
+                <span
+                  id="nav-indicator"
+                  class="bg-light-primary pointer-events-none absolute -bottom-1/2 h-1 w-5 rounded-full transition-all duration-300"
+                ></span>
               </nav>
             </div>
             <div class="flex items-center gap-1.5">
@@ -323,7 +280,7 @@
         >
           <div
             id="serviceTabs"
-            class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-1.5 gap-y-2"
+            class="relative grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-1.5 gap-y-2"
           >
             <button
               data-image="%BASE_URL%images/home/hero/hero-1.png"
@@ -331,9 +288,6 @@
             >
               <i data-lucide="plane" class="size-5"></i>
               <span>پرواز داخلی</span>
-              <span
-                class="bg-light-primary absolute -bottom-1 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-1/3"
-              ></span>
             </button>
             <button
               data-image="%BASE_URL%images/home/hero/hero-3.jpg"
@@ -341,10 +295,6 @@
             >
               <i data-lucide="globe" class="size-5"></i>
               <span>پرواز خارجی</span>
-
-              <span
-                class="bg-light-primary absolute -bottom-1 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-1/3"
-              ></span>
             </button>
             <button
               data-image="%BASE_URL%images/home/hero/hero-2.jpg"
@@ -352,9 +302,6 @@
             >
               <i data-lucide="map" class="size-5"></i>
               <span>تورها</span>
-              <span
-                class="bg-light-primary absolute -bottom-1 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-1/3"
-              ></span>
             </button>
             <button
               data-image="%BASE_URL%images/home/hero/hero-1.png"
@@ -362,9 +309,6 @@
             >
               <i data-lucide="hotel" class="size-5"></i>
               <span>هتل و ویلا</span>
-              <span
-                class="bg-light-primary absolute -bottom-1 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-1/3"
-              ></span>
             </button>
             <button
               data-image="%BASE_URL%images/home/hero/hero-3.jpg"
@@ -372,9 +316,6 @@
             >
               <i data-lucide="bus" class="size-5"></i>
               <span>اتوبوس</span>
-              <span
-                class="bg-light-primary absolute -bottom-1 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-1/3"
-              ></span>
             </button>
             <button
               data-image="%BASE_URL%images/home/hero/hero-2.jpg"
@@ -382,10 +323,11 @@
             >
               <i data-lucide="shield-check" class="size-5"></i>
               <span>بیمه</span>
-              <span
-                class="bg-light-primary absolute -bottom-1 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-1/3"
-              ></span>
             </button>
+            <span
+              id="service-indicator"
+              class="pointer-events-none absolute right-0 z-10 h-1.25 w-10 md:w-16 rounded-full bg-light-primary transition-all duration-300"
+            ></span>
           </div>
 
           <!--          search block-->
