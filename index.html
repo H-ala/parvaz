@@ -125,19 +125,89 @@
               </nav>
             </div>
             <div class="flex items-center gap-1.5">
-              <button
-                class="flex items-center gap-1 rounded-full border border-white p-2 text-white transition-all duration-300 hover:bg-white/20"
-              >
-                <i data-lucide="chevron-down" class="size-5"></i>
-                <span class="pe-1 text-xs font-medium">IRR</span>
-                <i data-lucide="badge-dollar-sign" class="size-5"></i>
-              </button>
-              <button
-                class="flex items-center gap-1 rounded-full border border-white p-2 text-white transition-all duration-300 hover:bg-white/20"
-              >
-                <span class="pe-1 text-xs font-medium">فارسی</span>
-                <i data-lucide="earth" class="size-5"></i>
-              </button>
+              <div class="relative">
+                <button
+                  type="button"
+                  id="currency-dropdown-button"
+                  class="flex items-center gap-1 rounded-full border border-white p-2 text-white transition-all duration-300 hover:bg-white/20"
+                >
+                  <i data-lucide="chevron-down" class="size-3"></i>
+                  <span id="selected-currency" class="pe-1 text-xs font-medium"
+                    >IRR</span
+                  >
+                  <i data-lucide="badge-dollar-sign" class="size-5"></i>
+                </button>
+
+                <div
+                  id="currency-dropdown"
+                  class="absolute -end-1.5 top-full z-50 mt-2 hidden min-w-24 overflow-hidden rounded-2xl backdrop-blur-xs! bg-card/35 border border-white/70! text-white p-1 shadow-lg space-y-0.25"
+                >
+                  <button
+                    type="button"
+                    data-currency="IRR"
+                    class="currency-option flex w-full items-center justify-between rounded-lg px-3 py-1 text-sm! transition hover:bg-white/30"
+                  >
+                    <span>ریال</span>
+                    <span class="text-xs">IRR</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    data-currency="USD"
+                    class="currency-option flex w-full items-center justify-between rounded-lg px-3 py-1 text-sm! transition hover:bg-white/30"
+                  >
+                    <span>دلار</span>
+                    <span class="text-xs">USD</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    data-currency="EUR"
+                    class="currency-option flex w-full items-center justify-between rounded-lg px-3 py-1 text-sm! transition hover:bg-white/30"
+                  >
+                    <span>یورو</span>
+                    <span class="text-xs">EUR</span>
+                  </button>
+                </div>
+              </div>
+              <div class="relative">
+                <button
+                  type="button"
+                  id="language-dropdown-button"
+                  class="flex items-center gap-1 rounded-full border border-white p-2 text-white transition-all duration-300 hover:bg-white/20"
+                >
+                  <i data-lucide="chevron-down" class="size-3"></i>
+                  <span id="selected-language" class="pe-1 text-xs font-medium">
+                    فارسی
+                  </span>
+                  </span>
+
+                  <i data-lucide="earth" class="size-5"></i>
+                </button>
+
+                <div
+                  id="language-dropdown"
+                  class="absolute end-0 top-full z-50 mt-2 hidden min-w-25 overflow-hidden rounded-2xl border border-white/70! bg-card/35 p-1 text-white shadow-lg backdrop-blur-xs! space-y-0.25"
+                >
+                  <button
+                    type="button"
+                    data-language="fa"
+                    class="language-option flex w-full items-center justify-between rounded-lg px-3 py-1 text-sm! transition hover:bg-white/30"
+                  >
+                    <span>فارسی</span>
+                    <span class="text-xs">FA</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    data-language="en"
+                    class="language-option flex w-full items-center justify-between rounded-lg px-3 py-1 text-sm! transition hover:bg-white/30"
+                  >
+                    <span>English</span>
+                    <span class="text-xs">EN</span>
+                  </button>
+                </div>
+              </div>
               <button
                 class="bg-light-primary relative flex items-center gap-1 rounded-full p-2 text-white transition-all duration-300 hover:brightness-115"
               >
@@ -257,7 +327,7 @@
           >
             <button
               data-image="%BASE_URL%images/home/hero/hero-1.png"
-              class="service-btn  group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary active"
+              class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary active"
             >
               <i data-lucide="plane" class="size-5"></i>
               <span>پرواز داخلی</span>
@@ -278,7 +348,7 @@
             </button>
             <button
               data-image="%BASE_URL%images/home/hero/hero-2.jpg"
-              class="service-btn  group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary"
+              class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary"
             >
               <i data-lucide="map" class="size-5"></i>
               <span>تورها</span>
@@ -288,7 +358,7 @@
             </button>
             <button
               data-image="%BASE_URL%images/home/hero/hero-1.png"
-              class="service-btn  group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary"
+              class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary"
             >
               <i data-lucide="hotel" class="size-5"></i>
               <span>هتل و ویلا</span>
@@ -506,7 +576,8 @@
               <i data-lucide="lock" class="text-primary md:size-8"></i>
             </div>
             <div class="flex flex-col">
-              <span class="whitespace-nowrap text-lg md:text-[22px] font-extrabold"
+              <span
+                class="whitespace-nowrap text-lg md:text-[22px] font-extrabold"
                 >پرداخت امن</span
               >
               <span class="text-sm md:text-base whitespace-nowrap"
@@ -521,7 +592,8 @@
               <i data-lucide="headset" class="text-primary md:size-8"></i>
             </div>
             <div class="flex flex-col">
-              <span class="whitespace-nowrap text-lg md:text-[22px] font-extrabold"
+              <span
+                class="whitespace-nowrap text-lg md:text-[22px] font-extrabold"
                 >پشتیبانی 24/7</span
               >
               <span class="text-sm md:text-base whitespace-nowrap"
@@ -536,7 +608,8 @@
               <i data-lucide="badge-check" class="text-primary md:size-8"></i>
             </div>
             <div class="flex flex-col">
-              <span class="whitespace-nowrap text-lg md:text-[22px] font-extrabold"
+              <span
+                class="whitespace-nowrap text-lg md:text-[22px] font-extrabold"
                 >تضـــــمین قیمت</span
               >
               <span class="text-sm md:text-base whitespace-nowrap"
@@ -551,7 +624,8 @@
               <i data-lucide="zap" class="text-secondary md:size-8"></i>
             </div>
             <div class="flex flex-col">
-              <span class="whitespace-nowrap text-lg md:text-[22px] font-extrabold"
+              <span
+                class="whitespace-nowrap text-lg md:text-[22px] font-extrabold"
                 >رزرو سریع</span
               >
               <span class="text-sm md:text-base whitespace-nowrap"
@@ -1644,9 +1718,7 @@
 
             <div class="flex flex-wrap items-center gap-4 py-1">
               <div class="text-white">
-                <p
-                  class="text-xl whitespace-nowrap font-extrabold lg:text-3xl"
-                >
+                <p class="text-xl whitespace-nowrap font-extrabold lg:text-3xl">
                   سفر کن، قسطی پرداخت کن!
                 </p>
                 <p class="text-xs font-medium lg:text-base">
@@ -1741,13 +1813,9 @@
               </li>
             </ul>
           </div>
-          <div class="col-span-2  mx-auto">
-            <img
-              src="/images/home/application/phone.png"
-              alt="phone image"
-            />
+          <div class="col-span-2 mx-auto">
+            <img src="/images/home/application/phone.png" alt="phone image" />
           </div>
-
         </div>
         <!--        application end-->
         <!--        decorations-->
@@ -2080,8 +2148,9 @@
             </div>
             <div class="space-y-1.5 lg:hidden">
               <div class="relative z-50">
-                <select id="footerLinksSelect"
-                        class="text-foreground w-full appearance-none rounded-2xl border p-3 ps-4.5 pl-10 font-normal! text-sm!"
+                <select
+                  id="footerLinksSelect"
+                  class="text-foreground w-full appearance-none rounded-2xl border p-3 ps-4.5 pl-10 font-normal! text-sm!"
                 >
                   <option value="" disabled selected>لینک‌ها</option>
                   <option value="/tours">تورهای مسافرتی</option>
@@ -2091,12 +2160,16 @@
                   <option value="/blog">وبلاگ</option>
                 </select>
 
-                <i data-lucide="chevron-down" class="pointer-events-none absolute left-4 top-1/2 size-3.5 -translate-y-1/2 text-foreground/70"></i>
+                <i
+                  data-lucide="chevron-down"
+                  class="pointer-events-none absolute left-4 top-1/2 size-3.5 -translate-y-1/2 text-foreground/70"
+                ></i>
               </div>
 
               <div class="relative z-50">
-                <select id="quickAccessSelect"
-                        class="w-full appearance-none rounded-2xl bg-card! text-white p-3 ps-4.5 pl-10 font-normal! text-sm!"
+                <select
+                  id="quickAccessSelect"
+                  class="w-full appearance-none rounded-2xl bg-card! text-white p-3 ps-4.5 pl-10 font-normal! text-sm!"
                 >
                   <option value="" disabled selected>دسترسی سریع</option>
                   <option value="/tours/domestic">تورهای داخلی</option>
@@ -2106,7 +2179,10 @@
                   <option value="/contact">ارتباط با ما</option>
                 </select>
 
-                <i data-lucide="chevron-down" class="pointer-events-none absolute left-4 top-1/2 size-3.5 -translate-y-1/2 text-white"></i>
+                <i
+                  data-lucide="chevron-down"
+                  class="pointer-events-none absolute left-4 top-1/2 size-3.5 -translate-y-1/2 text-white"
+                ></i>
               </div>
             </div>
             <div>
@@ -2254,16 +2330,13 @@
         class="flex items-center justify-between p-4 border-b border-white/20"
       >
         <span class="font-extrabold text-white">لحظه پرواز</span>
-        <button
-          id="closeSidebarBtn"
-          class="rounded-full text-white"
-        >
+        <button id="closeSidebarBtn" class="rounded-full text-white">
           <i data-lucide="x" class="size-5"></i>
         </button>
       </div>
 
       <nav
-        class="flex flex-col gap-1 py-4 text-sm font-semibold text-white overflow-y-auto"
+        class="flex flex-col h-full gap-1 py-4 text-sm font-semibold text-white overflow-y-auto"
       >
         <a href="#home" class="py-2 px-4">پرواز داخلی</a>
         <a href="#about" class="py-2 px-4">پرواز خارجی</a>
@@ -2277,19 +2350,95 @@
         <div
           class="flex items-center gap-1.5 pt-4 px-4 mt-2 border-t border-white/20"
         >
-          <button
-            class="flex items-center gap-1 rounded-full border border-white p-2 text-white"
-          >
-            <i data-lucide="chevron-down" class="size-5"></i>
-            <span class="pe-1 text-xs font-medium">IRR</span>
-            <i data-lucide="badge-dollar-sign" class="size-5"></i>
-          </button>
-          <button
-            class="flex items-center gap-1 rounded-full border border-white p-2 text-white"
-          >
-            <span class="pe-1 text-xs font-medium">فارسی</span>
-            <i data-lucide="earth" class="size-5"></i>
-          </button>
+          <div class="relative">
+            <button
+              type="button"
+              id="mobile-currency-dropdown-button"
+              class="flex items-center gap-1 rounded-full border border-white p-2 text-white"
+            >
+              <i data-lucide="chevron-down" class="size-3"></i>
+              <span
+                id="mobile-selected-currency"
+                class="pe-1 text-xs font-medium"
+              >
+                IRR
+              </span>
+              <i data-lucide="badge-dollar-sign" class="size-5"></i>
+            </button>
+
+            <div
+              id="mobile-currency-dropdown"
+              class="absolute -end-2 top-full z-50 mt-2 hidden min-w-24 overflow-hidden rounded-2xl border border-white/70! bg-card/35 p-1 text-white shadow-lg backdrop-blur-xs!"
+            >
+              <button
+                type="button"
+                data-mobile-currency="IRR"
+                class="mobile-currency-option flex w-full items-center justify-between rounded-lg px-3 py-1 text-sm! transition hover:bg-white/30"
+              >
+                <span>ریال</span>
+                <span class="text-xs">IRR</span>
+              </button>
+
+              <button
+                type="button"
+                data-mobile-currency="USD"
+                class="mobile-currency-option flex w-full items-center justify-between rounded-lg px-3 py-1 text-sm! transition hover:bg-white/30"
+              >
+                <span>دلار</span>
+                <span class="text-xs">USD</span>
+              </button>
+
+              <button
+                type="button"
+                data-mobile-currency="EUR"
+                class="mobile-currency-option flex w-full items-center justify-between rounded-lg px-3 py-1 text-sm! transition hover:bg-white/30"
+              >
+                <span>یورو</span>
+                <span class="text-xs">EUR</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="relative">
+            <button
+              type="button"
+              id="mobile-language-dropdown-button"
+              class="flex items-center gap-1 rounded-full border border-white p-2 text-white"
+            >
+              <i data-lucide="chevron-down" class="size-3"></i>
+              <span
+                id="mobile-selected-language"
+                class="pe-1 text-xs font-medium"
+              >
+                فارسی
+              </span>
+
+              <i data-lucide="earth" class="size-5"></i>
+            </button>
+
+            <div
+              id="mobile-language-dropdown"
+              class="absolute -end-2 top-full z-50 mt-2 hidden min-w-28 overflow-hidden rounded-2xl border border-white/70! bg-card/35 p-1 text-white shadow-lg backdrop-blur-xs!"
+            >
+              <button
+                type="button"
+                data-mobile-language="fa"
+                class="mobile-language-option flex w-full items-center justify-between rounded-lg px-3 py-1 text-sm! transition hover:bg-white/30"
+              >
+                <span>فارسی</span>
+                <span class="text-xs">FA</span>
+              </button>
+
+              <button
+                type="button"
+                data-mobile-language="en"
+                class="mobile-language-option flex w-full items-center justify-between rounded-lg px-3 py-1 text-sm! transition hover:bg-white/30"
+              >
+                <span>English</span>
+                <span class="text-xs">EN</span>
+              </button>
+            </div>
+          </div>
         </div>
 
         <button

@@ -221,6 +221,12 @@ createIcons({
   },
 })
 
+function setActiveOption(options, value, dataKey) {
+  options.forEach((option) => {
+    option.classList.toggle('bg-white/30', option.dataset[dataKey] === value)
+  })
+}
+
 const mobileMenuBtn = document.querySelector('#mobileMenuBtn')
 const bottomMenuBtn = document.querySelector('#bottomMenuBtn')
 const closeSidebarBtn = document.querySelector('#closeSidebarBtn')
@@ -229,6 +235,163 @@ const mobileMenuOverlay = document.querySelector('#mobileMenuOverlay')
 const mobileSearchBtn = document.querySelector('#mobileSearchBtn')
 const heroImage = document.getElementById('heroImage')
 const buttons = document.querySelectorAll('.service-btn')
+const dropdownButton = document.getElementById('currency-dropdown-button')
+const dropdown = document.getElementById('currency-dropdown')
+const selectedCurrency = document.getElementById('selected-currency')
+const currencyOptions = document.querySelectorAll('.currency-option')
+
+const languageDropdownButton = document.getElementById(
+  'language-dropdown-button'
+)
+const languageDropdown = document.getElementById('language-dropdown')
+const selectedLanguage = document.getElementById('selected-language')
+const languageOptions = document.querySelectorAll('.language-option')
+
+// Mobile
+const mobileCurrencyButton = document.getElementById(
+  'mobile-currency-dropdown-button'
+)
+const mobileCurrencyDropdown = document.getElementById(
+  'mobile-currency-dropdown'
+)
+const mobileSelectedCurrency = document.getElementById(
+  'mobile-selected-currency'
+)
+const mobileCurrencyOptions = document.querySelectorAll(
+  '.mobile-currency-option'
+)
+
+const mobileLanguageButton = document.getElementById(
+  'mobile-language-dropdown-button'
+)
+const mobileLanguageDropdown = document.getElementById(
+  'mobile-language-dropdown'
+)
+const mobileSelectedLanguage = document.getElementById(
+  'mobile-selected-language'
+)
+const mobileLanguageOptions = document.querySelectorAll(
+  '.mobile-language-option'
+)
+
+// باز کردن dropdown و بستن dropdown مقابل
+function toggleDropdown(currentDropdown, otherDropdown) {
+  const isOpen = !currentDropdown.classList.contains('hidden')
+
+  otherDropdown?.classList.add('hidden')
+
+  if (isOpen) {
+    currentDropdown.classList.add('hidden')
+  } else {
+    currentDropdown.classList.remove('hidden')
+  }
+}
+
+// =========================
+// Desktop Currency
+// =========================
+
+dropdownButton?.addEventListener('click', (event) => {
+  event.stopPropagation()
+
+  toggleDropdown(dropdown, languageDropdown)
+})
+
+currencyOptions.forEach((option) => {
+  option.addEventListener('click', () => {
+    const currency = option.dataset.currency
+
+    selectedCurrency.textContent = currency
+    dropdown.classList.add('hidden')
+
+    setActiveOption(currencyOptions, currency, 'currency')
+  })
+})
+
+setActiveOption(currencyOptions, 'IRR', 'currency')
+
+// =========================
+// Desktop Language
+// =========================
+
+languageDropdownButton?.addEventListener('click', (event) => {
+  event.stopPropagation()
+
+  toggleDropdown(languageDropdown, dropdown)
+})
+
+languageOptions.forEach((option) => {
+  option.addEventListener('click', () => {
+    const language = option.dataset.language
+
+    selectedLanguage.textContent = language === 'fa' ? 'فارسی' : 'English'
+
+    languageDropdown.classList.add('hidden')
+
+    setActiveOption(languageOptions, language, 'language')
+  })
+})
+
+setActiveOption(languageOptions, 'fa', 'language')
+
+// =========================
+// Mobile Currency
+// =========================
+
+mobileCurrencyButton?.addEventListener('click', (event) => {
+  event.stopPropagation()
+
+  toggleDropdown(mobileCurrencyDropdown, mobileLanguageDropdown)
+})
+
+mobileCurrencyOptions.forEach((option) => {
+  option.addEventListener('click', () => {
+    const currency = option.dataset.mobileCurrency
+
+    mobileSelectedCurrency.textContent = currency
+    mobileCurrencyDropdown.classList.add('hidden')
+
+    setActiveOption(mobileCurrencyOptions, currency, 'mobileCurrency')
+  })
+})
+
+setActiveOption(mobileCurrencyOptions, 'IRR', 'mobileCurrency')
+
+// =========================
+// Mobile Language
+// =========================
+
+mobileLanguageButton?.addEventListener('click', (event) => {
+  event.stopPropagation()
+
+  toggleDropdown(mobileLanguageDropdown, mobileCurrencyDropdown)
+})
+
+mobileLanguageOptions.forEach((option) => {
+  option.addEventListener('click', () => {
+    const language = option.dataset.mobileLanguage
+
+    mobileSelectedLanguage.textContent = language === 'fa' ? 'فارسی' : 'English'
+
+    mobileLanguageDropdown.classList.add('hidden')
+
+    setActiveOption(mobileLanguageOptions, language, 'mobileLanguage')
+  })
+})
+
+setActiveOption(mobileLanguageOptions, 'fa', 'mobileLanguage')
+
+// =========================
+// Click Outside
+// =========================
+
+document.addEventListener('click', () => {
+  dropdown?.classList.add('hidden')
+  languageDropdown?.classList.add('hidden')
+
+  mobileCurrencyDropdown?.classList.add('hidden')
+  mobileLanguageDropdown?.classList.add('hidden')
+})
 
 // track the *intended* image, not the resolved src
 heroImage.dataset.currentImage = heroImage.getAttribute('src')
