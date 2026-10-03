@@ -119,7 +119,6 @@
 html,
 body {
   font-family: var(--font-sans);
-  direction: rtl;
 }
 body {
   margin: 0;
@@ -151,7 +150,25 @@ a {
 }
 #loan::after {
   content: '';
-  @apply absolute inset-[3%] -translate-x-2 xs:translate-x-0 -z-1 -rotate-10 xs:-rotate-4 rounded-4xl border border-ring/40;
+  @apply absolute inset-[3%] -z-1 rounded-4xl border border-ring/40;
+}
+
+#loan:dir(rtl)::after {
+  @apply -translate-x-2 -rotate-10;
+}
+
+#loan:dir(ltr)::after {
+  @apply translate-x-2 rotate-10;
+}
+
+@media (min-width: 640px) {
+  #loan:dir(rtl)::after {
+    @apply translate-x-0 -rotate-4;
+  }
+
+  #loan:dir(ltr)::after {
+    @apply translate-x-0 rotate-4;
+  }
 }
 .gradient-overlay {
   @apply relative isolate;
@@ -178,11 +195,17 @@ a {
 
 @utility hover-fill-right {
   @apply relative isolate overflow-hidden transition-colors duration-300;
+
   &::before {
     content: '';
-    @apply absolute inset-0 -z-10 origin-right scale-x-0 bg-card transition-transform duration-300;
+    @apply absolute inset-0 -z-10 origin-left scale-x-0 bg-card transition-transform duration-300;
   }
+
   &:hover::before {
     @apply scale-x-100;
+  }
+
+  &:dir(rtl)::before {
+    @apply origin-right;
   }
 }

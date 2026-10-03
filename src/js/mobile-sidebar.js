@@ -11,13 +11,12 @@ const mobileMenuOverlay = document.querySelector('#mobileMenuOverlay')
 // ============================================================
 // OPEN
 // ============================================================
+const HIDDEN_CLASSES = ['rtl:translate-x-full', 'ltr:-translate-x-full']
 
 function openSidebar() {
-  if (!mobileSidebar || !mobileMenuOverlay) {
-    return
-  }
+  if (!mobileSidebar || !mobileMenuOverlay) return
 
-  mobileSidebar.classList.remove('translate-x-full')
+  mobileSidebar.classList.remove(...HIDDEN_CLASSES)
 
   mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none')
 
@@ -29,11 +28,9 @@ function openSidebar() {
 // ============================================================
 
 function closeSidebar() {
-  if (!mobileSidebar || !mobileMenuOverlay) {
-    return
-  }
+  if (!mobileSidebar || !mobileMenuOverlay) return
 
-  mobileSidebar.classList.add('translate-x-full')
+  mobileSidebar.classList.add(...HIDDEN_CLASSES)
 
   mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none')
 

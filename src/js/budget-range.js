@@ -9,18 +9,19 @@ function updateBudgetRange() {
   const value = Number(range.value)
 
   const percent = ((value - min) / (max - min)) * 100
+  const isRtl = document.documentElement.dir === 'rtl'
 
   budgetValue.textContent = value
 
   range.style.background = `
-linear-gradient(
-  to left,
-var(--light-primary) 0%,
-var(--light-primary) ${percent}%,
-color-mix(in srgb, var(--primary) 10%, transparent) ${percent}%,
-color-mix(in srgb, var(--primary) 10%, transparent) 100%
-)
-`
+    linear-gradient(
+      to ${isRtl ? 'left' : 'right'},
+      var(--light-primary) 0%,
+      var(--light-primary) ${percent}%,
+      color-mix(in srgb, var(--primary) 10%, transparent) ${percent}%,
+      color-mix(in srgb, var(--primary) 10%, transparent) 100%
+    )
+  `
 }
 
 range?.addEventListener('input', updateBudgetRange)

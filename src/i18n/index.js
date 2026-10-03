@@ -1,23 +1,31 @@
 import i18next from 'i18next'
 
 import faHome from './fa/home'
+import faHeader from './fa/header.js'
 import faCommon from './fa/common.js'
+import faFooter from './fa/footer.js'
 
 import enHome from './en/home'
+import enHeader from './en/header.js'
 import enCommon from './en/common.js'
+import enFooter from './en/footer.js'
 
 const resources = {
   fa: {
     translation: {
       home: faHome,
+      header: faHeader,
       common: faCommon,
+      footer: faFooter,
     },
   },
 
   en: {
     translation: {
       home: enHome,
+      header: enHeader,
       common: enCommon,
+      footer: enFooter,
     },
   },
 }
@@ -27,13 +35,11 @@ const supportedLanguages = ['fa', 'en']
 function getLanguageFromUrl() {
   const segments = window.location.pathname.split('/').filter(Boolean)
 
-  const language = segments[1]
+  const language = segments.find((segment) =>
+    supportedLanguages.includes(segment)
+  )
 
-  if (supportedLanguages.includes(language)) {
-    return language
-  }
-
-  return 'fa'
+  return language || 'fa'
 }
 
 export async function initI18n() {
@@ -59,6 +65,12 @@ export function translatePage() {
     const key = element.dataset.i18n
 
     element.textContent = i18next.t(key)
+  })
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
+    const key = element.dataset.i18nPlaceholder
+
+    element.placeholder = i18next.t(key)
   })
 }
 

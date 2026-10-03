@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      const lang = location.pathname.split('/').includes('en') ? 'en' : 'fa'
+      document.documentElement.lang = lang
+      document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr'
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,53 +36,73 @@
                     class="w-6"
                   />
                   <div class="flex flex-col gap-0.5 items-start">
-                    <span  data-i18n="common.logo" class="font-extrabold text-sm -mb-1.5 text-white"
-                      >لحظه پرواز</span
-                    >
-                    <span class="text-[10px] font-normal text-white"
-                      >Lahzeh parvaz</span
-                    >
+                    <span
+                      data-i18n="common.logo.fa"
+                      class="font-extrabold text-sm -mb-1.5 text-white"
+                    ></span>
+                    <span
+                      data-i18n="common.logo.en"
+                      class="text-[10px] font-normal text-white"
+                    ></span>
                   </div>
                 </div>
               </a>
 
-              <nav id="mainNavigation" class="relative flex gap-6 text-sm font-semibold text-white">
-                <a href="#home" class="nav-item relative hover:text-light-primary! transition-all duration-300">
-                  پرواز داخلی
-                </a>
+              <nav
+                id="mainNavigation"
+                class="relative flex gap-6 text-sm font-semibold text-white"
+              >
+                <a
+                  href="#home"
+                  class="nav-item relative transition-all duration-300 hover:text-light-primary!"
+                  data-i18n="header.navigation.domesticFlights"
+                ></a>
 
-                <a href="#about" class="nav-item relative hover:text-light-primary! transition-all duration-300">
-                  پرواز خارجی
-                </a>
+                <a
+                  href="#about"
+                  class="nav-item relative transition-all duration-300 hover:text-light-primary!"
+                  data-i18n="header.navigation.internationalFlights"
+                ></a>
 
-                <a href="#tour" class="nav-item relative hover:text-light-primary! transition-all duration-300">
-                  تور
-                </a>
+                <a
+                  href="#tour"
+                  class="nav-item relative transition-all duration-300 hover:text-light-primary!"
+                  data-i18n="header.navigation.tours"
+                ></a>
 
-                <a href="#stay" class="nav-item relative hover:text-light-primary! transition-all duration-300">
-                  اقامت
-                </a>
+                <a
+                  href="#stay"
+                  class="nav-item relative transition-all duration-300 hover:text-light-primary!"
+                  data-i18n="header.navigation.accommodation"
+                ></a>
 
-                <a href="#blog" class="nav-item relative hover:text-light-primary! transition-all duration-300">
-                  وبلاگ
-                </a>
+                <a
+                  href="#blog"
+                  class="nav-item relative transition-all duration-300 hover:text-light-primary!"
+                  data-i18n="header.navigation.blog"
+                ></a>
 
-                <a href="#about-us" class="nav-item relative hover:text-light-primary! transition-all duration-300">
-                  درباره ما
-                </a>
+                <a
+                  href="#about-us"
+                  class="nav-item relative transition-all duration-300 hover:text-light-primary!"
+                  data-i18n="header.navigation.aboutUs"
+                ></a>
 
-                <a href="#contact" class="nav-item relative hover:text-light-primary! transition-all duration-300">
-                  ارتباط با ما
-                </a>
+                <a
+                  href="#contact"
+                  class="nav-item relative transition-all duration-300 hover:text-light-primary!"
+                  data-i18n="header.navigation.contactUs"
+                ></a>
 
-                <a href="#tracking" class="nav-item relative hover:text-light-primary! transition-all duration-300">
-                  پیگیری خرید
-                </a>
+                <a
+                  href="#tracking"
+                  class="nav-item relative transition-all duration-300 hover:text-light-primary!"
+                  data-i18n="header.navigation.purchaseTracking"
+                ></a>
 
-                <!-- فقط یک span -->
                 <span
                   id="nav-indicator"
-                  class="bg-light-primary pointer-events-none absolute -bottom-1/2 h-1 w-5 rounded-full transition-all duration-300"
+                  class="pointer-events-none absolute -bottom-1/2 h-1 w-5 rounded-full bg-light-primary transition-all duration-300"
                 ></span>
               </nav>
             </div>
@@ -97,14 +122,14 @@
 
                 <div
                   id="currency-dropdown"
-                  class="absolute -end-1.5 top-full z-50 mt-2 hidden min-w-24 overflow-hidden rounded-2xl backdrop-blur-xs! bg-card/35 border border-white/70! text-white p-1 shadow-lg space-y-0.25"
+                  class="absolute -end-1.5 top-full z-50 mt-2 hidden min-w-24 overflow-hidden rounded-2xl border border-white/70! bg-card/35 p-1 text-white shadow-lg backdrop-blur-xs! space-y-0.25"
                 >
                   <button
                     type="button"
                     data-currency="IRR"
                     class="currency-option flex w-full items-center justify-between rounded-lg px-3 py-1 text-sm! transition hover:bg-white/30"
                   >
-                    <span>ریال</span>
+                    <span data-i18n="header.currency.irr"></span>
                     <span class="text-xs">IRR</span>
                   </button>
 
@@ -113,7 +138,7 @@
                     data-currency="USD"
                     class="currency-option flex w-full items-center justify-between rounded-lg px-3 py-1 text-sm! transition hover:bg-white/30"
                   >
-                    <span>دلار</span>
+                    <span data-i18n="header.currency.usd"></span>
                     <span class="text-xs">USD</span>
                   </button>
 
@@ -122,7 +147,7 @@
                     data-currency="EUR"
                     class="currency-option flex w-full items-center justify-between rounded-lg px-3 py-1 text-sm! transition hover:bg-white/30"
                   >
-                    <span>یورو</span>
+                    <span data-i18n="header.currency.eur"></span>
                     <span class="text-xs">EUR</span>
                   </button>
                 </div>
@@ -137,8 +162,6 @@
                   <span id="selected-language" class="pe-1 text-xs font-medium">
                     فارسی
                   </span>
-                  </span>
-
                   <i data-lucide="earth" class="size-5"></i>
                 </button>
 
@@ -181,7 +204,10 @@
                 <span class="bg-secondary rounded-full p-1">
                   <i data-lucide="circle-user" class="size-5 text-black"></i>
                 </span>
-                <span class="pe-1 text-xs font-medium">ورود/ثبت نام</span>
+                <span
+                  class="pe-1 text-xs font-medium"
+                  data-i18n="header.auth.loginRegister"
+                ></span>
               </button>
             </div>
           </div>
@@ -206,12 +232,14 @@
                     class="w-6"
                   />
                   <div class="flex flex-col gap-0.5 items-start">
-                    <span class="font-extrabold text-sm -mb-1.5 text-white"
-                      >لحظه پرواز</span
-                    >
-                    <span class="text-[10px] font-normal text-white"
-                      >Lahzeh parvaz</span
-                    >
+                    <span
+                      data-i18n="common.logo.fa"
+                      class="font-extrabold text-sm -mb-1.5 text-white"
+                    ></span>
+                    <span
+                      data-i18n="common.logo.en"
+                      class="text-[10px] font-normal text-white"
+                    ></span>
                   </div>
                 </div>
               </a>
@@ -249,26 +277,38 @@
           <div
             class="absolute top-[13vh] md:top-[15vh] left-1/2 -translate-x-1/2 space-y-2 md:space-y-4 text-center font-black text-white"
           >
-            <p class="text-3xl md:text-5xl">سفر بعدی تو</p>
-            <p class="text-2xl md:text-4xl font-extrabold">
-              <span class="text-secondary">از همینجا</span> شروع میشه!
+            <p class="text-3xl md:text-5xl" data-i18n="home.hero.title"></p>
+
+            <p class="text-2xl font-extrabold md:text-4xl">
+              <span
+                class="text-secondary"
+                data-i18n="home.hero.highlight"
+              ></span>
+              <span data-i18n="home.hero.highlightSuffix"></span>
             </p>
-            <p class="font-medium hidden md:block">
-              پرواز، هتل، تور و اقامتگاه رو سریع، مطمئن و با بهترین قیمت پیدا
-              کن!
-            </p>
+
+            <p
+              class="hidden font-medium md:block"
+              data-i18n="home.hero.description"
+            ></p>
             <div class="flex items-center justify-center gap-1.5">
               <button
                 class="flex items-center gap-1 rounded-full border border-white/80! py-2 text-white transition-all duration-300 hover-fill-right w-30 justify-center whitespace-nowrap"
               >
-                <span class="pe-1 font-medium">درباره ما</span>
-                <i data-lucide="move-left" class="size-5"></i>
+                <span
+                  data-i18n="home.hero.buttons.about"
+                  class="pe-1 font-medium"
+                ></span>
+                <i data-lucide="move-left" class="size-5 ltr:rotate-180"></i>
               </button>
               <button
                 class="bg-secondary flex items-center gap-1 rounded-full py-2 text-black transition-all duration-300 hover:brightness-90 w-30 justify-center whitespace-nowrap"
               >
                 <i data-lucide="line-squiggle" class="size-5"></i>
-                <span class="pe-1 font-medium">لحظه آخری</span>
+                <span
+                  data-i18n="home.hero.buttons.lastMoment"
+                  class="pe-1 font-medium"
+                ></span>
               </button>
             </div>
           </div>
@@ -280,13 +320,61 @@
         >
           <div
             id="serviceTabs"
-            class="relative grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-1.5 gap-y-2"
+            class="relative grid grid-cols-2 gap-1.5 gap-y-2 lg:grid-cols-3 xl:grid-cols-6"
           >
-            <button data-image="%BASE_URL%images/home/hero/hero-1.png" class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary active" > <i data-lucide="plane" class="size-5"></i> <span>پرواز داخلی</span> </button>
-            <button data-image="%BASE_URL%images/home/hero/hero-3.jpg" class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary" > <i data-lucide="globe" class="size-5"></i> <span>پرواز خارجی</span> </button> <button data-image="%BASE_URL%images/home/hero/hero-2.jpg" class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary" > <i data-lucide="map" class="size-5"></i> <span>تورها</span> </button> <button data-image="%BASE_URL%images/home/hero/hero-1.png" class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary" > <i data-lucide="hotel" class="size-5"></i> <span>هتل و ویلا</span> </button> <button data-image="%BASE_URL%images/home/hero/hero-3.jpg" class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary" > <i data-lucide="bus" class="size-5"></i> <span>اتوبوس</span> </button> <button data-image="%BASE_URL%images/home/hero/hero-2.jpg" class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 md:bg-primary/30 whitespace-nowrap py-3 md:py-4 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary" > <i data-lucide="shield-check" class="size-5"></i> <span>بیمه</span> </button>
+            <button
+              data-image="%BASE_URL%images/home/hero/hero-1.png"
+              class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 whitespace-nowrap py-3 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary md:bg-primary/30 md:py-4 active"
+            >
+              <i data-lucide="plane" class="size-5"></i>
+              <span data-i18n="home.blurredCard.tabs.domesticFlight"></span>
+            </button>
+
+            <button
+              data-image="%BASE_URL%images/home/hero/hero-3.jpg"
+              class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 whitespace-nowrap py-3 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary md:bg-primary/30 md:py-4"
+            >
+              <i data-lucide="globe" class="size-5"></i>
+              <span
+                data-i18n="home.blurredCard.tabs.internationalFlight"
+              ></span>
+            </button>
+
+            <button
+              data-image="%BASE_URL%images/home/hero/hero-2.jpg"
+              class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 whitespace-nowrap py-3 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary md:bg-primary/30 md:py-4"
+            >
+              <i data-lucide="map" class="size-5"></i>
+              <span data-i18n="home.blurredCard.tabs.tours"></span>
+            </button>
+
+            <button
+              data-image="%BASE_URL%images/home/hero/hero-1.png"
+              class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 whitespace-nowrap py-3 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary md:bg-primary/30 md:py-4"
+            >
+              <i data-lucide="hotel" class="size-5"></i>
+              <span data-i18n="home.blurredCard.tabs.hotel"></span>
+            </button>
+
+            <button
+              data-image="%BASE_URL%images/home/hero/hero-3.jpg"
+              class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 whitespace-nowrap py-3 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary md:bg-primary/30 md:py-4"
+            >
+              <i data-lucide="bus" class="size-5"></i>
+              <span data-i18n="home.blurredCard.tabs.bus"></span>
+            </button>
+
+            <button
+              data-image="%BASE_URL%images/home/hero/hero-2.jpg"
+              class="service-btn group relative flex items-center justify-center gap-1 rounded-full border border-white/30! bg-primary/55 whitespace-nowrap py-3 text-white shadow-[inset_0_0_20px_rgba(255,255,255)] backdrop-blur-md transition-all duration-300 hover:bg-white/60 hover:text-light-primary md:bg-primary/30 md:py-4"
+            >
+              <i data-lucide="shield-check" class="size-5"></i>
+              <span data-i18n="home.blurredCard.tabs.insurance"></span>
+            </button>
+
             <span
               id="service-indicator"
-              class="pointer-events-none absolute right-0 z-10 h-1 w-10 md:w-16 rounded-full bg-light-primary transition-all duration-300"
+              class="pointer-events-none absolute right-0 z-10 h-1 w-10 rounded-full bg-light-primary transition-all duration-300 md:w-16"
             ></span>
           </div>
 
@@ -297,26 +385,63 @@
             <div class="relative">
               <select
                 id="origin"
-                class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-lg!"
+                class="text-foreground w-full appearance-none rounded-xl border p-3 pe-10 font-normal! text-lg!"
               >
-                <option value="" disabled selected>مبدا (شهر)</option>
-                <option value="tehran">تهران</option>
-                <option value="mashhad">مشهد</option>
-                <option value="shiraz">شیراز</option>
-                <option value="tabriz">تبریز</option>
-                <option value="istanbul">استانبول</option>
-                <option value="dubai">دبی</option>
-                <option value="antalya">آنتالیا</option>
-                <option value="paris">پاریس</option>
+                <option
+                  value=""
+                  disabled
+                  selected
+                  data-i18n="common.searchBox.origin.placeholder"
+                ></option>
+
+                <option
+                  value="tehran"
+                  data-i18n="common.searchBox.origin.tehran"
+                ></option>
+
+                <option
+                  value="mashhad"
+                  data-i18n="common.searchBox.origin.mashhad"
+                ></option>
+
+                <option
+                  value="shiraz"
+                  data-i18n="common.searchBox.origin.shiraz"
+                ></option>
+
+                <option
+                  value="tabriz"
+                  data-i18n="common.searchBox.origin.tabriz"
+                ></option>
+
+                <option
+                  value="istanbul"
+                  data-i18n="common.searchBox.origin.istanbul"
+                ></option>
+
+                <option
+                  value="dubai"
+                  data-i18n="common.searchBox.origin.dubai"
+                ></option>
+
+                <option
+                  value="antalya"
+                  data-i18n="common.searchBox.origin.antalya"
+                ></option>
+
+                <option
+                  value="paris"
+                  data-i18n="common.searchBox.origin.paris"
+                ></option>
               </select>
 
               <i
                 data-lucide="chevron-down"
-                class="pointer-events-none absolute left-5 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
+                class="pointer-events-none absolute end-5 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
               ></i>
               <button
                 id="swap-locations"
-                class="z-10 rounded-full p-1.5 bg-background absolute top-1/2 -translate-y-1/2 left-0 -translate-x-4 bg-secondary shadow-[0_0_1px_rgba(0,0,0,0.2)] border border-ring/30!"
+                class="z-10 rounded-full p-1.5 absolute top-1/2 -translate-y-1/2 inset-e-0 rtl:-translate-x-4 ltr:translate-x-4 bg-secondary shadow-[0_0_1px_rgba(0,0,0,0.2)] border border-ring/30!"
               >
                 <i data-lucide="arrow-left-right" class="size-4"></i>
               </button>
@@ -325,89 +450,206 @@
             <div class="relative">
               <select
                 id="destination"
-                class="text-foreground w-full appearance-none rounded-xl border p-3 ps-4.5 pl-10 font-normal! text-lg!"
+                class="text-foreground w-full appearance-none rounded-xl border p-3 ps-4.5 pe-10 font-normal! text-lg!"
               >
-                <option value="" disabled selected>مقصد (شهر)</option>
-                <option value="tehran">تهران</option>
-                <option value="mashhad">مشهد</option>
-                <option value="shiraz">شیراز</option>
-                <option value="tabriz">تبریز</option>
-                <option value="istanbul">استانبول</option>
-                <option value="dubai">دبی</option>
-                <option value="antalya">آنتالیا</option>
-                <option value="paris">پاریس</option>
+                <option
+                  value=""
+                  disabled
+                  selected
+                  data-i18n="common.searchBox.destination.placeholder"
+                ></option>
+
+                <option
+                  value="tehran"
+                  data-i18n="common.searchBox.destination.tehran"
+                ></option>
+
+                <option
+                  value="mashhad"
+                  data-i18n="common.searchBox.destination.mashhad"
+                ></option>
+
+                <option
+                  value="shiraz"
+                  data-i18n="common.searchBox.destination.shiraz"
+                ></option>
+
+                <option
+                  value="tabriz"
+                  data-i18n="common.searchBox.destination.tabriz"
+                ></option>
+
+                <option
+                  value="istanbul"
+                  data-i18n="common.searchBox.destination.istanbul"
+                ></option>
+
+                <option
+                  value="dubai"
+                  data-i18n="common.searchBox.destination.dubai"
+                ></option>
+
+                <option
+                  value="antalya"
+                  data-i18n="common.searchBox.destination.antalya"
+                ></option>
+
+                <option
+                  value="paris"
+                  data-i18n="common.searchBox.destination.paris"
+                ></option>
               </select>
 
               <i
                 data-lucide="chevron-down"
-                class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
+                class="pointer-events-none absolute end-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
               ></i>
             </div>
 
             <div class="relative">
               <select
-                class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-lg!"
+                class="text-foreground w-full appearance-none rounded-xl border p-3 pe-10 font-normal! text-lg!"
               >
-                <option value="" disabled selected>تاریخ رفت</option>
-                <option value="2026-10-01">۱ مهر ۱۴۰۵</option>
-                <option value="2026-10-05">۵ مهر ۱۴۰۵</option>
-                <option value="2026-10-10">۱۰ مهر ۱۴۰۵</option>
-                <option value="2026-10-15">۱۵ مهر ۱۴۰۵</option>
+                <option
+                  value=""
+                  disabled
+                  selected
+                  data-i18n="common.searchBox.departureDate.placeholder"
+                ></option>
+
+                <option
+                  value="2026-10-01"
+                  data-i18n="common.searchBox.departureDate.october1"
+                ></option>
+
+                <option
+                  value="2026-10-05"
+                  data-i18n="common.searchBox.departureDate.october5"
+                ></option>
+
+                <option
+                  value="2026-10-10"
+                  data-i18n="common.searchBox.departureDate.october10"
+                ></option>
+
+                <option
+                  value="2026-10-15"
+                  data-i18n="common.searchBox.departureDate.october15"
+                ></option>
               </select>
 
               <i
                 data-lucide="chevron-down"
-                class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
+                class="pointer-events-none absolute end-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
               ></i>
             </div>
 
             <div class="relative">
               <select
-                class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-lg!"
+                class="text-foreground w-full appearance-none rounded-xl border p-3 pe-10 font-normal! text-lg!"
               >
-                <option value="" disabled selected>تاریخ برگشت</option>
-                <option value="2026-10-05">۵ مهر ۱۴۰۵</option>
-                <option value="2026-10-10">۱۰ مهر ۱۴۰۵</option>
-                <option value="2026-10-15">۱۵ مهر ۱۴۰۵</option>
-                <option value="2026-10-20">۲۰ مهر ۱۴۰۵</option>
+                <option
+                  value=""
+                  disabled
+                  selected
+                  data-i18n="common.searchBox.returnDate.placeholder"
+                ></option>
+
+                <option
+                  value="2026-10-05"
+                  data-i18n="common.searchBox.returnDate.october5"
+                ></option>
+
+                <option
+                  value="2026-10-10"
+                  data-i18n="common.searchBox.returnDate.october10"
+                ></option>
+
+                <option
+                  value="2026-10-15"
+                  data-i18n="common.searchBox.returnDate.october15"
+                ></option>
+
+                <option
+                  value="2026-10-20"
+                  data-i18n="common.searchBox.returnDate.october20"
+                ></option>
               </select>
 
               <i
                 data-lucide="chevron-down"
-                class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
+                class="pointer-events-none absolute end-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
               ></i>
             </div>
 
             <div class="relative">
               <select
-                class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-lg!"
+                class="text-foreground w-full appearance-none rounded-xl border p-3 pe-10 font-normal! text-lg!"
               >
-                <option value="" disabled selected>نوع سفر</option>
-                <option value="one-way">یک طرفه</option>
-                <option value="round-trip">رفت و برگشت</option>
+                <option
+                  value=""
+                  disabled
+                  selected
+                  data-i18n="common.searchBox.tripType.placeholder"
+                ></option>
+
+                <option
+                  value="one-way"
+                  data-i18n="common.searchBox.tripType.oneWay"
+                ></option>
+
+                <option
+                  value="round-trip"
+                  data-i18n="common.searchBox.tripType.roundTrip"
+                ></option>
               </select>
 
               <i
                 data-lucide="chevron-down"
-                class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
+                class="pointer-events-none absolute end-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
               ></i>
             </div>
 
             <div class="relative">
               <select
-                class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-lg!"
+                class="text-foreground w-full appearance-none rounded-xl border p-3 pe-10 font-normal! text-lg!"
               >
-                <option value="" disabled selected>تعداد مسافران</option>
-                <option value="1">۱ مسافر</option>
-                <option value="2">۲ مسافر</option>
-                <option value="3">۳ مسافر</option>
-                <option value="4">۴ مسافر</option>
-                <option value="5">۵ مسافر</option>
+                <option
+                  value=""
+                  disabled
+                  selected
+                  data-i18n="common.searchBox.passengers.placeholder"
+                ></option>
+
+                <option
+                  value="1"
+                  data-i18n="common.searchBox.passengers.one"
+                ></option>
+
+                <option
+                  value="2"
+                  data-i18n="common.searchBox.passengers.two"
+                ></option>
+
+                <option
+                  value="3"
+                  data-i18n="common.searchBox.passengers.three"
+                ></option>
+
+                <option
+                  value="4"
+                  data-i18n="common.searchBox.passengers.four"
+                ></option>
+
+                <option
+                  value="5"
+                  data-i18n="common.searchBox.passengers.five"
+                ></option>
               </select>
 
               <i
                 data-lucide="chevron-down"
-                class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
+                class="pointer-events-none absolute end-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
               ></i>
             </div>
 
@@ -418,51 +660,85 @@
                 data-lucide="search"
                 class="size-6 transition-all duration-300 group-hover:scale-105"
               ></i>
-              <span class="text-xl font-bold">جستجو</span>
+              <span
+                data-i18n="common.searchBox.button"
+                class="text-xl font-bold"
+              ></span>
             </button>
           </div>
           <!--          search block end-->
           <div class="text-foreground items-center gap-2 hidden lg:flex">
             <i data-lucide="line-squiggle" class="size-5"></i>
-            <span class="text-xl font-[950]">مسیرهای پرتردد</span>
+
+            <span
+              class="text-xl font-[950]"
+              data-i18n="home.blurredCard.popularRoutes.title"
+            ></span>
+
             <div class="flex grow items-center gap-2">
-              <i data-lucide="chevron-right" class="size-6"></i>
+              <i data-lucide="chevron-right" class="size-6 ltr:rotate-180"></i>
+
               <div
                 class="border-b-foreground/40 flex grow items-center justify-center gap-2 rounded-xl border p-3 px-6 text-base font-medium"
               >
-                <span>تهران</span>
+                <span
+                  data-i18n="home.blurredCard.popularRoutes.routes.tehranKaraj.from"
+                ></span>
                 <i data-lucide="arrow-left-right" class="size-4"></i>
-                <span>کرج</span>
+                <span
+                  data-i18n="home.blurredCard.popularRoutes.routes.tehranKaraj.to"
+                ></span>
               </div>
+
               <div
                 class="border-b-foreground/40 flex grow items-center justify-center gap-2 rounded-xl border p-3 px-6 text-base font-medium"
               >
-                <span>تهران</span>
+                <span
+                  data-i18n="home.blurredCard.popularRoutes.routes.tehranGilan.from"
+                ></span>
                 <i data-lucide="arrow-left-right" class="size-4"></i>
-                <span>گیلان</span>
+                <span
+                  data-i18n="home.blurredCard.popularRoutes.routes.tehranGilan.to"
+                ></span>
               </div>
+
               <div
                 class="border-b-foreground/40 flex grow items-center justify-center gap-2 rounded-xl border p-3 px-6 text-base font-medium"
               >
-                <span>تهران</span>
+                <span
+                  data-i18n="home.blurredCard.popularRoutes.routes.tehranIstanbul.from"
+                ></span>
                 <i data-lucide="arrow-left-right" class="size-4"></i>
-                <span>استانبول</span>
+                <span
+                  data-i18n="home.blurredCard.popularRoutes.routes.tehranIstanbul.to"
+                ></span>
               </div>
+
               <div
                 class="border-b-foreground/40 flex grow items-center justify-center gap-2 rounded-xl border p-3 px-6 text-base font-medium"
               >
-                <span>تهران</span>
+                <span
+                  data-i18n="home.blurredCard.popularRoutes.routes.tehranMashhad.from"
+                ></span>
                 <i data-lucide="arrow-left-right" class="size-4"></i>
-                <span>مشهد</span>
+                <span
+                  data-i18n="home.blurredCard.popularRoutes.routes.tehranMashhad.to"
+                ></span>
               </div>
+
               <div
                 class="border-b-foreground/40 flex grow items-center justify-center gap-2 rounded-xl border p-3 px-6 text-base font-medium"
               >
-                <span>تهران</span>
+                <span
+                  data-i18n="home.blurredCard.popularRoutes.routes.tehranKish.from"
+                ></span>
                 <i data-lucide="arrow-left-right" class="size-4"></i>
-                <span>کیش</span>
+                <span
+                  data-i18n="home.blurredCard.popularRoutes.routes.tehranKish.to"
+                ></span>
               </div>
-              <i data-lucide="chevron-left" class="size-6"></i>
+
+              <i data-lucide="chevron-left" class="size-6 ltr:rotate-180"></i>
             </div>
           </div>
         </div>
@@ -480,11 +756,13 @@
             <div class="flex flex-col">
               <span
                 class="whitespace-nowrap text-lg md:text-[22px] font-extrabold"
-                >پرداخت امن</span
-              >
-              <span class="text-sm md:text-base whitespace-nowrap"
-                >با درگاه‌های معتبر‌بانکی</span
-              >
+                data-i18n="home.pros.securePayment.title"
+              ></span>
+
+              <span
+                class="text-sm md:text-base whitespace-nowrap"
+                data-i18n="home.pros.securePayment.description"
+              ></span>
             </div>
           </div>
           <div
@@ -496,11 +774,13 @@
             <div class="flex flex-col">
               <span
                 class="whitespace-nowrap text-lg md:text-[22px] font-extrabold"
-                >پشتیبانی 24/7</span
-              >
-              <span class="text-sm md:text-base whitespace-nowrap"
-                >کنار شما هستیم!</span
-              >
+                data-i18n="home.pros.support.title"
+              ></span>
+
+              <span
+                class="text-sm md:text-base whitespace-nowrap"
+                data-i18n="home.pros.support.description"
+              ></span>
             </div>
           </div>
           <div
@@ -512,11 +792,13 @@
             <div class="flex flex-col">
               <span
                 class="whitespace-nowrap text-lg md:text-[22px] font-extrabold"
-                >تضـــــمین قیمت</span
-              >
-              <span class="text-sm md:text-base whitespace-nowrap"
-                >بهترین پیشنهاد قیمتی!</span
-              >
+                data-i18n="home.pros.priceGuarantee.title"
+              ></span>
+
+              <span
+                class="text-sm md:text-base whitespace-nowrap"
+                data-i18n="home.pros.priceGuarantee.description"
+              ></span>
             </div>
           </div>
           <div
@@ -528,11 +810,13 @@
             <div class="flex flex-col">
               <span
                 class="whitespace-nowrap text-lg md:text-[22px] font-extrabold"
-                >رزرو سریع</span
-              >
-              <span class="text-sm md:text-base whitespace-nowrap"
-                >فقط در چند دقیقه!</span
-              >
+                data-i18n="home.pros.fastBooking.title"
+              ></span>
+
+              <span
+                class="text-sm md:text-base whitespace-nowrap"
+                data-i18n="home.pros.fastBooking.description"
+              ></span>
             </div>
           </div>
         </div>
@@ -548,21 +832,24 @@
             <div
               class="absolute top-[8%] left-1/2 z-10 flex w-full -translate-x-1/2 flex-col items-center justify-center gap-1.5"
             >
-              <p class="font-[950] text-lg text-center md:text-2xl">
-                تورهای داخلی و خارجی مرداد
-              </p>
-              <p class="text-xs text-center md:text-base">
-                وقتشه یه سفر تازه رو تجربه کنی!
-              </p>
+              <p
+                class="font-[950] text-lg text-center md:text-2xl"
+                data-i18n="home.imagesGrid.first.title"
+              ></p>
+              <p
+                class="text-xs text-center md:text-base"
+                data-i18n="home.imagesGrid.first.description"
+              ></p>
               <button
                 class="flex items-center rounded-full bg-white p-2 md:p-2.5 text-black group transition-all duration-300 hover:brightness-90"
               >
-                <span class="text-xs md:text-sm font-[450]">
-                  مشاهده تورها
-                </span>
+                <span
+                  class="text-xs md:text-sm font-[450]"
+                  data-i18n="home.imagesGrid.first.button"
+                ></span>
                 <i
                   data-lucide="chevron-left"
-                  class="size-3.25 group-hover:-translate-x-1 transition-all duration-300"
+                  class="size-3.25 rtl:group-hover:-translate-x-1 ltr:group-hover:translate-x-1 transition-all duration-300 ltr:rotate-180"
                 ></i>
               </button>
             </div>
@@ -581,21 +868,24 @@
             <div
               class="absolute top-[8%] left-1/2 z-10 flex w-full -translate-x-1/2 flex-col items-center justify-center gap-1.5"
             >
-              <p class="font-[950] text-lg text-center md:text-2xl">
-                تورهای داخلی و خارجی مرداد
-              </p>
-              <p class="text-xs text-center md:text-base">
-                وقتشه یه سفر تازه رو تجربه کنی!
-              </p>
+              <p
+                class="font-[950] text-lg text-center md:text-2xl"
+                data-i18n="home.imagesGrid.second.title"
+              ></p>
+              <p
+                class="text-xs text-center md:text-base"
+                data-i18n="home.imagesGrid.second.description"
+              ></p>
               <button
                 class="flex items-center rounded-full bg-white p-2 md:p-2.5 text-black group transition-all duration-300 hover:brightness-90"
               >
-                <span class="text-xs md:text-sm font-[450]">
-                  مشاهده تورها
-                </span>
+                <span
+                  class="text-xs md:text-sm font-[450]"
+                  data-i18n="home.imagesGrid.second.button"
+                ></span>
                 <i
                   data-lucide="chevron-left"
-                  class="size-3.25 group-hover:-translate-x-1 transition-all duration-300"
+                  class="size-3.25 rtl:group-hover:-translate-x-1 ltr:group-hover:translate-x-1 transition-all duration-300 ltr:rotate-180"
                 ></i>
               </button>
             </div>
@@ -611,10 +901,10 @@
           <div
             class="relative col-span-2 lg:col-span-3 gap-2 h-[38vh] lg:h-auto order-1 md:order-3"
           >
-            <div class="absolute top-[8%] left-0 justify-center flex flex-col">
+            <div class="absolute top-[8%] inset-e-2 justify-center flex flex-col">
               <div class="flex items-center">
                 <div
-                  class="bg-destructive -ml-3 rounded-full p-2.25 md:p-2.5 z-10"
+                  class="bg-destructive -me-3 rounded-full p-2.25 md:p-2.5 z-10"
                 >
                   <i
                     data-lucide="flame"
@@ -623,23 +913,23 @@
                 </div>
                 <p
                   class="bg-destructive/37 backdrop-blur-xs rounded-full md:py-2.5 py-1.75 px-4 text-lg md:text-2xl text-white font-black"
-                >
-                  پیشنهاد ویژه امروز
-                </p>
+                  data-i18n="home.imagesGrid.third.specialOffer"
+                ></p>
               </div>
               <div
                 class="flex grow items-center justify-center gap-2 p-3 px-6 text-xl md:text-3xl font-extrabold text-black"
               >
-                <span>تهران</span>
+                <span data-i18n="home.imagesGrid.third.from"></span>
                 <i data-lucide="arrow-left-right" class="size-6"></i>
-                <span>استانبول</span>
+                <span data-i18n="home.imagesGrid.third.to"></span>
               </div>
-              <p class="text-black text-center text-xs md:text-sm">
-                لورم ایپسوم متن نمایشی با تولید .
-              </p>
+              <p
+                class="text-black text-center text-xs md:text-sm"
+                data-i18n="home.imagesGrid.third.description"
+              ></p>
             </div>
             <div
-              class="absolute bottom-6 left-6 z-10 flex flex-col gap-0 font-extrabold text-white"
+              class="absolute bottom-6 inset-e-6 z-10 flex flex-col gap-0 font-extrabold text-white"
             >
               <span
                 class="text-shadow-[0_4px_6px_rgba(0,0,0,0.7)] text-sm md:text-lg"
@@ -652,12 +942,15 @@
               </p>
               <div class="flex justify-end">
                 <button
-                  class="flex w-fit items-center gap-1 justify-center rounded-full bg-white py-2 ps-4 pl-2 text-black group transition-all duration-300 hover:brightness-90"
+                  class="flex w-fit items-center gap-1 justify-center rounded-full bg-white py-2 px-1 ps-4 pe-2 text-black group transition-all duration-300 hover:brightness-90"
                 >
-                  <span class="text-xs md:text-sm font-medium">جزئیات</span>
+                  <span
+                    class="text-xs md:text-sm font-medium"
+                    data-i18n="home.imagesGrid.third.button"
+                  ></span>
                   <i
                     data-lucide="chevron-left"
-                    class="size-3.5 group-hover:-translate-x-1 transition-all duration-300"
+                    class="size-3.5 rtl:group-hover:-translate-x-1 ltr:group-hover:translate-x-1 ltr:rotate-180 transition-all duration-300"
                   ></i>
                 </button>
               </div>
@@ -683,11 +976,15 @@
               data-lucide="megaphone"
               class="text-primary size-5 md:size-6"
             ></i>
-            <p class="text-xl md:text-2xl font-extrabold">کجا بریم؟</p>
+            <p
+              class="text-xl md:text-2xl font-extrabold"
+              data-i18n="home.whereToGo.title"
+            ></p>
           </div>
-          <p class="text-xs md:text-sm font-medium">
-            محبوبترین مقصدها رو ببین و سفرت رو انتخاب کن!
-          </p>
+          <p
+            class="text-xs md:text-sm font-medium"
+            data-i18n="home.whereToGo.description"
+          ></p>
           <div class="swiper mySwiper w-full pt-2! pb-6!">
             <div class="swiper-wrapper">
               <div
@@ -699,14 +996,16 @@
                   class="h-full w-full rounded-xl object-cover"
                 />
                 <button class="bg-ring/10 w-full rounded-full py-2 md:py-2.5">
-                  <span class="text-foreground/80 font-medium md:text-lg">
-                    تور‌های استانبول
-                  </span>
+                  <span
+                    class="text-foreground/80 font-medium md:text-lg"
+                    data-i18n="home.whereToGo.items.istanbul.title"
+                  ></span>
                 </button>
                 <div class="flex items-center justify-between">
-                  <span class="text-foreground/70 text-xs md:text-sm"
-                    >شروع قیمت از</span
-                  >
+                  <span
+                    class="text-foreground/70 text-xs md:text-sm"
+                    data-i18n="home.whereToGo.items.istanbul.priceFrom"
+                  ></span>
                   <div>
                     <span
                       class="text-foreground/80 font-extrabold text-sm md:text-base"
@@ -728,14 +1027,16 @@
                   class="h-full w-full rounded-xl object-cover"
                 />
                 <button class="bg-ring/10 w-full rounded-full py-2 md:py-2.5">
-                  <span class="text-foreground/80 font-medium md:text-lg">
-                    تورهای تایلند
-                  </span>
+                  <span
+                    class="text-foreground/80 font-medium md:text-lg"
+                    data-i18n="home.whereToGo.items.thailand.title"
+                  ></span>
                 </button>
                 <div class="flex items-center justify-between">
-                  <span class="text-foreground/70 text-xs md:text-sm"
-                    >شروع قیمت از</span
-                  >
+                  <span
+                    class="text-foreground/70 text-xs md:text-sm"
+                    data-i18n="home.whereToGo.items.thailand.priceFrom"
+                  ></span>
                   <div>
                     <span
                       class="text-foreground/80 font-extrabold text-sm md:text-base"
@@ -757,14 +1058,16 @@
                   class="h-full w-full rounded-xl object-cover"
                 />
                 <button class="bg-ring/10 w-full rounded-full py-2 md:py-2.5">
-                  <span class="text-foreground/80 font-medium md:text-lg">
-                    تورهای گرجستان
-                  </span>
+                  <span
+                    class="text-foreground/80 font-medium md:text-lg"
+                    data-i18n="home.whereToGo.items.georgia.title"
+                  ></span>
                 </button>
                 <div class="flex items-center justify-between">
-                  <span class="text-foreground/70 text-xs md:text-sm"
-                    >شروع قیمت از</span
-                  >
+                  <span
+                    class="text-foreground/70 text-xs md:text-sm"
+                    data-i18n="home.whereToGo.items.georgia.priceFrom"
+                  ></span>
                   <div>
                     <span
                       class="text-foreground/80 font-extrabold text-sm md:text-base"
@@ -786,14 +1089,16 @@
                   class="h-full w-full rounded-xl object-cover"
                 />
                 <button class="bg-ring/10 w-full rounded-full py-2 md:py-2.5">
-                  <span class="text-foreground/80 font-medium md:text-lg">
-                    تورهای مالزی
-                  </span>
+                  <span
+                    class="text-foreground/80 font-medium md:text-lg"
+                    data-i18n="home.whereToGo.items.malaysia.title"
+                  ></span>
                 </button>
                 <div class="flex items-center justify-between">
-                  <span class="text-foreground/70 text-xs md:text-sm"
-                    >شروع قیمت از</span
-                  >
+                  <span
+                    class="text-foreground/70 text-xs md:text-sm"
+                    data-i18n="home.whereToGo.items.malaysia.priceFrom"
+                  ></span>
                   <div>
                     <span
                       class="text-foreground/80 font-extrabold text-sm md:text-base"
@@ -815,14 +1120,16 @@
                   class="h-full w-full rounded-xl object-cover"
                 />
                 <button class="bg-ring/10 w-full rounded-full py-2 md:py-2.5">
-                  <span class="text-foreground/80 font-medium md:text-lg">
-                    تورهای کرج
-                  </span>
+                  <span
+                    class="text-foreground/80 font-medium md:text-lg"
+                    data-i18n="home.whereToGo.items.istanbul.title"
+                  ></span>
                 </button>
                 <div class="flex items-center justify-between">
-                  <span class="text-foreground/70 text-xs md:text-sm"
-                    >شروع قیمت از</span
-                  >
+                  <span
+                    class="text-foreground/70 text-xs md:text-sm"
+                    data-i18n="home.whereToGo.items.istanbul.priceFrom"
+                  ></span>
                   <div>
                     <span
                       class="text-foreground/80 font-extrabold text-sm md:text-base"
@@ -841,34 +1148,36 @@
             ></div>
           </div>
           <button
-            class="swiper-button-prev !h-16 md:!h-24 translate-x-1/2 !-translate-y-1/2 !rounded-full border !bg-white/70 !shadow-[3px_4px_4px_rgba(0,0,0,0.2)] md:!shadow-[5px_8px_8px_rgba(0,0,0,0.36)] !backdrop-blur-xs !w-9 md:w-11!"
+            class="swiper-button-prev !h-16 md:!h-24 rtl:translate-x-1/2 ltr:-translate-x-1/2 !-translate-y-1/2 !rounded-full border !bg-white/70 !shadow-[3px_4px_4px_rgba(0,0,0,0.2)] md:!shadow-[5px_8px_8px_rgba(0,0,0,0.36)] !backdrop-blur-xs !w-9 md:w-11!"
           >
             <i
               data-lucide="chevron-right"
-              class="size-5! md:size-7! fill-transparent!"
+              class="size-5! md:size-7! fill-transparent! ltr:rotate-180"
             ></i>
           </button>
           <button
-            class="swiper-button-next !h-16 md:!h-24 -translate-x-1/2 !-translate-y-1/2 !rounded-full border !bg-white/70 !shadow-[3px_4px_4px_rgba(0,0,0,0.2)] md:!shadow-[5px_8px_8px_rgba(0,0,0,0.36)] !backdrop-blur-xs !w-9 md:w-11!"
+            class="swiper-button-next !h-16 md:!h-24 rtl:-translate-x-1/2 ltr:translate-x-1/2 !-translate-y-1/2 !rounded-full border !bg-white/70 !shadow-[3px_4px_4px_rgba(0,0,0,0.2)] md:!shadow-[5px_8px_8px_rgba(0,0,0,0.36)] !backdrop-blur-xs !w-9 md:w-11!"
           >
             <i
               data-lucide="chevron-left"
-              class="size-5! md:size-7! fill-transparent!"
+              class="size-5! md:size-7! fill-transparent! ltr:rotate-180"
             ></i>
           </button>
           <button
             class="bg-light-primary gradient-overlay mx-auto flex w-fit items-center gap-1 rounded-full px-4 py-3 text-white ransition-all duration-300 hover:brightness-120 group"
           >
-            <span class="font-medium">مشاهده همه</span>
+            <span data-i18n="common.seeAll" class="font-medium"
+              >مشاهده همه</span
+            >
             <i
               data-lucide="chevron-left"
-              class="size-4 transition-transform duration-300 group-hover:-translate-x-1"
+              class="size-4 transition-transform duration-300 rtl:group-hover:-translate-x-1 ltr:group-hover:translate-x-1 ltr:rotate-180"
             ></i>
           </button>
         </div>
         <!--    where to go end-->
         <!--        decorations-->
-        <div class="absolute bottom-[-6%] md:bottom-[-12%] z-10 w-20 md:w-auto">
+        <div class="absolute bottom-[-6%] md:bottom-[-12%] z-10 w-20 md:w-auto ltr:scale-x-[-1]">
           <div
             class="bg-primary/60 absolute inset-0 h-full w-[50%] rounded-full blur-3xl"
           ></div>
@@ -880,7 +1189,7 @@
           />
         </div>
         <div
-          class="absolute bottom-[-18%] left-0 z-10 scale-x-[-1] hidden md:block"
+          class="absolute bottom-[-18%] end-0 z-10 rtl:scale-x-[-1] hidden md:block"
         >
           <div
             class="bg-primary/60 absolute inset-0 h-full w-[50%] rounded-full blur-3xl"
@@ -909,16 +1218,16 @@
                   data-lucide="star"
                   class="text-secondary fill-secondary size-5 md:size-6"
                 ></i>
-                <p class="text-xl md:text-2xl font-extrabold">
-                  با این بودجه کجا میتونم برم؟
-                </p>
+                <p
+                  class="text-xl md:text-2xl font-extrabold"
+                  data-i18n="home.budget.title"
+                ></p>
               </div>
               <p>
                 <span
                   class="text-foreground/70 text-[12px] md:text-sm p-1.5 md:p-2 rounded-full bg-foreground/4"
-                >
-                  بودجه سفرت رو مشخص کن مقصد رو بهت پیشنهاد بدیم!
-                </span>
+                  data-i18n="home.budget.description"
+                ></span>
               </p>
             </div>
             <div class="col-span-2 block md:hidden mx-auto">
@@ -933,9 +1242,9 @@
                 class="rounded-full w-2/3 lg:w-1/3 text-center py-3 bg-light-primary gradient-overlay"
               >
                 <span class="text-white font-bold text-lg">
-                  بودجه شما:
+                  <span data-i18n="home.budget.valueLabel"></span>
                   <span id="budget-value">15</span>
-                  میلیون
+                  <span data-i18n="home.budget.currency"></span>
                 </span>
               </div>
               <button
@@ -968,7 +1277,10 @@
               </span>
             </div>
             <div class="flex flex-col gap-1.5 md:mt-5">
-              <h4 class="md:text-xl font-extrabold">نتایج(4)</h4>
+              <h4 class="md:text-xl font-extrabold">
+                <span data-i18n="home.budget.results.title"></span>
+                (<span id="budget-results-count">4</span>)
+              </h4>
               <div class="swiper budgetSwiper w-full py-2! md:py-4! px-1!">
                 <div class="swiper-wrapper">
                   <div
@@ -980,8 +1292,15 @@
                       class="rounded-2xl md:rounded-3xl w-[50%] h-full object-cover"
                     />
                     <div class="flex flex-col gap-1">
-                      <span class="md:text-lg font-medium">استانبول</span>
-                      <span class="font-medium md:text-lg">3 روز</span>
+                      <span
+                        class="md:text-lg font-medium"
+                        data-i18n="home.budget.results.items.istanbul.destination"
+                      ></span>
+
+                      <span
+                        class="font-medium md:text-lg"
+                        data-i18n="home.budget.results.items.istanbul.duration"
+                      ></span>
                       <div class="mt-3">
                         <p class="font-extrabold lg:text-lg text-foreground/80">
                           4.700.000
@@ -1001,8 +1320,15 @@
                       class="rounded-2xl md:rounded-3xl w-[50%] h-full object-cover"
                     />
                     <div class="flex flex-col gap-1">
-                      <span class="md:text-lg font-medium">استانبول</span>
-                      <span class="font-medium md:text-lg">3 روز</span>
+                      <span
+                        class="md:text-lg font-medium"
+                        data-i18n="home.budget.results.items.istanbul.destination"
+                      ></span>
+
+                      <span
+                        class="font-medium md:text-lg"
+                        data-i18n="home.budget.results.items.istanbul.duration"
+                      ></span>
                       <div class="mt-3">
                         <p class="font-extrabold lg:text-lg text-foreground/80">
                           4.700.000
@@ -1022,8 +1348,15 @@
                       class="rounded-2xl md:rounded-3xl w-[50%] h-full object-cover"
                     />
                     <div class="flex flex-col gap-1">
-                      <span class="md:text-lg font-medium">استانبول</span>
-                      <span class="font-medium md:text-lg">3 روز</span>
+                      <span
+                        class="md:text-lg font-medium"
+                        data-i18n="home.budget.results.items.istanbul.destination"
+                      ></span>
+
+                      <span
+                        class="font-medium md:text-lg"
+                        data-i18n="home.budget.results.items.istanbul.duration"
+                      ></span>
                       <div class="mt-3">
                         <p class="font-extrabold lg:text-lg text-foreground/80">
                           4.700.000
@@ -1043,8 +1376,15 @@
                       class="rounded-2xl md:rounded-3xl w-[50%] h-full object-cover"
                     />
                     <div class="flex flex-col gap-1">
-                      <span class="md:text-lg font-medium">استانبول</span>
-                      <span class="font-medium md:text-lg">3 روز</span>
+                      <span
+                        class="md:text-lg font-medium"
+                        data-i18n="home.budget.results.items.istanbul.destination"
+                      ></span>
+
+                      <span
+                        class="font-medium md:text-lg"
+                        data-i18n="home.budget.results.items.istanbul.duration"
+                      ></span>
                       <div class="mt-3">
                         <p class="font-extrabold lg:text-lg text-foreground/80">
                           4.700.000
@@ -1080,13 +1420,15 @@
                   data-lucide="zap"
                   class="size-5 md:size-6 fill-secondary text-secondary"
                 ></i>
-                <p class="text-2xl md:text-3xl font-extrabold text-white">
-                  لحظه آخری
-                </p>
+                <p
+                  class="text-2xl md:text-3xl font-extrabold text-white"
+                  data-i18n="home.lastMoment.title"
+                ></p>
               </div>
-              <p class="text-white font-bold text-xs text-center md:text-base">
-                بهتزین قیمت‌ها درست قبل از اینکه دیر بشه!
-              </p>
+              <p
+                class="text-white font-bold text-xs text-center md:text-base"
+                data-i18n="home.lastMoment.description"
+              ></p>
             </div>
             <div class="flex gap-1.5 justify-center">
               <div class="flex flex-col gap-1 items-center">
@@ -1095,7 +1437,10 @@
                 >
                   <span class="font-extrabold text-lg md:text-xl"> 58 </span>
                 </button>
-                <span class="text-white text-[10px] font-bold">ثانیه</span>
+                <span
+                  class="text-white text-[10px] font-bold"
+                  data-i18n="home.lastMoment.timer.seconds"
+                ></span>
               </div>
               <div class="flex flex-col gap-1 items-center">
                 <button
@@ -1103,7 +1448,10 @@
                 >
                   <span class="font-extrabold text-lg md:text-xl"> 23 </span>
                 </button>
-                <span class="text-white text-[10px] font-bold">دقیقه</span>
+                <span
+                  class="text-white text-[10px] font-bold"
+                  data-i18n="home.lastMoment.timer.minutes"
+                ></span>
               </div>
               <div class="flex flex-col gap-1 items-center">
                 <button
@@ -1111,7 +1459,10 @@
                 >
                   <span class="font-extrabold text-lg md:text-xl"> 02 </span>
                 </button>
-                <span class="text-white text-[10px] font-bold">ساعت</span>
+                <span
+                  class="text-white text-[10px] font-bold"
+                  data-i18n="home.lastMoment.timer.hours"
+                ></span>
               </div>
               <div class="flex flex-col gap-1 items-center">
                 <button
@@ -1119,8 +1470,8 @@
                 >
                   <span
                     class="text-white font-extrabold whitespace-nowrap text-sm md:text-base"
+                    data-i18n="common.seeAll"
                   >
-                    مشاهده همه
                   </span>
                 </button>
               </div>
@@ -1136,11 +1487,15 @@
                   alt="where to go 1"
                   class="h-full w-full rounded-xl object-cover"
                 />
-                <span class="font-extrabold md:text-xl"> تور روسیه </span>
+                <span
+                  class="font-extrabold md:text-xl"
+                  data-i18n="home.lastMoment.items.russia.title"
+                ></span>
                 <div class="flex items-center justify-between mt-2">
-                  <span class="text-[10px] md:text-xs font-medium"
-                    >قیمت از</span
-                  >
+                  <span
+                    class="text-[10px] md:text-xs font-medium"
+                    data-i18n="home.lastMoment.items.russia.priceFrom"
+                  ></span>
                   <div>
                     <span class="md:text-2xl font-extrabold"> 6.750.000</span>
                     <span class="text-[10px] md:text-xs font-medium"
@@ -1153,8 +1508,8 @@
                     class="bg-secondary rounded-full md:py-0.5 px-2 md:px-3"
                   >
                     <span class="text-xs md:text-sm font-bold whitespace-nowrap"
-                      >60% تخفیف</span
-                    >
+                      >60% <span data-i18n="common.discount"></span
+                    ></span>
                   </button>
                   <span class="line-through text-white/50 md:text-xl font-[350]"
                     >26.750.000</span
@@ -1169,11 +1524,15 @@
                   alt="where to go 1"
                   class="h-full w-full rounded-xl object-cover"
                 />
-                <span class="font-extrabold md:text-xl"> تور روسیه </span>
+                <span
+                  class="font-extrabold md:text-xl"
+                  data-i18n="home.lastMoment.items.russia.title"
+                ></span>
                 <div class="flex items-center justify-between mt-2">
-                  <span class="text-[10px] md:text-xs font-medium"
-                    >قیمت از</span
-                  >
+                  <span
+                    class="text-[10px] md:text-xs font-medium"
+                    data-i18n="home.lastMoment.items.russia.priceFrom"
+                  ></span>
                   <div>
                     <span class="md:text-2xl font-extrabold"> 6.750.000</span>
                     <span class="text-[10px] md:text-xs font-medium"
@@ -1186,42 +1545,8 @@
                     class="bg-secondary rounded-full md:py-0.5 px-2 md:px-3"
                   >
                     <span class="text-xs md:text-sm font-bold whitespace-nowrap"
-                      >60% تخفیف</span
-                    >
-                  </button>
-                  <span class="line-through text-white/50 md:text-xl font-[350]"
-                    >26.750.000</span
-                  >
-                </div>
-              </div>
-
-              <div
-                class="swiper-slide transition-all! duration-300! hover:bg-white/35 hover:cursor-pointer rounded-3xl md:rounded-4xl p-3 md:p-4.5 border border-white/40! bg-white/25 text-white shadow-[inset_0_0_30px_rgba(255,255,255),0_4px_30px_rgba(0,0,0,0.08)] backdrop-blur-[6px] space-y-1"
-              >
-                <img
-                  src="/images/home/last-minute/place-flying-sunset-sky%204.png"
-                  alt="where to go 1"
-                  class="h-full w-full rounded-xl object-cover"
-                />
-                <span class="font-extrabold md:text-xl"> تور روسیه </span>
-                <div class="flex items-center justify-between mt-2">
-                  <span class="text-[10px] md:text-xs font-medium"
-                    >قیمت از</span
-                  >
-                  <div>
-                    <span class="md:text-2xl font-extrabold"> 6.750.000</span>
-                    <span class="text-[10px] md:text-xs font-medium"
-                      >تومان</span
-                    >
-                  </div>
-                </div>
-                <div class="flex items-center justify-between">
-                  <button
-                    class="bg-secondary rounded-full md:py-0.5 px-2 md:px-3"
-                  >
-                    <span class="text-xs md:text-sm font-bold whitespace-nowrap"
-                      >60% تخفیف</span
-                    >
+                      >60% <span data-i18n="common.discount"></span
+                    ></span>
                   </button>
                   <span class="line-through text-white/50 md:text-xl font-[350]"
                     >26.750.000</span
@@ -1237,11 +1562,15 @@
                   alt="where to go 1"
                   class="h-full w-full rounded-xl object-cover"
                 />
-                <span class="font-extrabold md:text-xl"> تور روسیه </span>
+                <span
+                  class="font-extrabold md:text-xl"
+                  data-i18n="home.lastMoment.items.russia.title"
+                ></span>
                 <div class="flex items-center justify-between mt-2">
-                  <span class="text-[10px] md:text-xs font-medium"
-                    >قیمت از</span
-                  >
+                  <span
+                    class="text-[10px] md:text-xs font-medium"
+                    data-i18n="home.lastMoment.items.russia.priceFrom"
+                  ></span>
                   <div>
                     <span class="md:text-2xl font-extrabold"> 6.750.000</span>
                     <span class="text-[10px] md:text-xs font-medium"
@@ -1254,8 +1583,8 @@
                     class="bg-secondary rounded-full md:py-0.5 px-2 md:px-3"
                   >
                     <span class="text-xs md:text-sm font-bold whitespace-nowrap"
-                      >60% تخفیف</span
-                    >
+                      >60% <span data-i18n="common.discount"></span
+                    ></span>
                   </button>
                   <span class="line-through text-white/50 md:text-xl font-[350]"
                     >26.750.000</span
@@ -1271,11 +1600,15 @@
                   alt="where to go 1"
                   class="h-full w-full rounded-xl object-cover"
                 />
-                <span class="font-extrabold md:text-xl"> تور روسیه </span>
+                <span
+                  class="font-extrabold md:text-xl"
+                  data-i18n="home.lastMoment.items.russia.title"
+                ></span>
                 <div class="flex items-center justify-between mt-2">
-                  <span class="text-[10px] md:text-xs font-medium"
-                    >قیمت از</span
-                  >
+                  <span
+                    class="text-[10px] md:text-xs font-medium"
+                    data-i18n="home.lastMoment.items.russia.priceFrom"
+                  ></span>
                   <div>
                     <span class="md:text-2xl font-extrabold"> 6.750.000</span>
                     <span class="text-[10px] md:text-xs font-medium"
@@ -1288,8 +1621,46 @@
                     class="bg-secondary rounded-full md:py-0.5 px-2 md:px-3"
                   >
                     <span class="text-xs md:text-sm font-bold whitespace-nowrap"
-                      >60% تخفیف</span
-                    >
+                      >60% <span data-i18n="common.discount"></span
+                    ></span>
+                  </button>
+                  <span class="line-through text-white/50 md:text-xl font-[350]"
+                    >26.750.000</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="swiper-slide transition-all! duration-300! hover:bg-white/35 hover:cursor-pointer rounded-3xl md:rounded-4xl p-3 md:p-4.5 border border-white/40! bg-white/25 text-white shadow-[inset_0_0_30px_rgba(255,255,255),0_4px_30px_rgba(0,0,0,0.08)] backdrop-blur-[6px] space-y-1"
+              >
+                <img
+                  src="/images/home/last-minute/place-flying-sunset-sky%204.png"
+                  alt="where to go 1"
+                  class="h-full w-full rounded-xl object-cover"
+                />
+                <span
+                  class="font-extrabold md:text-xl"
+                  data-i18n="home.lastMoment.items.russia.title"
+                ></span>
+                <div class="flex items-center justify-between mt-2">
+                  <span class="text-[10px] md:text-xs font-medium"
+                    >قیمت از</span
+                  >
+                  <div>
+                    <span class="md:text-2xl font-extrabold"> 6.750.000</span>
+                    <span
+                      class="text-[10px] md:text-xs font-medium"
+                      data-i18n="home.lastMoment.items.russia.priceFrom"
+                    ></span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <button
+                    class="bg-secondary rounded-full md:py-0.5 px-2 md:px-3"
+                  >
+                    <span class="text-xs md:text-sm font-bold whitespace-nowrap"
+                      >60% <span data-i18n="common.discount"></span
+                    ></span>
                   </button>
                   <span class="line-through text-white/50 md:text-xl font-[350]"
                     >26.750.000</span
@@ -1306,7 +1677,7 @@
           >
             <i
               data-lucide="chevron-right"
-              class="size-5! md:size-7! fill-transparent!"
+              class="size-5! md:size-7! fill-transparent! ltr:rotate-180"
             ></i>
           </button>
           <button
@@ -1314,7 +1685,7 @@
           >
             <i
               data-lucide="chevron-left"
-              class="size-5! md:size-7! fill-transparent!"
+              class="size-5! md:size-7! fill-transparent! ltr:rotate-180"
             ></i>
           </button>
         </div>
@@ -1328,13 +1699,15 @@
               data-lucide="hotel"
               class="text-primary size-5 md:size-6"
             ></span>
-            <p class="text-xl md:text-2xl font-extrabold">
-              هتل‌های برتر و پربازدید
-            </p>
+            <p
+              class="text-xl md:text-2xl font-extrabold"
+              data-i18n="home.topHotels.title"
+            ></p>
           </div>
-          <p class="text-xs md:text-sm font-medium">
-            محبوبترین هتل‌ها رو ببین و هتلت رو انتخاب کن!
-          </p>
+          <p
+            class="text-xs md:text-sm font-medium"
+            data-i18n="home.topHotels.description"
+          ></p>
           <div class="swiper mySwiper w-full pt-2! pb-6!">
             <div class="swiper-wrapper">
               <div
@@ -1346,8 +1719,10 @@
                   class="h-full w-full rounded-xl object-cover"
                 />
                 <div class="flex justify-between items-center">
-                  <span class="text-base md:text-lg font-medium">
-                    هتل سی نور مشهد
+                  <span
+                    class="text-base md:text-lg font-medium"
+                    data-i18n="home.topHotels.items.title"
+                  >
                   </span>
                   <div class="flex gap-1 items-center">
                     <span class="text-sm md:text-base">(4.0)</span>
@@ -1359,14 +1734,14 @@
                 </div>
                 <p
                   class="text-foreground/70 text-[10px] line-clamp-1 md:text-xs text-start"
-                >
-                  مشهد خیابان هفده شهریور
-                </p>
+                  data-i18n="home.topHotels.items.address"
+                ></p>
 
                 <div class="flex items-center justify-between">
-                  <span class="text-foreground/70 text-xs md:text-sm"
-                    >شروع قیمت از</span
-                  >
+                  <span
+                    class="text-foreground/70 text-xs md:text-sm"
+                    data-i18n="home.topHotels.items.priceFrom"
+                  ></span>
                   <div>
                     <span
                       class="text-foreground text-sm md:text-base font-bold"
@@ -1388,8 +1763,10 @@
                   class="h-full w-full rounded-xl object-cover"
                 />
                 <div class="flex justify-between items-center">
-                  <span class="text-base md:text-lg font-medium">
-                    هتل سی نور مشهد
+                  <span
+                    class="text-base md:text-lg font-medium"
+                    data-i18n="home.topHotels.items.title"
+                  >
                   </span>
                   <div class="flex gap-1 items-center">
                     <span class="text-sm md:text-base">(4.0)</span>
@@ -1401,14 +1778,14 @@
                 </div>
                 <p
                   class="text-foreground/70 text-[10px] line-clamp-1 md:text-xs text-start"
-                >
-                  مشهد خیابان هفده شهریور
-                </p>
+                  data-i18n="home.topHotels.items.address"
+                ></p>
 
                 <div class="flex items-center justify-between">
-                  <span class="text-foreground/70 text-xs md:text-sm"
-                    >شروع قیمت از</span
-                  >
+                  <span
+                    class="text-foreground/70 text-xs md:text-sm"
+                    data-i18n="home.topHotels.items.priceFrom"
+                  ></span>
                   <div>
                     <span
                       class="text-foreground text-sm md:text-base font-bold"
@@ -1430,8 +1807,10 @@
                   class="h-full w-full rounded-xl object-cover"
                 />
                 <div class="flex justify-between items-center">
-                  <span class="text-base md:text-lg font-medium">
-                    هتل سی نور مشهد
+                  <span
+                    class="text-base md:text-lg font-medium"
+                    data-i18n="home.topHotels.items.title"
+                  >
                   </span>
                   <div class="flex gap-1 items-center">
                     <span class="text-sm md:text-base">(4.0)</span>
@@ -1443,14 +1822,14 @@
                 </div>
                 <p
                   class="text-foreground/70 text-[10px] line-clamp-1 md:text-xs text-start"
-                >
-                  مشهد خیابان هفده شهریور
-                </p>
+                  data-i18n="home.topHotels.items.address"
+                ></p>
 
                 <div class="flex items-center justify-between">
-                  <span class="text-foreground/70 text-xs md:text-sm"
-                    >شروع قیمت از</span
-                  >
+                  <span
+                    class="text-foreground/70 text-xs md:text-sm"
+                    data-i18n="home.topHotels.items.priceFrom"
+                  ></span>
                   <div>
                     <span
                       class="text-foreground text-sm md:text-base font-bold"
@@ -1472,8 +1851,10 @@
                   class="h-full w-full rounded-xl object-cover"
                 />
                 <div class="flex justify-between items-center">
-                  <span class="text-base md:text-lg font-medium">
-                    هتل سی نور مشهد
+                  <span
+                    class="text-base md:text-lg font-medium"
+                    data-i18n="home.topHotels.items.title"
+                  >
                   </span>
                   <div class="flex gap-1 items-center">
                     <span class="text-sm md:text-base">(4.0)</span>
@@ -1485,14 +1866,14 @@
                 </div>
                 <p
                   class="text-foreground/70 text-[10px] line-clamp-1 md:text-xs text-start"
-                >
-                  مشهد خیابان هفده شهریور
-                </p>
+                  data-i18n="home.topHotels.items.address"
+                ></p>
 
                 <div class="flex items-center justify-between">
-                  <span class="text-foreground/70 text-xs md:text-sm"
-                    >شروع قیمت از</span
-                  >
+                  <span
+                    class="text-foreground/70 text-xs md:text-sm"
+                    data-i18n="home.topHotels.items.priceFrom"
+                  ></span>
                   <div>
                     <span
                       class="text-foreground text-sm md:text-base font-bold"
@@ -1514,8 +1895,10 @@
                   class="h-full w-full rounded-xl object-cover"
                 />
                 <div class="flex justify-between items-center">
-                  <span class="text-base md:text-lg font-medium">
-                    هتل سی نور مشهد
+                  <span
+                    class="text-base md:text-lg font-medium"
+                    data-i18n="home.topHotels.items.title"
+                  >
                   </span>
                   <div class="flex gap-1 items-center">
                     <span class="text-sm md:text-base">(4.0)</span>
@@ -1527,14 +1910,14 @@
                 </div>
                 <p
                   class="text-foreground/70 text-[10px] line-clamp-1 md:text-xs text-start"
-                >
-                  مشهد خیابان هفده شهریور
-                </p>
+                  data-i18n="home.topHotels.items.address"
+                ></p>
 
                 <div class="flex items-center justify-between">
-                  <span class="text-foreground/70 text-xs md:text-sm"
-                    >شروع قیمت از</span
-                  >
+                  <span
+                    class="text-foreground/70 text-xs md:text-sm"
+                    data-i18n="home.topHotels.items.priceFrom"
+                  ></span>
                   <div>
                     <span
                       class="text-foreground text-sm md:text-base font-bold"
@@ -1553,28 +1936,28 @@
             ></div>
           </div>
           <button
-            class="swiper-button-prev !h-16 md:!h-24 translate-x-1/2 !-translate-y-1/2 !rounded-full border !bg-white/70 !p-2 !shadow-[3px_4px_4px_rgba(0,0,0,0.2)] md:!shadow-[5px_8px_8px_rgba(0,0,0,0.36)] !backdrop-blur-xs !w-9 md:w-11!"
+            class="swiper-button-prev !h-16 md:!h-24 rtl:translate-x-1/2 ltr:-translate-x-1/2  !-translate-y-1/2 !rounded-full border !bg-white/70 !p-2 !shadow-[3px_4px_4px_rgba(0,0,0,0.2)] md:!shadow-[5px_8px_8px_rgba(0,0,0,0.36)] !backdrop-blur-xs !w-9 md:w-11!"
           >
             <i
               data-lucide="chevron-right"
-              class="size-5! md:size-7! fill-transparent!"
+              class="size-5! md:size-7! fill-transparent! ltr:rotate-180"
             ></i>
           </button>
           <button
-            class="swiper-button-next !h-16 md:!h-24 -translate-x-1/2 !-translate-y-1/2 !rounded-full border !bg-white/70 !p-2 !shadow-[3px_4px_4px_rgba(0,0,0,0.2)] md:!shadow-[5px_8px_8px_rgba(0,0,0,0.36)] !backdrop-blur-xs !w-9 md:w-11!"
+            class="swiper-button-next !h-16 md:!h-24 rtl:-translate-x-1/2 ltr:translate-x-1/2 !-translate-y-1/2 !rounded-full border !bg-white/70 !p-2 !shadow-[3px_4px_4px_rgba(0,0,0,0.2)] md:!shadow-[5px_8px_8px_rgba(0,0,0,0.36)] !backdrop-blur-xs !w-9 md:w-11!"
           >
             <i
               data-lucide="chevron-left"
-              class="size-5! md:size-7! fill-transparent!"
+              class="size-5! md:size-7! fill-transparent! ltr:rotate-180"
             ></i>
           </button>
           <button
             class="group gradient-overlay bg-light-primary mx-auto flex w-fit items-center gap-1 rounded-full px-4 py-3 text-white transition-all duration-300 hover:brightness-120"
           >
-            <span class="font-medium">مشاهده همه</span>
+            <span class="font-medium" data-i18n="common.seeAll"></span>
             <i
               data-lucide="chevron-left"
-              class="size-4 transition-transform duration-300 group-hover:-translate-x-1"
+              class="size-4 transition-transform duration-300 rtl:group-hover:-translate-x-1 ltr:group-hover:translate-x-1 ltr:rotate-180"
             ></i>
           </button>
         </div>
@@ -1585,7 +1968,7 @@
           class="relative mx-auto mt-[10vh] max-w-[85%] md:aspect-80/9 max-sm:aspect-auto overflow-visible rounded-4xl bg-light-primary px-4"
         >
           <div class="relative">
-            <div class="absolute right-0 md:right-[5%]">
+            <div class="absolute start-0 md:start-[5%]">
               <svg
                 viewBox="0 0 100 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1620,21 +2003,27 @@
 
             <div class="flex flex-wrap items-center gap-4 py-1">
               <div class="text-white">
-                <p class="text-xl whitespace-nowrap font-extrabold lg:text-3xl">
-                  سفر کن، قسطی پرداخت کن!
-                </p>
-                <p class="text-xs font-medium lg:text-base">
-                  سفرت رو امروز رزرو کن؛ هزینه‌ش رو راحت‌تر پرداخت کن.
-                </p>
+                <p
+                  class="text-xl whitespace-nowrap font-extrabold lg:text-3xl"
+                  data-i18n="home.loan.title"
+                ></p>
+
+                <p
+                  class="text-xs font-medium lg:text-base"
+                  data-i18n="home.loan.description"
+                ></p>
               </div>
 
               <button
-                class="group flex items-center rounded-xl bg-white px-2.5 py-3 lg:py-3.5 text-black transition-all duration-300 hover:brightness-90 absolute lg:static bottom-0 left-1/2 lg:left-0 translate-y-1/2 md:translate-y-2/3 lg:translate-y-0 -translate-x-1/2 lg:translate-x-0 border border-ring/10! shadow-[2px_4px_8px_rgba(0,0,0,0.15)]"
+                class="group flex items-center rounded-xl bg-white px-2.5 py-3 lg:py-3.5 text-black transition-all duration-300 hover:brightness-90 absolute lg:static bottom-0 end-1/2 lg:end-0 translate-y-1/2 md:translate-y-2/3 lg:translate-y-0 rtl:-translate-x-1/2 ltr:translate-x-1/2 lg:translate-x-0 border border-ring/10! shadow-[2px_4px_8px_rgba(0,0,0,0.15)]"
               >
-                <span class="text-xs font-[450]">مشاهده شرایط</span>
+                <span
+                  class="text-xs font-[450]"
+                  data-i18n="home.loan.button"
+                ></span>
                 <i
                   data-lucide="chevron-left"
-                  class="size-3.25 transition-all duration-300 group-hover:-translate-x-1"
+                  class="size-3.25 transition-all duration-300 rtl:group-hover:-translate-x-1 ltr:group-hover:translate-x-1 ltr:rotate-180"
                 ></i>
               </button>
             </div>
@@ -1643,27 +2032,27 @@
           <img
             src="/images/home/loan/airplane.png"
             alt="orange airplane image"
-            class="absolute top-[-22%] xs:top-[-35%] left-[8%] xs:left-[5%] z-10 w-[88%] xs:w-[35%] object-contain"
+            class="absolute top-[-22%] xs:top-[-35%] end-[8%] xs:end-[5%] z-10 w-[88%] xs:w-[35%] object-contain ltr:scale-x-[-1]"
           />
           <img
             src="/images/home/loan/idk.png"
             alt="unknown blue image"
-            class="absolute bottom-[51%] xs:bottom-[52%] md:bottom-[-8%] left-[-1%] xs:left-[1.5%] z-20 w-[31%] xs:w-[12%] object-contain"
+            class="absolute bottom-[51%] xs:bottom-[52%] md:bottom-[-8%] end-[-1%] xs:end-[1.5%] z-20 w-[31%] xs:w-[12%] object-contain"
           />
           <img
             src="/images/home/loan/snapp-pay.png"
             alt="snapp-pay logo image"
-            class="absolute top-[-25%] xs:top-[-30%] left-[39%] xs:left-[17.5%] z-10 w-[31%] xs:w-[12%] object-contain"
+            class="absolute top-[-25%] xs:top-[-30%] end-[39%] xs:end-[17.5%] z-10 w-[31%] xs:w-[12%] object-contain"
           />
           <img
             src="/images/home/loan/elipse.png"
             alt=""
-            class="absolute bottom-[43%] md:bottom-[-50%] left-[4%] xs:left-0 w-[40%] xs:w-[25%] object-contain"
+            class="absolute bottom-[43%] md:bottom-[-50%] end-[4%] xs:end-0 w-[40%] xs:w-[25%] object-contain"
           />
           <img
             src="/images/home/loan/elipse.png"
             alt=""
-            class="absolute bottom-[42%] xs:bottom-[55%] md:bottom-[-15%] left-[23%] w-[30%] xs:w-[15%] object-contain"
+            class="absolute bottom-[42%] xs:bottom-[55%] md:bottom-[-15%] end-[23%] w-[30%] xs:w-[15%] object-contain"
           />
 
           <div
@@ -1682,36 +2071,42 @@
                 class="text-secondary fill-secondary size-5 md:size-6"
               ></i>
               <p class="text-xl md:text-2xl font-extrabold">
-                همه‌جا همراه شما؛
-                <span class="text-primary">با اپلیکیشن ما</span>
+                <span data-i18n="home.application.title"></span>
+                <span
+                  class="text-primary"
+                  data-i18n="home.application.highlight"
+                ></span>
               </p>
             </div>
-            <p class="text-foreground/70 mt-1 text-xs md:text-sm font-medium">
-              رزرو بلیط هیچ‌وقت به این راحتی نبوده! با اپلیکیشن ما، در هر زمان و
-              هر مکان می‌توانید بلیط هواپیـــــــما، قطار و اتوبوس خود را جستجو،
-              مقایسه و تنها در چند دقیقه رزرو کنید.
-            </p>
+            <p
+              class="text-foreground/70 mt-1 text-xs md:text-sm font-medium"
+              data-i18n="home.application.description"
+            ></p>
             <ul class="mt-6 space-y-2 text-sm lg:text-lg font-medium">
               <li class="flex items-center gap-2">
                 <i data-lucide="circle-check" class="size-4 md:size-5"></i>
-                <span>سریع و آسان بلیط موردنظرتان را پیدا کنید.</span>
-              </li>
-
-              <li class="flex items-center gap-2">
-                <i data-lucide="circle-check" class="size-4 md:size-5"></i>
-                <span>پرداخت امن و آنلاین داشته باشید.</span>
-              </li>
-
-              <li class="flex items-center gap-2">
-                <i data-lucide="circle-check" class="size-4 md:size-5"></i>
-                <span>از آخرین قیمت‌ها و پیشنهادهای ویژه باخبر شوید.</span>
+                <span data-i18n="home.application.features.findTicket"></span>
               </li>
 
               <li class="flex items-center gap-2">
                 <i data-lucide="circle-check" class="size-4 md:size-5"></i>
                 <span
-                  >اطلاعات و جزئیات سفر خود را همیشه همراه داشته باشید.</span
-                >
+                  data-i18n="home.application.features.securePayment"
+                ></span>
+              </li>
+
+              <li class="flex items-center gap-2">
+                <i data-lucide="circle-check" class="size-4 md:size-5"></i>
+                <span
+                  data-i18n="home.application.features.specialOffers"
+                ></span>
+              </li>
+
+              <li class="flex items-center gap-2">
+                <i data-lucide="circle-check" class="size-4 md:size-5"></i>
+                <span
+                  data-i18n="home.application.features.travelDetails"
+                ></span>
               </li>
             </ul>
           </div>
@@ -1722,7 +2117,7 @@
         <!--        application end-->
         <!--        decorations-->
         <div
-          class="absolute bottom-[-6%] z-10 w-20 lg:w-auto left-0 lg:left-auto hidden lg:block"
+          class="absolute bottom-[-6%] z-10 w-20 lg:w-auto end-0 lg:end-auto hidden lg:block ltr:scale-x-[-1]"
         >
           <div
             class="bg-primary/60 absolute inset-0 h-full w-[50%] rounded-full blur-3xl"
@@ -1735,7 +2130,7 @@
           />
         </div>
         <div
-          class="absolute bottom-[-6%] md:bottom-[-18%] left-0 z-10 scale-x-[-1] w-20 md:w-auto"
+          class="absolute bottom-[-6%] md:bottom-[-18%] end-0 z-10 rtl:scale-x-[-1] w-20 md:w-auto"
         >
           <div
             class="bg-primary/60 absolute inset-0 h-full w-[50%] rounded-full blur-3xl"
@@ -1764,11 +2159,15 @@
               data-lucide="clipboard-list"
               class="text-primary size-5 md:size-6"
             ></span>
-            <p class="text-xl md:text-2xl font-extrabold">مقالات</p>
+            <p
+              class="text-xl md:text-2xl font-extrabold"
+              data-i18n="home.articles.title"
+            ></p>
           </div>
-          <p class="text-xs md:text-sm font-medium">
-            لورم ایپسوم متن نمایشی با تولید ساختگی نامفهوم
-          </p>
+          <p
+            class="text-xs md:text-sm font-medium"
+            data-i18n="home.articles.description"
+          ></p>
           <div class="swiper blogSwiper w-full pt-2! pb-6!">
             <div class="swiper-wrapper">
               <div
@@ -1779,16 +2178,22 @@
                   alt="where to go 1"
                   class="h-full w-full rounded-xl object-cover"
                 />
-                <h3 class="font-bold text-start">مقاله و اخبار شماره 1</h3>
+                <h3
+                  class="font-bold text-start"
+                  data-i18n="home.articles.items.article1.title"
+                ></h3>
 
-                <p class="text-foreground text-xs text-start line-clamp-1">
-                  لورم ایپسوم متن ساختگی با تولید سادگی از صنعت چــــــاپ.
-                </p>
+                <p
+                  class="text-foreground text-xs text-start line-clamp-1"
+                  data-i18n="home.articles.items.article1.description"
+                ></p>
                 <div class="w-full text-end">
                   <button
-                    class="text-primary transition-all duration-300 hover:-translate-x-1 hover:text-primary/85"
+                    class="text-primary transition-all duration-300 rtl:hover:-translate-x-1 ltr:hover:translate-x-1 hover:text-primary/85"
                   >
-                    <span class="text-xs font-medium"> ادامه مطلب... </span>
+                    <span class="text-xs font-medium">
+                      <span data-i18n="common.readMore"></span>...
+                    </span>
                   </button>
                 </div>
               </div>
@@ -1800,16 +2205,22 @@
                   alt="where to go 1"
                   class="h-full w-full rounded-xl object-cover"
                 />
-                <h3 class="font-bold text-start">مقاله و اخبار شماره 2</h3>
+                <h3
+                  class="font-bold text-start"
+                  data-i18n="home.articles.items.article1.title"
+                ></h3>
 
-                <p class="text-foreground text-xs text-start line-clamp-1">
-                  لورم ایپسوم متن ساختگی با تولید سادگی از صنعت چــــــاپ.
-                </p>
+                <p
+                  class="text-foreground text-xs text-start line-clamp-1"
+                  data-i18n="home.articles.items.article1.description"
+                ></p>
                 <div class="w-full text-end">
                   <button
-                    class="text-primary transition-all duration-300 hover:-translate-x-1 hover:text-primary/85"
+                    class="text-primary transition-all duration-300 rtl:hover:-translate-x-1 ltr:hover:translate-x-1 hover:text-primary/85"
                   >
-                    <span class="text-xs font-medium"> ادامه مطلب... </span>
+                    <span class="text-xs font-medium">
+                      <span data-i18n="common.readMore"></span>...
+                    </span>
                   </button>
                 </div>
               </div>
@@ -1821,16 +2232,22 @@
                   alt="where to go 1"
                   class="h-full w-full rounded-xl object-cover"
                 />
-                <h3 class="font-bold text-start">مقاله و اخبار شماره 3</h3>
+                <h3
+                  class="font-bold text-start"
+                  data-i18n="home.articles.items.article1.title"
+                ></h3>
 
-                <p class="text-foreground text-xs text-start line-clamp-1">
-                  لورم ایپسوم متن ساختگی با تولید سادگی از صنعت چــــــاپ.
-                </p>
+                <p
+                  class="text-foreground text-xs text-start line-clamp-1"
+                  data-i18n="home.articles.items.article1.description"
+                ></p>
                 <div class="w-full text-end">
                   <button
-                    class="text-primary transition-all duration-300 hover:-translate-x-1 hover:text-primary/85"
+                    class="text-primary transition-all duration-300 rtl:hover:-translate-x-1 ltr:hover:translate-x-1 hover:text-primary/85"
                   >
-                    <span class="text-xs font-medium"> ادامه مطلب... </span>
+                    <span class="text-xs font-medium">
+                      <span data-i18n="common.readMore"></span>...
+                    </span>
                   </button>
                 </div>
               </div>
@@ -1842,16 +2259,22 @@
                   alt="where to go 1"
                   class="h-full w-full rounded-xl object-cover"
                 />
-                <h3 class="font-bold text-start">مقاله و اخبار شماره 4</h3>
+                <h3
+                  class="font-bold text-start"
+                  data-i18n="home.articles.items.article1.title"
+                ></h3>
 
-                <p class="text-foreground text-xs text-start line-clamp-1">
-                  لورم ایپسوم متن ساختگی با تولید سادگی از صنعت چــــــاپ.
-                </p>
+                <p
+                  class="text-foreground text-xs text-start line-clamp-1"
+                  data-i18n="home.articles.items.article1.description"
+                ></p>
                 <div class="w-full text-end">
                   <button
-                    class="text-primary transition-all duration-300 hover:-translate-x-1 hover:text-primary/85"
+                    class="text-primary transition-all duration-300 rtl:hover:-translate-x-1 ltr:hover:translate-x-1 hover:text-primary/85"
                   >
-                    <span class="text-xs font-medium"> ادامه مطلب... </span>
+                    <span class="text-xs font-medium">
+                      <span data-i18n="common.readMore"></span>...
+                    </span>
                   </button>
                 </div>
               </div>
@@ -1868,10 +2291,17 @@
         >
           <div class="space-y-2">
             <div class="rounded-full px-4 py-1 bg-card text-white inline-block">
-              <span class="text-xs font-bold"> تماس با ما </span>
+              <span
+                class="text-xs font-bold"
+                data-i18n="home.contactUs.badge"
+              ></span>
             </div>
             <p class="font-extrabold text-xl md:text-2xl">
-              خدمات حرفه‌ای و <span class="text-primary">پشتیبانی اختصاصی</span>
+              <span data-i18n="home.contactUs.title"></span>
+              <span
+                class="text-primary"
+                data-i18n="home.contactUs.highlight"
+              ></span>
             </p>
             <img
               src="/images/home/contact-us/devices.png"
@@ -1885,22 +2315,22 @@
               class="bg-primary/50 top-[1%] absolute h-[40%] w-[7%] rounded-full blur-xl"
             ></div>
             <div
-              class="bg-primary/50 top-[1%] left-0 absolute h-[40%] w-[7%] rounded-full blur-xl"
+              class="bg-primary/50 top-[1%] end-0 absolute h-[40%] w-[7%] rounded-full blur-xl"
             ></div>
             <div
-              class="bg-primary/50 top-[1%] left-[15%] absolute h-[8%] w-[18%] rounded-full blur-xl"
+              class="bg-primary/50 top-[1%] end-[15%] absolute h-[8%] w-[18%] rounded-full blur-xl"
             ></div>
             <div
-              class="bg-primary/50 top-[1%] right-[15%] absolute h-[8%] w-[18%] rounded-full blur-xl"
+              class="bg-primary/50 top-[1%] start-[15%] absolute h-[8%] w-[18%] rounded-full blur-xl"
             ></div>
             <div
-              class="bg-primary/50 bottom-0 right-0 absolute w-[8%] h-[18%] rounded-full blur-xl"
+              class="bg-primary/50 bottom-0 start-0 absolute w-[8%] h-[18%] rounded-full blur-xl"
             ></div>
             <div
-              class="bg-primary/50 bottom-0 left-0 absolute w-[8%] h-[18%] rounded-full blur-xl"
+              class="bg-primary/50 bottom-0 end-0 absolute w-[8%] h-[18%] rounded-full blur-xl"
             ></div>
             <div
-              class="bg-primary/50 bottom-0 left-1/2 absolute h-[4%] w-[30%] rounded-full blur-xl"
+              class="bg-primary/50 bottom-0 end-1/2 absolute h-[4%] w-[30%] rounded-full blur-xl"
             ></div>
             <!--            decorations end-->
             <div
@@ -1910,31 +2340,53 @@
                 type="text"
                 class="w-full rounded-full bg-white p-2 z-10 placeholder:text-sm placeholder:ps-2 placeholder:text-foreground/60 shadow-[0_10px_25px_rgba(0,0,0,0.08)] border border-ring/10"
                 placeholder="نام و نام خانوادگی"
+                data-i18n-placeholder="home.contactUs.form.fullName"
               />
 
               <input
                 type="text"
                 class="w-full rounded-full bg-white p-2 z-10 placeholder:text-sm placeholder:ps-2 placeholder:text-foreground/60 shadow-[0_10px_25px_rgba(0,0,0,0.08)] border border-ring/10"
                 placeholder="شماره تماس"
+                data-i18n-placeholder="home.contactUs.form.phone"
               />
 
               <input
                 type="email"
                 class="w-full md:col-span-2 rounded-full bg-white p-2 z-10 placeholder:text-sm placeholder:ps-2 placeholder:text-foreground/60 shadow-[0_10px_25px_rgba(0,0,0,0.08)] border border-ring/10"
                 placeholder="ایمیل"
+                data-i18n-placeholder="home.contactUs.form.email"
               />
               <div class="relative md:col-span-2">
                 <select
                   class="w-full appearance-none rounded-full border border-ring/10 bg-white px-4 py-2 text-sm outline-none shadow-[0_10px_25px_rgba(0,0,0,0.08)] focus:border-primary"
                 >
-                  <option value="">درخواست مشاوره</option>
-                  <option value="support">پشتیبانی</option>
-                  <option value="booking">رزرو بلیط</option>
-                  <option value="payment">پرداخت</option>
-                  <option value="other">سایر</option>
+                  <option
+                    value=""
+                    data-i18n="home.contactUs.form.subject.consultation"
+                  ></option>
+
+                  <option
+                    value="support"
+                    data-i18n="home.contactUs.form.subject.support"
+                  ></option>
+
+                  <option
+                    value="booking"
+                    data-i18n="home.contactUs.form.subject.booking"
+                  ></option>
+
+                  <option
+                    value="payment"
+                    data-i18n="home.contactUs.form.subject.payment"
+                  ></option>
+
+                  <option
+                    value="other"
+                    data-i18n="home.contactUs.form.subject.other"
+                  ></option>
                 </select>
                 <div
-                  class="pointer-events-none absolute inset-y-0 end-4 flex items-center"
+                  class="pointer-events-none absolute -inset-y-0 xl:-translate-y-1.25 end-4 flex items-center"
                 >
                   <i data-lucide="chevron-down" class="size-4"></i>
                 </div>
@@ -1942,12 +2394,16 @@
               <textarea
                 class="w-full md:col-span-2 min-h-32 z-10 rounded-2xl border items-stretch border-ring/10 bg-white p-2 shadow-[0_10px_25px_rgba(0,0,0,0.08)] placeholder:text-sm placeholder:text-foreground/60"
                 placeholder="متن پیام"
+                data-i18n-placeholder="home.contactUs.form.message"
               ></textarea>
 
               <button
                 class="w-full md:col-span-2 text-white bg-card py-1.75 rounded-full transition-color duration-300 hover:bg-card/85"
               >
-                <span class="text-sm font-medium">ثبت درخواست</span>
+                <span
+                  class="text-sm font-medium"
+                  data-i18n="home.contactUs.form.submit"
+                ></span>
               </button>
             </div>
           </div>
@@ -1958,7 +2414,7 @@
           class="relative mx-auto mt-[10vh] bg-card max-w-[85%] grid lg:grid-cols-3 gap-2 items-center rounded-3xl p-3.5 px-5"
         >
           <button
-            class="absolute left-[15%] lg:left-1/2 top-0 -translate-y-1/2 w-fit -translate-x-1/2 rounded-full bg-secondary p-2 text-white transition-all duration-300 hover:scale-105"
+            class="absolute end-[15%] lg:end-1/2 top-0 -translate-y-1/2 w-fit rtl:-translate-x-1/2 ltr:translate-x-1/2 rounded-full bg-secondary p-2 text-white transition-all duration-300 hover:scale-105"
           >
             <a href="#">
               <i
@@ -1968,21 +2424,32 @@
             </a>
           </button>
           <p class="text-2xl lg:text-[35px] font-black text-white">
-            “عضویت در <span class="text-secondary">خبرنامه</span>”
+            <span data-i18n="home.register.title"></span>
+            <span
+              class="text-secondary"
+              data-i18n="home.register.highlight"
+            ></span>
+            ”
           </p>
-          <p class="text-white text-sm font-medium">
-            با عضویت در خبرنامه از جدیدترین اخبار ما مطلع شوید.
-          </p>
+
+          <p
+            class="text-white text-sm font-medium"
+            data-i18n="home.register.description"
+          ></p>
           <div class="h-full relative">
             <input
               type="email"
               placeholder="ایمیل شما.."
+              data-i18n-placeholder="home.register.email"
               class="bg-white placeholder:text-sm rounded-xl w-full h-full ps-4 py-3 lg:py-0"
             />
             <button
-              class="absolute left-2 top-1/2 -translate-y-1/2 rounded-lg md:rounded-xl bg-secondary h-[76%] px-5 transition-all duration-300 hover:bg-secondary/85"
+              class="absolute end-2 top-1/2 -translate-y-1/2 rounded-lg md:rounded-xl bg-secondary h-[76%] px-5 transition-all duration-300 hover:bg-secondary/85"
             >
-              <span class="text-sm text-white font-bold">عضویت</span>
+              <span
+                class="text-sm text-white font-bold"
+                data-i18n="home.register.submit"
+              ></span>
             </button>
           </div>
         </div>
@@ -1995,23 +2462,31 @@
             <div class="hidden lg:block">
               <div class="grid grid-cols-2 gap-8">
                 <div>
-                  <h3 class="font-extrabold text-xl text-primary">دسترسی</h3>
+                  <h3
+                    class="font-extrabold text-xl text-primary"
+                    data-i18n="footer.access.title"
+                  ></h3>
+
                   <ul class="text-sm space-y-5 mt-6">
-                    <li>تورها</li>
-                    <li>پروازها</li>
-                    <li>هتل‌ها</li>
-                    <li>درباره‌ما</li>
-                    <li>وبلاگ</li>
+                    <li data-i18n="footer.access.items.tours"></li>
+                    <li data-i18n="footer.access.items.flights"></li>
+                    <li data-i18n="footer.access.items.hotels"></li>
+                    <li data-i18n="footer.access.items.aboutUs"></li>
+                    <li data-i18n="footer.access.items.blog"></li>
                   </ul>
                 </div>
                 <div>
-                  <h3 class="font-extrabold text-xl text-primary">لینک‌ها</h3>
+                  <h3
+                    class="font-extrabold text-xl text-primary"
+                    data-i18n="footer.links.title"
+                  ></h3>
+
                   <ul class="text-sm space-y-5 mt-6">
-                    <li>تورها</li>
-                    <li>پروازها</li>
-                    <li>هتل‌ها</li>
-                    <li>درباره‌ما</li>
-                    <li>وبلاگ</li>
+                    <li data-i18n="footer.links.items.tours"></li>
+                    <li data-i18n="footer.links.items.flights"></li>
+                    <li data-i18n="footer.links.items.hotels"></li>
+                    <li data-i18n="footer.links.items.aboutUs"></li>
+                    <li data-i18n="footer.links.items.blog"></li>
                   </ul>
                 </div>
               </div>
@@ -2024,23 +2499,24 @@
                 <div class="flex flex-col gap-1 items-start">
                   <span
                     class="font-extrabold text-xl -mb-1.5 text-shadow-[0_4px_6px_rgba(0,0,0,0.25)]"
-                    >لحظه پرواز</span
-                  >
-                  <span class="text-shadow-[0_4px_6px_rgba(0,0,0,0.25)]"
-                    >Lahzeh parvaz</span
-                  >
+                    data-i18n="common.logo.fa"
+                  ></span>
+                  <span
+                    class="text-shadow-[0_4px_6px_rgba(0,0,0,0.25)]"
+                    data-i18n="common.logo.en"
+                  ></span>
                 </div>
               </div>
 
-              <h3 class="font-bold text-start mt-1 lg:mt-0">
-                سامانه معتبر و جامع در حوزه گردشگری و خدمات سفر
-              </h3>
+              <h3
+                class="font-extrabold text-xl text-primary"
+                data-i18n="footer.description.title"
+              ></h3>
 
-              <p class="text-xs max-w-[80%] text-start">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-                استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
-                در ستون و سطرآنچنان که لازم است.
-              </p>
+              <p
+                class="text-xs max-w-[80%] text-start"
+                data-i18n="footer.description.text"
+              ></p>
               <div
                 class="gap-2 items-center justify-center mt-2 hidden lg:flex"
               >
@@ -2052,44 +2528,94 @@
               <div class="relative z-50">
                 <select
                   id="footerLinksSelect"
-                  class="text-foreground w-full appearance-none rounded-2xl border p-3 ps-4.5 pl-10 font-normal! text-sm!"
+                  class="text-foreground w-full appearance-none rounded-2xl border p-3 ps-4.5 pe-10 font-normal! text-sm!"
                 >
-                  <option value="" disabled selected>لینک‌ها</option>
-                  <option value="/tours">تورهای مسافرتی</option>
-                  <option value="/flights">پروازها</option>
-                  <option value="/hotels">هتل‌ها</option>
-                  <option value="/about">درباره ما</option>
-                  <option value="/blog">وبلاگ</option>
+                  <option
+                    value=""
+                    disabled
+                    selected
+                    data-i18n="footer.links.title"
+                  ></option>
+
+                  <option
+                    value="/tours"
+                    data-i18n="footer.links.items.tours"
+                  ></option>
+
+                  <option
+                    value="/flights"
+                    data-i18n="footer.links.items.flights"
+                  ></option>
+
+                  <option
+                    value="/hotels"
+                    data-i18n="footer.links.items.hotels"
+                  ></option>
+
+                  <option
+                    value="/about"
+                    data-i18n="footer.links.items.aboutUs"
+                  ></option>
+
+                  <option
+                    value="/blog"
+                    data-i18n="footer.links.items.blog"
+                  ></option>
                 </select>
 
                 <i
                   data-lucide="chevron-down"
-                  class="pointer-events-none absolute left-4 top-1/2 size-3.5 -translate-y-1/2 text-foreground/70"
+                  class="pointer-events-none absolute end-4 top-1/2 size-3.5 -translate-y-1/2 text-foreground/70"
                 ></i>
               </div>
 
               <div class="relative z-50">
                 <select
                   id="quickAccessSelect"
-                  class="w-full appearance-none rounded-2xl bg-card! text-white p-3 ps-4.5 pl-10 font-normal! text-sm!"
+                  class="w-full appearance-none rounded-2xl bg-card! text-white p-3 ps-4.5 pe-10 font-normal! text-sm!"
                 >
-                  <option value="" disabled selected>دسترسی سریع</option>
-                  <option value="/tours/domestic">تورهای داخلی</option>
-                  <option value="/tours/international">تورهای خارجی</option>
-                  <option value="/accommodation">رزرو اقامتگاه</option>
-                  <option value="/tracking">پیگیری سفارش</option>
-                  <option value="/contact">ارتباط با ما</option>
+                  <option
+                    value=""
+                    disabled
+                    selected
+                    data-i18n="footer.access.title"
+                  ></option>
+
+                  <option
+                    value="/tours/domestic"
+                    data-i18n="footer.access.items.domesticTours"
+                  ></option>
+
+                  <option
+                    value="/tours/international"
+                    data-i18n="footer.access.items.internationalTours"
+                  ></option>
+
+                  <option
+                    value="/accommodation"
+                    data-i18n="footer.access.items.accommodation"
+                  ></option>
+
+                  <option
+                    value="/tracking"
+                    data-i18n="footer.access.items.tracking"
+                  ></option>
+
+                  <option
+                    value="/contact"
+                    data-i18n="footer.access.items.contactUs"
+                  ></option>
                 </select>
 
                 <i
                   data-lucide="chevron-down"
-                  class="pointer-events-none absolute left-4 top-1/2 size-3.5 -translate-y-1/2 text-white"
+                  class="pointer-events-none absolute end-4 top-1/2 size-3.5 -translate-y-1/2 text-white"
                 ></i>
               </div>
             </div>
             <div>
               <h3 class="text-primary text-xl font-extrabold hidden lg:block">
-                ارتباط با ما
+                <span data-i18n="footer.contactUs.title"></span>
               </h3>
               <div
                 class="lg:mt-6 grid grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-7.5"
@@ -2102,7 +2628,10 @@
                     ></i>
                   </div>
                   <div class="flex flex-col">
-                    <span class="text-[10px] md:text-xs">شماره تماس:</span>
+                    <span
+                      class="text-[10px] md:text-xs"
+                      data-i18n="footer.contactUs.phone"
+                    ></span>
                     <span class="text-sm md:text-base">۰۱۳-۴۴۴۴</span>
                   </div>
                 </div>
@@ -2114,7 +2643,10 @@
                     ></i>
                   </div>
                   <div class="flex flex-col">
-                    <span class="text-[10px] md:text-xs">شماره تماس:</span>
+                    <span
+                      class="text-[10px] md:text-xs"
+                      data-i18n="footer.contactUs.phone"
+                    ></span>
                     <span class="text-sm md:text-base">۰۹۳۷۸۹۲۹۳۷۷</span>
                   </div>
                 </div>
@@ -2126,7 +2658,10 @@
                     ></i>
                   </div>
                   <div class="flex flex-col">
-                    <span class="text-[10px] md:text-xs">ایمیل</span>
+                    <span
+                      class="text-[10px] md:text-xs"
+                      data-i18n="footer.contactUs.email"
+                    ></span>
                     <span class="text-sm md:text-base">parvaz@gmail.com</span>
                   </div>
                 </div>
@@ -2138,10 +2673,8 @@
             </div>
             <p
               class="order-2 md:order-1 col-span-3 lg:my-[6vh] text-xs md:text-sm flex items-center justify-self-start ps-[7%]"
-            >
-              تمامی حقوق این سایت به لحظه پرواز تعلق دارد طراحی سایت توسط
-              یلداحضرتی انجام شده است.
-            </p>
+              data-i18n="footer.copyright"
+            ></p>
             <div
               class="flex order-1 md:order-2 gap-2 items-center lg:my-[4vh] justify-center lg:justify-start"
             >
@@ -2154,7 +2687,10 @@
               <div
                 class="bg-white rounded-full z-20 flex gap-2 items-center shadow-[0_10px_25px_rgba(0,0,0,0.08)] border border-ring/15!"
               >
-                <span class="text-xs p-2 md:ps-2">اینستاگرام</span>
+                <span
+                  class="text-xs p-2 md:ps-2"
+                  data-i18n="footer.social.instagram"
+                ></span>
                 <div class="bg-primary p-2 md:p-2.5 rounded-full shrink-0">
                   <i
                     data-lucide="camera"
@@ -2172,13 +2708,13 @@
         <!--        footer end-->
         <!--      decorations-->
         <div
-          class="absolute bg-primary/20 left-0 bottom-[12%] h-[25%] w-[10%] rounded-full blur-3xl"
+          class="absolute bg-primary/20 end-0 bottom-[12%] h-[25%] w-[10%] rounded-full blur-3xl"
         ></div>
         <div
-          class="absolute bg-primary/10 -right-25 bottom-[8%] size-[20%] rounded-full blur-3xl"
+          class="absolute bg-primary/10 -start-25 bottom-[8%] size-[20%] rounded-full blur-3xl"
         ></div>
         <div
-          class="absolute bg-primary/30 left-70 bottom-0 h-[5%] w-[10%] rounded-full blur-3xl"
+          class="absolute bg-primary/30 end-70 bottom-0 h-[5%] w-[10%] rounded-full blur-3xl"
         ></div>
         <div
           class="absolute bg-primary/10 bottom-0 h-[20%] w-full rounded-full blur-3xl"
@@ -2201,7 +2737,7 @@
 
       <button class="p-2.5 bg-primary/20 rounded-full relative">
         <span
-          class="absolute -top-px -right-px flex size-3.5 items-center justify-center rounded-full bg-secondary text-[10px] font-medium text-black"
+          class="absolute -top-px -start-px flex size-3.5 items-center justify-center rounded-full bg-secondary text-[10px] font-medium text-black"
         >
           2
         </span>
@@ -2226,12 +2762,12 @@
     <!-- mobile sidebar -->
     <aside
       id="mobileSidebar"
-      class="fixed top-0 right-0 h-full w-72 max-w-[80%] bg-card z-80 translate-x-full transition-transform duration-300 ease-in-out flex flex-col"
+      class="fixed top-0 start-0 h-full w-72 max-w-[80%] bg-card z-80 rtl:translate-x-full ltr:-translate-x-full transition-transform duration-300 ease-in-out flex flex-col"
     >
       <div
         class="flex items-center justify-between p-4 border-b border-white/20"
       >
-        <span class="font-extrabold text-white">لحظه پرواز</span>
+        <span class="font-extrabold text-white" data-i18n="common.logo.title"></span>
         <button id="closeSidebarBtn" class="rounded-full text-white">
           <i data-lucide="x" class="size-5"></i>
         </button>
@@ -2241,14 +2777,53 @@
         class="flex h-full flex-col gap-1 overflow-y-auto py-4 text-sm font-semibold text-white"
       >
         <!-- NAV LINKS -->
-        <a href="#home" class="px-4 py-2">پرواز داخلی</a>
-        <a href="#about" class="px-4 py-2">پرواز خارجی</a>
-        <a href="#contact" class="px-4 py-2">تور</a>
-        <a href="#contact" class="px-4 py-2">اقامت</a>
-        <a href="#contact" class="px-4 py-2">وبلاگ</a>
-        <a href="#contact" class="px-4 py-2">درباره ما</a>
-        <a href="#contact" class="px-4 py-2">ارتباط با ما</a>
-        <a href="#contact" class="px-4 py-2">پیگیری خرید</a>
+        <a
+          href="#home"
+          class="px-4 py-2"
+          data-i18n="header.navigation.domesticFlights"
+        ></a>
+
+        <a
+          href="#about"
+          class="px-4 py-2"
+          data-i18n="header.navigation.internationalFlights"
+        ></a>
+
+        <a
+          href="#contact"
+          class="px-4 py-2"
+          data-i18n="header.navigation.tours"
+        ></a>
+
+        <a
+          href="#contact"
+          class="px-4 py-2"
+          data-i18n="header.navigation.accommodation"
+        ></a>
+
+        <a
+          href="#contact"
+          class="px-4 py-2"
+          data-i18n="header.navigation.blog"
+        ></a>
+
+        <a
+          href="#contact"
+          class="px-4 py-2"
+          data-i18n="header.navigation.aboutUs"
+        ></a>
+
+        <a
+          href="#contact"
+          class="px-4 py-2"
+          data-i18n="header.navigation.contactUs"
+        ></a>
+
+        <a
+          href="#contact"
+          class="px-4 py-2"
+          data-i18n="header.navigation.purchaseTracking"
+        ></a>
 
         <!-- DIVIDER + LOGIN -->
         <div class="mt-2 border-t border-white/20 px-4 pt-4">
@@ -2256,11 +2831,15 @@
             type="button"
             class="flex w-full items-center gap-1 rounded-full bg-white p-1 text-black"
           >
-      <span class="rounded-full bg-secondary p-1">
-        <i data-lucide="circle-user" class="size-5 text-black"></i>
-      </span>
+            <span class="rounded-full bg-secondary p-1">
+              <i data-lucide="circle-user" class="size-5 text-black"></i>
+            </span>
 
-            <span class="pe-1 text-xs font-medium">ورود/ثبت نام</span>
+            <span
+              class="pe-1 text-xs font-medium"
+              data-i18n="header.auth.loginRegister"
+              ></span
+            >
           </button>
         </div>
 
@@ -2279,8 +2858,8 @@
                 id="mobile-selected-currency"
                 class="pe-1 text-xs font-medium"
               >
-          IRR
-        </span>
+                IRR
+              </span>
 
               <i data-lucide="badge-dollar-sign" class="size-5"></i>
             </button>
@@ -2294,7 +2873,7 @@
                 data-mobile-currency="IRR"
                 class="mobile-currency-option flex w-full items-center justify-between rounded-lg px-3 py-1 text-sm! transition hover:bg-white/30"
               >
-                <span>ریال</span>
+                <span data-i18n="header.currency.irr"></span>
                 <span class="text-xs">IRR</span>
               </button>
 
@@ -2303,7 +2882,7 @@
                 data-mobile-currency="USD"
                 class="mobile-currency-option flex w-full items-center justify-between rounded-lg px-3 py-1 text-sm! transition hover:bg-white/30"
               >
-                <span>دلار</span>
+                <span data-i18n="header.currency.usd"></span>
                 <span class="text-xs">USD</span>
               </button>
 
@@ -2312,7 +2891,7 @@
                 data-mobile-currency="EUR"
                 class="mobile-currency-option flex w-full items-center justify-between rounded-lg px-3 py-1 text-sm! transition hover:bg-white/30"
               >
-                <span>یورو</span>
+                <span data-i18n="header.currency.eur"></span>
                 <span class="text-xs">EUR</span>
               </button>
             </div>
@@ -2331,8 +2910,8 @@
                 id="mobile-selected-language"
                 class="pe-1 text-xs font-medium"
               >
-          فارسی
-        </span>
+                فارسی
+              </span>
 
               <i data-lucide="earth" class="size-5"></i>
             </button>
@@ -2378,7 +2957,7 @@
         class="bg-white rounded-3xl p-4 w-full max-w-md max-h-[85vh] overflow-y-auto"
       >
         <div class="flex items-center justify-between mb-3">
-          <span class="font-extrabold text-lg text-foreground">جستجوی سفر</span>
+          <span class="font-extrabold text-lg text-foreground" data-i18n="common.searchBox.title"></span>
           <button id="closeSearchPopup" class="rounded-full">
             <i data-lucide="x" class="size-5"></i>
           </button>
@@ -2388,21 +2967,58 @@
           <div class="relative">
             <select
               id="origin-mobile"
-              class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-base!"
+              class="text-foreground w-full appearance-none rounded-xl border p-3 pe-10 font-normal! text-base!"
             >
-              <option value="" disabled selected>مبدا (شهر)</option>
-              <option value="tehran">تهران</option>
-              <option value="mashhad">مشهد</option>
-              <option value="shiraz">شیراز</option>
-              <option value="tabriz">تبریز</option>
-              <option value="istanbul">استانبول</option>
-              <option value="dubai">دبی</option>
-              <option value="antalya">آنتالیا</option>
-              <option value="paris">پاریس</option>
+              <option
+                value=""
+                disabled
+                selected
+                data-i18n="common.searchBox.origin.placeholder"
+              ></option>
+
+              <option
+                value="tehran"
+                data-i18n="common.searchBox.origin.tehran"
+              ></option>
+
+              <option
+                value="mashhad"
+                data-i18n="common.searchBox.origin.mashhad"
+              ></option>
+
+              <option
+                value="shiraz"
+                data-i18n="common.searchBox.origin.shiraz"
+              ></option>
+
+              <option
+                value="tabriz"
+                data-i18n="common.searchBox.origin.tabriz"
+              ></option>
+
+              <option
+                value="istanbul"
+                data-i18n="common.searchBox.origin.istanbul"
+              ></option>
+
+              <option
+                value="dubai"
+                data-i18n="common.searchBox.origin.dubai"
+              ></option>
+
+              <option
+                value="antalya"
+                data-i18n="common.searchBox.origin.antalya"
+              ></option>
+
+              <option
+                value="paris"
+                data-i18n="common.searchBox.origin.paris"
+              ></option>
             </select>
             <i
               data-lucide="chevron-down"
-              class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
+              class="pointer-events-none absolute end-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
             ></i>
             <button
               id="swap-locations-mobile"
@@ -2418,84 +3034,201 @@
           <div class="relative">
             <select
               id="destination-mobile"
-              class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-base!"
+              class="text-foreground w-full appearance-none rounded-xl border p-3 pe-10 font-normal! text-base!"
             >
-              <option value="" disabled selected>مقصد (شهر)</option>
-              <option value="tehran">تهران</option>
-              <option value="mashhad">مشهد</option>
-              <option value="shiraz">شیراز</option>
-              <option value="tabriz">تبریز</option>
-              <option value="istanbul">استانبول</option>
-              <option value="dubai">دبی</option>
-              <option value="antalya">آنتالیا</option>
-              <option value="paris">پاریس</option>
+              <option
+                value=""
+                disabled
+                selected
+                data-i18n="common.searchBox.destination.placeholder"
+              ></option>
+
+              <option
+                value="tehran"
+                data-i18n="common.searchBox.destination.tehran"
+              ></option>
+
+              <option
+                value="mashhad"
+                data-i18n="common.searchBox.destination.mashhad"
+              ></option>
+
+              <option
+                value="shiraz"
+                data-i18n="common.searchBox.destination.shiraz"
+              ></option>
+
+              <option
+                value="tabriz"
+                data-i18n="common.searchBox.destination.tabriz"
+              ></option>
+
+              <option
+                value="istanbul"
+                data-i18n="common.searchBox.destination.istanbul"
+              ></option>
+
+              <option
+                value="dubai"
+                data-i18n="common.searchBox.destination.dubai"
+              ></option>
+
+              <option
+                value="antalya"
+                data-i18n="common.searchBox.destination.antalya"
+              ></option>
+
+              <option
+                value="paris"
+                data-i18n="common.searchBox.destination.paris"
+              ></option>
             </select>
             <i
               data-lucide="chevron-down"
-              class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
+              class="pointer-events-none absolute end-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
             ></i>
           </div>
 
           <div class="relative">
             <select
-              class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-base!"
+              class="text-foreground w-full appearance-none rounded-xl border p-3 pe-10 font-normal! text-base!"
             >
-              <option value="" disabled selected>تاریخ رفت</option>
-              <option value="2026-10-01">۱ مهر ۱۴۰۵</option>
-              <option value="2026-10-05">۵ مهر ۱۴۰۵</option>
-              <option value="2026-10-10">۱۰ مهر ۱۴۰۵</option>
-              <option value="2026-10-15">۱۵ مهر ۱۴۰۵</option>
+              <option
+                value=""
+                disabled
+                selected
+                data-i18n="common.searchBox.departureDate.placeholder"
+              ></option>
+
+              <option
+                value="2026-10-01"
+                data-i18n="common.searchBox.departureDate.october1"
+              ></option>
+
+              <option
+                value="2026-10-05"
+                data-i18n="common.searchBox.departureDate.october5"
+              ></option>
+
+              <option
+                value="2026-10-10"
+                data-i18n="common.searchBox.departureDate.october10"
+              ></option>
+
+              <option
+                value="2026-10-15"
+                data-i18n="common.searchBox.departureDate.october15"
+              ></option>
             </select>
             <i
               data-lucide="chevron-down"
-              class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
+              class="pointer-events-none absolute end-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
             ></i>
           </div>
 
           <div class="relative">
             <select
-              class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-base!"
+              class="text-foreground w-full appearance-none rounded-xl border p-3 pe-10 font-normal! text-base!"
             >
-              <option value="" disabled selected>تاریخ برگشت</option>
-              <option value="2026-10-05">۵ مهر ۱۴۰۵</option>
-              <option value="2026-10-10">۱۰ مهر ۱۴۰۵</option>
-              <option value="2026-10-15">۱۵ مهر ۱۴۰۵</option>
-              <option value="2026-10-20">۲۰ مهر ۱۴۰۵</option>
+              <option
+                value=""
+                disabled
+                selected
+                data-i18n="common.searchBox.returnDate.placeholder"
+              ></option>
+
+              <option
+                value="2026-10-05"
+                data-i18n="common.searchBox.returnDate.october5"
+              ></option>
+
+              <option
+                value="2026-10-10"
+                data-i18n="common.searchBox.returnDate.october10"
+              ></option>
+
+              <option
+                value="2026-10-15"
+                data-i18n="common.searchBox.returnDate.october15"
+              ></option>
+
+              <option
+                value="2026-10-20"
+                data-i18n="common.searchBox.returnDate.october20"
+              ></option>
             </select>
             <i
               data-lucide="chevron-down"
-              class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
+              class="pointer-events-none absolute end-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
             ></i>
           </div>
 
           <div class="relative">
             <select
-              class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-base!"
+              class="text-foreground w-full appearance-none rounded-xl border p-3 pe-10 font-normal! text-base!"
             >
-              <option value="" disabled selected>نوع سفر</option>
-              <option value="one-way">یک طرفه</option>
-              <option value="round-trip">رفت و برگشت</option>
+              <option
+                value=""
+                disabled
+                selected
+                data-i18n="common.searchBox.tripType.placeholder"
+              ></option>
+
+              <option
+                value="one-way"
+                data-i18n="common.searchBox.tripType.oneWay"
+              ></option>
+
+              <option
+                value="round-trip"
+                data-i18n="common.searchBox.tripType.roundTrip"
+              ></option>
             </select>
             <i
               data-lucide="chevron-down"
-              class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
+              class="pointer-events-none absolute end-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
             ></i>
           </div>
 
           <div class="relative">
             <select
-              class="text-foreground w-full appearance-none rounded-xl border p-3 pl-10 font-normal! text-base!"
+              class="text-foreground w-full appearance-none rounded-xl border p-3 pe-10 font-normal! text-base!"
             >
-              <option value="" disabled selected>تعداد مسافران</option>
-              <option value="1">۱ مسافر</option>
-              <option value="2">۲ مسافر</option>
-              <option value="3">۳ مسافر</option>
-              <option value="4">۴ مسافر</option>
-              <option value="5">۵ مسافر</option>
+              <option
+                value=""
+                disabled
+                selected
+                data-i18n="common.searchBox.passengers.placeholder"
+              ></option>
+
+              <option
+                value="1"
+                data-i18n="common.searchBox.passengers.one"
+              ></option>
+
+              <option
+                value="2"
+                data-i18n="common.searchBox.passengers.two"
+              ></option>
+
+              <option
+                value="3"
+                data-i18n="common.searchBox.passengers.three"
+              ></option>
+
+              <option
+                value="4"
+                data-i18n="common.searchBox.passengers.four"
+              ></option>
+
+              <option
+                value="5"
+                data-i18n="common.searchBox.passengers.five"
+              ></option>
             </select>
             <i
               data-lucide="chevron-down"
-              class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
+              class="pointer-events-none absolute end-4 top-1/2 size-4 -translate-y-1/2 text-foreground/70"
             ></i>
           </div>
 
@@ -2506,7 +3239,10 @@
               data-lucide="search"
               class="size-6 transition-all duration-300 group-hover:scale-105"
             ></i>
-            <span class="text-xl font-bold">جستجو</span>
+            <span
+              class="text-xl font-bold"
+              data-i18n="common.searchBox.button"
+            ></span>
           </button>
         </div>
       </div>
