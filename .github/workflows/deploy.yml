@@ -34,6 +34,14 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Prepare language routes
+        run: |
+          cp dist/index.html dist/404.html
+          mkdir -p dist/fa
+          mkdir -p dist/en
+          cp dist/index.html dist/fa/index.html
+          cp dist/index.html dist/en/index.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
