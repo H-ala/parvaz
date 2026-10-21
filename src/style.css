@@ -265,8 +265,12 @@ a {
   @apply relative isolate overflow-hidden transition-colors duration-300;
 
   &::before {
-    content: '';
+    content: "";
     @apply absolute inset-0 -z-10 origin-left scale-x-0 bg-card transition-transform duration-300;
+  }
+
+  &:hover {
+    @apply text-white;
   }
 
   &:hover::before {
